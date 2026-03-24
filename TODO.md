@@ -11,11 +11,12 @@
 - [x] Remove ".pdf" suffixes from Selected Work headers in `Projects.tsx`.
 - [x] Remove redundant "View full screen" links in `Projects.tsx`.
 - [x] Add a "Last Updated" timestamp to the footer.
+- [x] Correctly categorize Data Wise as a minor (Education) and InstantFlows as professional experience.
 
 ## Current Goal: Refine & Improve
 - [ ] Audit links in the footer and ensure they all work.
 - [ ] Add a "Project" section to the UI with placeholders or real data (for non-academic projects).
-- [ ] Improve UI/UX for the "Work Experience" section descriptions.
+- [ ] Improve UI/UX for the "Work Experience" and "Selected Work" section descriptions.
 
 ## Future Improvements (Autonomous Selection)
 - [ ] Optimize SEO (meta tags, title).
