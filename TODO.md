@@ -8,14 +8,14 @@
 - [x] Implement a "Contact Me" section/form with Google Forms iframe.
 - [x] Add a custom favicon ( George's profile ).
 - [x] Fix SPA routing (S3/CloudFront error document redirection).
+- [x] Improve styling for Academic Projects (InstantFlows/DataWise) in the Education section.
+- [x] Remove ".pdf" suffixes from Selected Work headers in `Projects.tsx`.
+- [x] Remove redundant "View full screen" links in `Projects.tsx`.
+- [x] Add a "Last Updated" timestamp to the footer.
 
 ## Current Goal: Refine & Improve
-- [ ] Improve styling for Academic Projects (InstantFlows/DataWise) in the Education section.
-- [ ] Remove ".pdf" suffixes from Selected Work headers in `Projects.tsx`.
-- [ ] Remove redundant "View full screen" links in `Projects.tsx`.
 - [ ] Audit links in the footer and ensure they all work.
 - [ ] Add a "Project" section to the UI with placeholders or real data (for non-academic projects).
-- [ ] Add a "Last Updated" timestamp to the footer.
 
 ## Future Improvements (Autonomous Selection)
 - [ ] Optimize SEO (meta tags, title).

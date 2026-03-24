@@ -6,7 +6,6 @@ import hagaLogo from '../assets/HagaZiekenhuis_logo.png';
 import boomerangLogo from '../assets/Boomerang_logo.png';
 import jorLogo from '../assets/JOR_logo.png';
 import huracanLogo from '../assets/Huracan_logo.png';
-import instantFlowsLogo from '../assets/Instantflows_logo.png';
 import aicsLogo from '../assets/Aics_logo.png';
 
 const Experience: React.FC = () => {
@@ -29,15 +28,6 @@ const Experience: React.FC = () => {
           <h3>Huracán / Systems Engineer</h3>
           <p className="date">October 2025 - November 2025, Amsterdam</p>
           <p className="description">Supported clients in infrastructure, energy, and digitalization by designing data-driven systems and project structures meeting technical and operational requirements.</p>
-        </div>
-      </div>
-
-      <div className="card experience-card">
-        <img src={instantFlowsLogo} alt="InstantFlows" className="card-logo" />
-        <div className="card-details">
-          <h3>InstantFlows / Co-Founder</h3>
-          <p className="date">September 2024 - October 2025, Delft</p>
-          <p className="description">Planning, organizing and leading a small, but growing, team to develop and sell a time and resource-saving AI research tool.</p>
         </div>
       </div>
 

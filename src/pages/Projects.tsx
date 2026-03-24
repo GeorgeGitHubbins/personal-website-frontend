@@ -5,27 +5,27 @@ import globalShapersLogo from '../assets/GlobalShapersTheHague_logo.png';
 const Projects: React.FC = () => {
   const selectedWorks = [
     {
-      title: "CoSEM Research Challenges literature review article - George Gittins.pdf",
+      title: "CoSEM Research Challenges literature review article - George Gittins",
       description: "Perform research and analyse relevant literature",
       url: "https://drive.google.com/file/d/17RUkst9oBVvHwhyItcPCP7C1vbV2686v/preview"
     },
     {
-      title: "Individual report Digital Platform Design - George Gittins.pdf",
+      title: "Individual report Digital Platform Design - George Gittins",
       description: "Design an online platform that tackles Sustainable Development Goals",
       url: "https://drive.google.com/file/d/1SspTG_UQJmYK7RJ8xinw6-1IPu5UafAV/preview"
     },
     {
-      title: "SEN1611_2022_2023_Group10_Report.pdf",
+      title: "SEN1611_2022_2023_Group10_Report",
       description: "Design the architecture of a digital service",
       url: "https://drive.google.com/file/d/1YrsZNjUp3nV25Hd5BbJFvyT34mu4Dtuj/preview"
     },
     {
-      title: "Sonae Group Case presentation.pdf",
+      title: "Sonae Group Case presentation",
       description: "Solve a logistical problem with truck deliveries for a large supermarket chain.",
       url: "https://drive.google.com/file/d/13Ees0246A3XRzWQB4ITxztXOm9HQf1UB/preview"
     },
     {
-      title: "2.9 Valorization Plan - Group 4.pdf",
+      title: "2.9 Valorization Plan - Group 4",
       description: "Develop a digital startup service, perform the necessary research and analysis",
       url: "https://drive.google.com/file/d/1xdDf52ojZyjpj2Fp1MfTSKyBRpKQtv6I/preview"
     },
@@ -35,17 +35,17 @@ const Projects: React.FC = () => {
       url: "https://drive.google.com/file/d/1rgOrRTYZp2xZjif6RuDwokTAT5Z_BIY5/preview"
     },
     {
-      title: "Final Report - Integration Project - George Gittins.pdf",
+      title: "Final Report - Integration Project - George Gittins",
       description: "Graduation project on simulating and optimizing a Mars robot's pathfinding and locomotion",
       url: "https://drive.google.com/file/d/14jvXJaS3nJsaLAM_ZazR8ZfN-MIiJJj2/preview"
     },
     {
-      title: "Product Analysis - Materials Selection - George Gittins.pdf",
+      title: "Product Analysis - Materials Selection - George Gittins",
       description: "Selecting materials for a specific purpose using specialized software",
       url: "https://drive.google.com/file/d/1LLzj4RLKg1AHHqUYUGK5ZRML41mCH_CF/preview"
     },
     {
-      title: "CDP Report Forus.pdf",
+      title: "CDP Report Forus",
       description: "Working in partnership with a startup to develop an advice for their organizational structure and data use",
       url: "https://drive.google.com/file/d/1Uar2ApiJ4cY_gLUOuVfzhZ7dZTgG7Q-_/preview"
     }
@@ -97,15 +97,6 @@ const Projects: React.FC = () => {
                     allow="autoplay"
                   ></iframe>
                 </div>
-                <a 
-                  href={work.url.replace('/preview', '/view')} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="view-link"
-                  style={{ display: 'block', marginTop: '10px', fontSize: '0.9rem', color: 'var(--accent-color)' }}
-                >
-                  View full screen
-                </a>
               </div>
             </div>
           ))}
