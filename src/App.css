@@ -77,11 +77,24 @@ body {
   flex: 1;
 }
 
-@media (max-width: 600px) {
-  .hero-section .hero-content {
-    flex-direction: column;
-    text-align: center;
-  }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  text-align: center;
+  background: #eee;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  background: white;
 }
 
 .highlight {
