@@ -25,7 +25,9 @@ jobs:
           cache-dependency-path: package-lock.json
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          npm install
+          git checkout package-lock.json # Prevent agent from over-analyzing lockfile changes
 
       - name: Install Gemini CLI
         run: npm install -g @google/gemini-cli
