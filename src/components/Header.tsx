@@ -6,11 +6,10 @@ const Header: React.FC = () => {
     <header className="header">
       <h1>George Gittins</h1>
       <nav>
-        <Link to="/">About</Link>
-        <Link to="/experience">Experience</Link>
+        <Link to="/">Home</Link>
+        <Link to="/experience">Work Experience</Link>
         <Link to="/education">Education</Link>
         <Link to="/projects">Volunteering & Projects</Link>
-        <Link to="/contact">Contact</Link>
       </nav>
     </header>
   );

@@ -54,3 +54,11 @@ jobs:
           AWS_DEFAULT_REGION: 'eu-central-1'
         run: |
           aws s3 sync personal-website-frontend/dist/ s3://ai.georgegittins.com --delete
+
+      - name: Invalidate CloudFront Cache
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: 'us-east-1' # CloudFront is global but usually managed from us-east-1
+        run: |
+          aws cloudfront create-invalidation --distribution-id E1IOHS3BJD2FUN --paths "/*"
