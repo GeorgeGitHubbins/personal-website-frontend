@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 
+import profileImg from './assets/profile.png';
+
 const App: React.FC = () => {
   return (
     <div className="app">
@@ -15,10 +17,15 @@ const App: React.FC = () => {
       </header>
 
       <main className="content">
-        <section id="about" className="section">
-          <h2>Hi, I'm George!</h2>
-          <p>Welcome to my website, a place where you can learn about me, what I'm up to, and have been up to.</p>
-          <p>I am curious, highly-adaptable and motivated with a passion for system design, data and process improvement. Furthermore, I am communicative, able to solve problems on the go, proficient with technology and ambitious to grow and make an impact wherever I am.</p>
+        <section id="about" className="section hero-section">
+          <div className="hero-content">
+            <img src={profileImg} alt="George Gittins" className="profile-img" />
+            <div className="hero-text">
+              <h2>Hi, I'm George!</h2>
+              <p>Welcome to my website, a place where you can learn about me, what I'm up to, and have been up to.</p>
+              <p>I am curious, highly-adaptable and motivated with a passion for system design, data and process improvement. Furthermore, I am communicative, able to solve problems on the go, proficient with technology and ambitious to grow and make an impact wherever I am.</p>
+            </div>
+          </div>
           <p className="highlight">I can make anything you want, you just have to describe it well enough.</p>
         </section>
 
