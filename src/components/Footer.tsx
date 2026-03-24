@@ -1,6 +1,5 @@
 import React from 'react';
 import linkedinIcon from '../assets/Linkedin_icon.png';
-import instagramIcon from '../assets/Instagram_icon.png';
 import googleDriveIcon from '../assets/googledrive_icon.png';
 
 const Footer: React.FC = () => {
@@ -24,9 +23,6 @@ const Footer: React.FC = () => {
       <div className="footer-social">
         <a href="https://www.linkedin.com/in/george-h-gittins/" target="_blank" rel="noopener noreferrer">
           <img src={linkedinIcon} alt="LinkedIn" className="small-icon" />
-        </a>
-        <a href="https://www.instagram.com/georiginality/" target="_blank" rel="noopener noreferrer">
-          <img src={instagramIcon} alt="Instagram" className="small-icon" />
         </a>
         <a href="https://github.com/GeorgeGitHubbins" target="_blank" rel="noopener noreferrer">
           <img src={googleDriveIcon} alt="GitHub" className="small-icon" />
