@@ -1,12 +1,9 @@
 import React from 'react';
 import './App.css';
 
-import profileImg from './assets/profile.png';
-import img1 from './assets/image_1.png';
-import img2 from './assets/image_2.png';
-import img3 from './assets/image_3.png';
-import img5 from './assets/image_5.png';
-import heroImg from './assets/hero.png';
+import headshotImg from './assets/image_2.png';
+import siaLogo from './assets/image_3.png';
+import globalShapersLogo from './assets/image_5.png';
 
 const App: React.FC = () => {
   return (
@@ -18,14 +15,13 @@ const App: React.FC = () => {
           <a href="#experience">Experience</a>
           <a href="#education">Education</a>
           <a href="#volunteering">Volunteering</a>
-          <a href="#gallery">Gallery</a>
         </nav>
       </header>
 
       <main className="content">
         <section id="about" className="section hero-section">
           <div className="hero-content">
-            <img src={img2} alt="George Gittins" className="profile-img" />
+            <img src={headshotImg} alt="George Gittins" className="profile-img" />
             <div className="hero-text">
               <h2>Hi, I'm George!</h2>
               <p>Welcome to my website, a place where you can learn about me, what I'm up to, and have been up to.</p>
@@ -35,24 +31,15 @@ const App: React.FC = () => {
           <p className="highlight">I can make anything you want, you just have to describe it well enough.</p>
         </section>
 
-        <section id="gallery" className="section">
-          <h2>Image Identification Gallery:</h2>
-          <div className="gallery-grid">
-            <div className="gallery-item"><img src={profileImg} /><p>profile.png</p></div>
-            <div className="gallery-item"><img src={heroImg} /><p>hero.png</p></div>
-            <div className="gallery-item"><img src={img1} /><p>image_1.png</p></div>
-            <div className="gallery-item"><img src={img2} /><p>image_2.png</p></div>
-            <div className="gallery-item"><img src={img3} /><p>image_3.png</p></div>
-            <div className="gallery-item"><img src={img5} /><p>image_5.png</p></div>
-          </div>
-        </section>
-
         <section id="experience" className="section">
           <h2>Occupation:</h2>
-          <div className="card">
-            <h3>SIA Partners / Data Science Consultant</h3>
-            <p className="date">November 2025 - Present, Amsterdam</p>
-            <p>Supported clients in infrastructure, energy, and digitalization by designing data-driven systems and project structures meeting technical and operational requirements.</p>
+          <div className="card experience-card">
+            <img src={siaLogo} alt="SIA Partners Logo" className="card-logo" />
+            <div className="card-details">
+              <h3>SIA Partners / Data Science Consultant</h3>
+              <p className="date">November 2025 - Present, Amsterdam</p>
+              <p>Supported clients in infrastructure, energy, and digitalization by designing data-driven systems and project structures meeting technical and operational requirements.</p>
+            </div>
           </div>
         </section>
 
@@ -67,10 +54,13 @@ const App: React.FC = () => {
 
         <section id="volunteering" className="section">
           <h2>Volunteering:</h2>
-          <div className="card">
-            <h3>Global Shapers / Active Member</h3>
-            <p className="date">January 2025 - Present, The Hague</p>
-            <p>A dynamic community of young leaders, setting ambitious goals for personal growth and community impact. Focusing on integrating into the organization, contributing to existing projects like Circle Hub and Financial Literacy, and proposing new initiatives.</p>
+          <div className="card experience-card">
+            <img src={globalShapersLogo} alt="Global Shapers Logo" className="card-logo" />
+            <div className="card-details">
+              <h3>Global Shapers / Active Member</h3>
+              <p className="date">January 2025 - Present, The Hague</p>
+              <p>A dynamic community of young leaders, setting ambitious goals for personal growth and community impact. Focusing on integrating into the organization, contributing to existing projects like Circle Hub and Financial Literacy, and proposing new initiatives.</p>
+            </div>
           </div>
           <div className="card">
             <h3>NGO Link / Developer</h3>
