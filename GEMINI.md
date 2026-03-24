@@ -8,6 +8,14 @@ A React-based personal website for George Gittins, designed for continuous, auto
 - **Deployment Target:** `ai.georgegittins.com` (S3 Bucket)
 - **Styling:** Vanilla CSS (preferred for clean, LLM-friendly modification)
 
+## Content & Structure Guidelines
+- **Selected Work:** All PDFs are hosted on Google Drive and embedded via iframes. Do NOT attempt to host PDFs locally or link to non-existent local files.
+- **Categorization:** 
+    - **Experience:** Focuses on professional roles (Sia Partners, Flink, Just Eat Takeaway, etc.).
+    - **Education:** Focuses on degrees and academic focus areas (TU Delft MSc, Uni Porto Erasmus, Uni Groningen BSc).
+    - **Volunteering:** Focuses on community leadership (Global Shapers, NGO Link).
+- **SPA Routing:** Ensure all links use React Router `Link` components. Do NOT break the S3/CloudFront error document redirection which handles direct route access.
+
 ## Gemini CLI: Autonomous Mode Instructions
 This repo is designed to be modified by an autonomous agent daily. 
 - **STRICT RESTRICTION:** NEVER touch or edit 'georgegittins.com' or 'www.georgegittins.com'. These host my Google Sites design and must not be modified or replaced.
