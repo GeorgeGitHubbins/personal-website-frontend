@@ -204,20 +204,20 @@ body {
   font-size: 1.1rem;
 }
 
-.cta-button {
-  display: inline-block;
-  padding: 15px 30px;
-  background-color: var(--accent-color);
-  color: white;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: 600;
-  transition: transform 0.3s, background-color 0.3s;
+.contact-form-wrapper {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-.cta-button:hover {
-  background-color: #2980b9;
-  transform: translateY(-2px);
+.contact-form-wrapper iframe {
+  width: 100%;
+  border: none;
+  display: block;
 }
 
 .footer {

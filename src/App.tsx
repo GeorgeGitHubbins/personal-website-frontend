@@ -184,9 +184,16 @@ const App: React.FC = () => {
           <h2>Get in touch:</h2>
           <div className="contact-container">
             <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdAF8z6BYhucXHl_oRF5kz4H2aHlpwQqe2abNNmvd7F5S2hAg/viewform" target="_blank" rel="noopener noreferrer" className="cta-button">
-              Fill out the Contact Form
-            </a>
+            <div className="contact-form-wrapper">
+              <iframe 
+                src="https://docs.google.com/forms/d/e/1FAIpQLSdAF8z6BYhucXHl_oRF5kz4H2aHlpwQqe2abNNmvd7F5S2hAg/viewform?embedded=true" 
+                width="640" 
+                height="585" 
+                title="Contact Form"
+              >
+                Loading…
+              </iframe>
+            </div>
           </div>
         </section>
 

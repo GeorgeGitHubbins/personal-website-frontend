@@ -10,7 +10,7 @@
 - [ ] Add a favicon (currently using default Vite/React one).
 - [ ] Audit links in the footer and ensure they all work.
 - [ ] Add a "Project" section to the UI with placeholders or real data.
-- [ ] Implement a "Contact Me" section/form.
+- [x] Implement a "Contact Me" section/form.
 
 ## Future Improvements (Autonomous Selection)
 - [ ] Optimize SEO (meta tags, title).
