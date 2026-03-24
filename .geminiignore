@@ -1,0 +1,4 @@
+﻿@google/gemini-cli
+package-lock.json
+dist/
+node_modules/
