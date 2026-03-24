@@ -11,6 +11,8 @@
 
 ## Current Goal: Refine & Improve
 - [ ] Improve styling for Academic Projects (InstantFlows/DataWise) in the Education section.
+- [ ] Remove ".pdf" suffixes from Selected Work headers in `Projects.tsx`.
+- [ ] Remove redundant "View full screen" links in `Projects.tsx`.
 - [ ] Audit links in the footer and ensure they all work.
 - [ ] Add a "Project" section to the UI with placeholders or real data (for non-academic projects).
 - [ ] Add a "Last Updated" timestamp to the footer.
