@@ -23,7 +23,7 @@ const Projects: React.FC = () => {
           <p className="date">January 2025 - Present, The Hague</p>
           <p className="description">
             Dynamic community of young leaders. Contributing to existing projects like Circle Hub and Financial Literacy, 
-            and proposing new initiatives.
+            and proposing new initiatives. I aim to take on leadership responsibilities, organize social events, and leverage the global network for meaningful connections and event participation.
           </p>
         </div>
         <div className="project-card">
