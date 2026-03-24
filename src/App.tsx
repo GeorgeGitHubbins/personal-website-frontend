@@ -1,9 +1,34 @@
 import React from 'react';
 import './App.css';
 
-import headshotImg from './assets/image_2.png';
-import siaLogo from './assets/image_3.png';
-import globalShapersLogo from './assets/image_5.png';
+// Profiles & General
+import headshotImg from './assets/George_profile.png';
+import viteLogo from './assets/vite_logo.png';
+import googleDriveIcon from './assets/googledrive_icon.png';
+import linkedinIcon from './assets/Linkedin_icon.png';
+import instagramIcon from './assets/Instagram_icon.png';
+
+// Experience Logos
+import siaLogo from './assets/SIA_logo.png';
+import aicsLogo from './assets/Aics_logo.png';
+import flinkLogo from './assets/Flink_logo.png';
+import takeawayLogo from './assets/Takeaway_logo.png';
+import boomerangLogo from './assets/Boomerang_logo.png';
+import hagaLogo from './assets/HagaZiekenhuis_logo.png';
+import jorLogo from './assets/JOR_logo.png';
+import huracanLogo from './assets/Huracan_logo.png';
+
+// Education Logos
+import tuDelftLogo from './assets/TUDelft_Logo.png';
+import uGroningenLogo from './assets/UniversityofGroningen_logo.png';
+import uPortoLogo from './assets/UPorto_logo.png';
+import ibLogo from './assets/InternationalBaccalaureate_logo.png';
+
+// Project & Org Logos
+import globalShapersLogo from './assets/GlobalShapersTheHague_logo.png';
+import ngoLinkLogo from './assets/NGOLink_logo.png';
+import instantFlowsLogo from './assets/Instantflows_logo.png';
+import dataWiseLogo from './assets/DataWise_logo.png';
 
 const App: React.FC = () => {
   return (
@@ -14,7 +39,7 @@ const App: React.FC = () => {
           <a href="#about">About</a>
           <a href="#experience">Experience</a>
           <a href="#education">Education</a>
-          <a href="#volunteering">Volunteering</a>
+          <a href="#projects">Projects & Orgs</a>
         </nav>
       </header>
 
@@ -32,50 +57,116 @@ const App: React.FC = () => {
         </section>
 
         <section id="experience" className="section">
-          <h2>Occupation:</h2>
+          <h2>Experience:</h2>
           <div className="card experience-card">
-            <img src={siaLogo} alt="SIA Partners Logo" className="card-logo" />
+            <img src={siaLogo} alt="SIA Partners" className="card-logo" />
             <div className="card-details">
               <h3>SIA Partners / Data Science Consultant</h3>
               <p className="date">November 2025 - Present, Amsterdam</p>
-              <p>Supported clients in infrastructure, energy, and digitalization by designing data-driven systems and project structures meeting technical and operational requirements.</p>
+            </div>
+          </div>
+          <div className="card experience-card">
+            <img src={flinkLogo} alt="Flink" className="card-logo" />
+            <div className="card-details">
+              <h3>Flink</h3>
+            </div>
+          </div>
+          <div className="card experience-card">
+            <img src={takeawayLogo} alt="Just Eat Takeaway" className="card-logo" />
+            <div className="card-details">
+              <h3>Just Eat Takeaway.com</h3>
+            </div>
+          </div>
+          <div className="card experience-card">
+            <img src={hagaLogo} alt="HagaZiekenhuis" className="card-logo" />
+            <div className="card-details">
+              <h3>HagaZiekenhuis</h3>
+            </div>
+          </div>
+          <div className="card experience-card">
+            <img src={boomerangLogo} alt="Boomerang" className="card-logo" />
+            <div className="card-details">
+              <h3>Boomerang Agency</h3>
+            </div>
+          </div>
+          <div className="card experience-card">
+            <img src={jorLogo} alt="JOR" className="card-logo" />
+            <div className="card-details">
+              <h3>JOR IT Services</h3>
+            </div>
+          </div>
+          <div className="card experience-card">
+            <img src={huracanLogo} alt="Huracan" className="card-logo" />
+            <div className="card-details">
+              <h3>Huracán Systems</h3>
             </div>
           </div>
         </section>
 
         <section id="education" className="section">
           <h2>Education:</h2>
-          <div className="card">
-            <h3>Technical University of Delft / MSc Complex Systems Engineering and Management</h3>
-            <p className="date">August 2021 - August 2024, Delft</p>
-            <p>My specialisation is in data, information and communication. The study focuses on project planning, design and management. I had to explore policies and markets, how they fail and how to succeed within them and develop my ability to handle the complexities of working with many stakeholders and variables.</p>
+          <div className="card experience-card">
+            <img src={tuDelftLogo} alt="TU Delft" className="card-logo" />
+            <div className="card-details">
+              <h3>Technical University of Delft</h3>
+              <p className="date">MSc Complex Systems Engineering and Management</p>
+            </div>
+          </div>
+          <div className="card experience-card">
+            <img src={uGroningenLogo} alt="University of Groningen" className="card-logo" />
+            <div className="card-details">
+              <h3>University of Groningen</h3>
+            </div>
+          </div>
+          <div className="card experience-card">
+            <img src={uPortoLogo} alt="University of Porto" className="card-logo" />
+            <div className="card-details">
+              <h3>Universidade do Porto</h3>
+            </div>
+          </div>
+          <div className="card experience-card">
+            <img src={ibLogo} alt="International Baccalaureate" className="card-logo" />
+            <div className="card-details">
+              <h3>International Baccalaureate</h3>
+              <img src={aicsLogo} alt="AICS" className="sub-logo" />
+            </div>
           </div>
         </section>
 
-        <section id="volunteering" className="section">
-          <h2>Volunteering:</h2>
-          <div className="card experience-card">
-            <img src={globalShapersLogo} alt="Global Shapers Logo" className="card-logo" />
-            <div className="card-details">
-              <h3>Global Shapers / Active Member</h3>
-              <p className="date">January 2025 - Present, The Hague</p>
-              <p>A dynamic community of young leaders, setting ambitious goals for personal growth and community impact. Focusing on integrating into the organization, contributing to existing projects like Circle Hub and Financial Literacy, and proposing new initiatives.</p>
+        <section id="projects" className="section">
+          <h2>Projects & Organizations:</h2>
+          <div className="projects-grid">
+            <div className="project-card">
+              <img src={ngoLinkLogo} alt="NGO Link" />
+              <h3>NGO Link</h3>
+            </div>
+            <div className="project-card">
+              <img src={globalShapersLogo} alt="Global Shapers" />
+              <h3>Global Shapers The Hague</h3>
+            </div>
+            <div className="project-card">
+              <img src={instantFlowsLogo} alt="InstantFlows" />
+              <h3>InstantFlows</h3>
+            </div>
+            <div className="project-card">
+              <img src={dataWiseLogo} alt="DataWise" />
+              <h3>DataWise</h3>
             </div>
           </div>
-          <div className="card">
-            <h3>NGO Link / Developer</h3>
-            <p className="date">July 2025 - Present, The Hague</p>
-            <p>I am actively developing the NGO Link infrastructure, a project that is parented by the Global Shapers of the Hague.</p>
+        </section>
+
+        <section className="section logo-cloud">
+          <h3>Tools & Resources:</h3>
+          <div className="icon-row">
+            <img src={googleDriveIcon} alt="Google Drive" className="small-icon" />
+            <img src={viteLogo} alt="Vite" className="small-icon" />
+            <img src={linkedinIcon} alt="LinkedIn" className="small-icon" />
+            <img src={instagramIcon} alt="Instagram" className="small-icon" />
           </div>
         </section>
       </main>
 
       <footer className="footer">
-        <div className="social-links">
-          <a href="https://www.linkedin.com/in/george-h-gittins/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://www.instagram.com/georiginality/" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://github.com/GeorgeGitHubbins" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </div>
         <p>&copy; {new Date().getFullYear()} George Gittins. Built with React and Gemini CLI.</p>
       </footer>
     </div>
