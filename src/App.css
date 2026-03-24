@@ -157,6 +157,69 @@ body {
   opacity: 1;
 }
 
+.card-details h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.date {
+  margin: 5px 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+}
+
+.description {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.highlight {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent-color);
+  text-align: center;
+  padding: 10px;
+  border-left: 4px solid var(--accent-color);
+  background: rgba(52, 152, 219, 0.05);
+}
+
+.contact-section {
+  text-align: center;
+  background: var(--primary-color);
+  color: white;
+  padding: 40px;
+  border-radius: 12px;
+}
+
+.contact-section h2 {
+  color: white;
+  border-bottom-color: white;
+}
+
+.contact-container p {
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
 .footer {
   padding: 40px 0;
   text-align: center;

@@ -53,4 +53,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: 'eu-central-1'
         run: |
-          aws s3 sync personal-website-frontend/dist/ s3://dev.georgegittins.com --delete
+          aws s3 sync personal-website-frontend/dist/ s3://ai.georgegittins.com --delete
