@@ -37,7 +37,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: 'eu-central-1'
         run: |
-          gemini "Analyze the current state of the project. Pick the top priority task from TODO.md or identify a critical UI/UX improvement. Implement the change, run 'npm run build' to verify, and commit the results. Spend no more than 45 minutes. Do not ask for user input."
+          gsd "Analyze the current state of the project. Pick the top priority task from TODO.md or identify a critical UI/UX improvement. Implement the change, run 'npm run build' to verify, and commit the results. Spend no more than 45 minutes. Do not ask for user input."
 
       - name: Commit and Push Changes
         run: |
