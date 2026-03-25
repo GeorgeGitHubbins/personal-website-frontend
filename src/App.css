@@ -87,13 +87,15 @@ body {
 
 .experience-card {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 15px;
-  margin-bottom: 15px;
+  align-items: flex-start;
+  gap: 25px;
+  padding: 25px;
+  margin-bottom: 25px;
   background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.02);
 }
 
 .academic-project-card {
@@ -114,11 +116,20 @@ body {
   box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+}
+
 .card-logo {
-  width: 50px;
-  height: 50px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
   flex-shrink: 0;
+  padding: 5px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
 }
 
 .sub-logo {
@@ -168,6 +179,11 @@ body {
   filter: grayscale(100%);
   opacity: 0.6;
   transition: all 0.3s;
+  display: inline-block;
+}
+
+svg.small-icon {
+  fill: var(--primary-color);
 }
 
 .small-icon:hover {
@@ -176,29 +192,31 @@ body {
 }
 
 .card-details h3 {
-  margin: 0;
-  font-size: 1.2rem;
+  margin: 0 0 5px 0;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: var(--primary-color);
 }
 
 .date {
-  margin: 5px 0;
-  font-weight: 600;
+  margin: 0 0 15px 0;
+  font-weight: 500;
   font-size: 0.9rem;
-  color: var(--secondary-color);
+  color: var(--accent-color);
 }
 
 .description {
-  margin-top: 10px;
-  font-size: 0.95rem;
-  color: #555;
+  margin: 0;
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.6;
 }
 
 .description-list {
   margin-top: 10px;
   padding-left: 20px;
   font-size: 0.95rem;
-  color: #555;
+  color: #4a5568;
 }
 
 .description-list li {
@@ -207,28 +225,58 @@ body {
 
 .selected-works-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
 }
 
 .work-card {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 0;
   background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.02);
+}
+
+.work-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.work-card .card-details {
+  padding: 20px;
+}
+
+.work-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  min-height: 2.4em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.work-card .description {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  color: #718096;
 }
 
 .pdf-container {
   width: 100%;
-  border-radius: 4px;
-  overflow: hidden;
-  border: 1px solid #eee;
+  aspect-ratio: 4/3;
+  border-top: 1px solid #f0f0f0;
+  background: #f7fafc;
 }
 
 .pdf-container iframe {
-  display: block;
+  width: 100%;
+  height: 100%;
   border: none;
 }
 

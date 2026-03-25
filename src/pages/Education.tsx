@@ -17,12 +17,14 @@ const Education: React.FC = () => {
         <div className="card-details">
           <h3>Technical University of Delft / MSc Complex Systems Engineering and Management</h3>
           <p className="date">August 2021 - August 2024, Delft</p>
-          <ul className="description-list">
-            <li>Project planning, design and management</li>
-            <li>Understanding markets, how they fail and how to succeed</li>
-            <li>Handling the complexities of working with many stakeholders and variables</li>
-            <li>Specialisation in data, information and communication</li>
-          </ul>
+          <div className="description">
+            <ul className="description-list">
+              <li>Project planning, design and management</li>
+              <li>Understanding markets, how they fail and how to succeed</li>
+              <li>Handling the complexities of working with many stakeholders and variables</li>
+              <li>Specialisation in data, information and communication</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -30,11 +32,13 @@ const Education: React.FC = () => {
         <img src={uPortoLogo} alt="University of Porto" className="card-logo" />
         <div className="card-details">
           <h3>University of Porto / ERASMUS+ MSc Industrial Engineering and Management</h3>
-          <ul className="description-list">
-            <li>Modeling and Data Analytics</li>
-            <li>Supply Chain Management and Entrepreneurship</li>
-            <li>Industrial Ecology and Sustainable strategies</li>
-          </ul>
+          <div className="description">
+            <ul className="description-list">
+              <li>Modeling and Data Analytics</li>
+              <li>Supply Chain Management and Entrepreneurship</li>
+              <li>Industrial Ecology and Sustainable strategies</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -42,10 +46,12 @@ const Education: React.FC = () => {
         <img src={dataWiseLogo} alt="Data Wise" className="card-logo" />
         <div className="card-details">
           <h3>University of Groningen / Minor Data Wise: Data Science in Society</h3>
-          <ul className="description-list">
-            <li>Understanding the role of data and its impacts on society</li>
-            <li>Collaborate with a company and provide them with a consulting report on their data use</li>
-          </ul>
+          <div className="description">
+            <ul className="description-list">
+              <li>Understanding the role of data and its impacts on society</li>
+              <li>Collaborate with a company and provide them with a consulting report on their data use</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -53,11 +59,13 @@ const Education: React.FC = () => {
         <img src={uGroningenLogo} alt="University of Groningen" className="card-logo" />
         <div className="card-details">
           <h3>University of Groningen / BSc Industrial Engineering and Management</h3>
-          <ul className="description-list">
-            <li>Develop strong programming skills, e.g. Matlab, Python, R, Javascript, Excel</li>
-            <li>Comprehend and control multivariable dynamic systems</li>
-            <li>Optimize operations within various fields, e.g. manufacturing, project management</li>
-          </ul>
+          <div className="description">
+            <ul className="description-list">
+              <li>Develop strong programming skills, e.g. Matlab, Python, R, Javascript, Excel</li>
+              <li>Comprehend and control multivariable dynamic systems</li>
+              <li>Optimize operations within various fields, e.g. manufacturing, project management</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -65,10 +73,12 @@ const Education: React.FC = () => {
         <img src={uGroningenLogo} alt="University of Groningen" className="card-logo" />
         <div className="card-details">
           <h3>University of Groningen / BSc Chemical Engineering</h3>
-          <ul className="description-list">
-            <li>Learn effective laboratory practices</li>
-            <li>Understand the complex nature of molecules: Structure, Reactivity and Function</li>
-          </ul>
+          <div className="description">
+            <ul className="description-list">
+              <li>Learn effective laboratory practices</li>
+              <li>Understand the complex nature of molecules: Structure, Reactivity and Function</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -76,8 +86,10 @@ const Education: React.FC = () => {
         <img src={ibLogo} alt="International Baccalaureate" className="card-logo" />
         <div className="card-details">
           <h3>International School of The Hague / International Baccalaureate</h3>
-          <p className="description"><strong>Higher Level:</strong> Physics, Chemistry, English Language and Literature</p>
-          <p className="description"><strong>Standard Level:</strong> Geography, Mathematics, Dutch Language and Literature</p>
+          <div className="description">
+            <p style={{ margin: '0 0 10px 0' }}><strong>Higher Level:</strong> Physics, Chemistry, English Language and Literature</p>
+            <p style={{ margin: 0 }}><strong>Standard Level:</strong> Geography, Mathematics, Dutch Language and Literature</p>
+          </div>
         </div>
       </div>
     </section>

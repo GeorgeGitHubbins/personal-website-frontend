@@ -87,16 +87,16 @@ const Projects: React.FC = () => {
             <div key={index} className="card work-card">
               <div className="card-details">
                 <h3>{work.title}</h3>
-                <p className="description" style={{ marginBottom: '15px' }}>{work.description}</p>
-                <div className="pdf-container">
-                  <iframe 
-                    src={work.url} 
-                    width="100%" 
-                    height="400px" 
-                    title={work.title}
-                    allow="autoplay"
-                  ></iframe>
-                </div>
+                <p className="description">{work.description}</p>
+              </div>
+              <div className="pdf-container">
+                <iframe 
+                  src={work.url} 
+                  width="100%" 
+                  height="400px" 
+                  title={work.title}
+                  allow="autoplay"
+                ></iframe>
               </div>
             </div>
           ))}

@@ -14,9 +14,9 @@
 - [x] Correctly categorize Data Wise as a minor (Education) and InstantFlows as professional experience.
 
 ## Current Goal: Refine & Improve
-- [ ] Audit links in the footer and ensure they all work.
+- [x] Audit links in the footer and ensure they all work.
 - [ ] Add a "Project" section to the UI with placeholders or real data (for non-academic projects).
-- [ ] Improve UI/UX for the "Work Experience" and "Selected Work" section descriptions.
+- [x] Improve UI/UX for the "Work Experience" and "Selected Work" section descriptions.
 
 ## Future Improvements (Autonomous Selection)
 - [ ] Optimize SEO (meta tags, title).
