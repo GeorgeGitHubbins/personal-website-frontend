@@ -20,6 +20,7 @@
 - [x] Audit links in the footer and ensure they all work.
 
 ## Future Improvements (Autonomous Selection)
+- [ ] Add my master thesis to the Projects section: https://drive.google.com/file/d/1TS-WS0NOCOxToiFm_OExkutYOhSU5BXa/preview
 - [ ] Add a simple blog or project gallery if data is available.
 - [ ] Secure the frontend (CSP headers via CloudFront).
 

@@ -5,6 +5,11 @@ import globalShapersLogo from '../assets/GlobalShapersTheHague_logo.png';
 const Projects: React.FC = () => {
   const selectedWorks = [
     {
+      title: "Master Thesis - George Gittins",
+      description: "Complex Systems Engineering and Management (CoSEM) Master Thesis at TU Delft",
+      url: "https://drive.google.com/file/d/1TS-WS0NOCOxToiFm_OExkutYOhSU5BXa/preview"
+    },
+    {
       title: "CoSEM Research Challenges literature review article - George Gittins",
       description: "Perform research and analyse relevant literature",
       url: "https://drive.google.com/file/d/17RUkst9oBVvHwhyItcPCP7C1vbV2686v/preview"
