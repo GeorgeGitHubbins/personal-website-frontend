@@ -1,8 +1,8 @@
-name: Daily Website Improvement
+name: Periodic Website Improvement
 
 on:
   schedule:
-    - cron: '0 4 * * *' # Runs daily at 4:00 AM UTC (Off-peak)
+    - cron: '0 4 */3 * *' # Runs every 3 days at 4:00 AM UTC (Off-peak)
   workflow_dispatch: # Allows you to trigger it manually for testing
 
 jobs:
@@ -44,7 +44,7 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add .
-          git commit -m "chore: autonomous daily improvement [skip ci]" || echo "No changes to commit"
+          git commit -m "chore: autonomous periodic improvement [skip ci]" || echo "No changes to commit"
           git push
 
       - name: Deploy to S3
