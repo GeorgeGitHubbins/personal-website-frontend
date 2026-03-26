@@ -53,8 +53,8 @@ const Projects: React.FC = () => {
 
   return (
     <>
-      <section id="projects" className="section">
-        <h2>Volunteering:</h2>
+      <section id="volunteering" className="section">
+        <h2>Volunteering & Community:</h2>
         <div className="card experience-card">
           <img src={globalShapersLogo} alt="Global Shapers" className="card-logo" />
           <div className="card-details">
@@ -65,23 +65,63 @@ const Projects: React.FC = () => {
             </p>
           </div>
         </div>
+      </section>
 
+      <section id="tech-projects" className="section">
+        <h2>Technical Projects:</h2>
+        
         <div className="card experience-card">
           <a href="https://www.ngo-link.org" target="_blank" rel="noopener noreferrer">
             <img src={ngoLinkLogo} alt="NGO Link" className="card-logo" />
           </a>
           <div className="card-details">
-            <h3>NGO Link / Developer</h3>
+            <h3>NGO Link Infrastructure</h3>
             <p className="date">July 2025 - Present, The Hague</p>
             <p className="description">
-              I am actively developing the NGO Link infrastructure, a project that is parented by the Global Shapers of the Hague. I recommend checking out the page by clicking on the NGO Link logo.
+              Leading the development of the NGO Link platform, connecting NGOs with resources and volunteers. Building the core infrastructure and features to scale the project's impact.
+            </p>
+            <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '10px' }}>
+              <span className="badge">React</span>
+              <span className="badge">TypeScript</span>
+              <span className="badge">Architecture</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="card experience-card">
+          <div className="card-logo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', background: '#2c3e50', color: 'white', borderRadius: '8px', minWidth: '64px', height: '64px' }}>
+            <span>GG</span>
+          </div>
+          <div className="card-details">
+            <h3>Personal Website (Autonomous Evolution)</h3>
+            <p className="date">Continuous Development</p>
+            <p className="description">
+              A React-based personal portfolio designed for continuous, autonomous evolution via Gemini CLI. The project explores the intersection of AI-driven development and personal branding.
+            </p>
+            <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '10px' }}>
+              <span className="badge">React</span>
+              <span className="badge">Gemini CLI</span>
+              <span className="badge">CI/CD</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="card experience-card" style={{ opacity: 0.7 }}>
+          <div className="card-logo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', background: '#ddd', borderRadius: '8px', minWidth: '64px', height: '64px' }}>
+            <span>?</span>
+          </div>
+          <div className="card-details">
+            <h3>Future Technical Ventures</h3>
+            <p className="date">Coming Soon</p>
+            <p className="description">
+              New projects focusing on data visualization, AI integration, and systems engineering are currently in the planning phase.
             </p>
           </div>
         </div>
       </section>
 
       <section className="section">
-        <h2>Selected Work:</h2>
+        <h2>Selected Academic Work:</h2>
         <div className="selected-works-grid">
           {selectedWorks.map((work, index) => (
             <div key={index} className="card work-card">
