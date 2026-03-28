@@ -25,6 +25,11 @@ const Education: React.FC = () => {
               <li>Specialisation in data, information and communication</li>
             </ul>
           </div>
+          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            <span className="badge">Systems Engineering</span>
+            <span className="badge">Management</span>
+            <span className="badge">Data Specialization</span>
+          </div>
         </div>
       </div>
 
@@ -39,6 +44,11 @@ const Education: React.FC = () => {
               <li>Industrial Ecology and Sustainable strategies</li>
             </ul>
           </div>
+          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            <span className="badge">Industrial Engineering</span>
+            <span className="badge">Modelling</span>
+            <span className="badge">Analytics</span>
+          </div>
         </div>
       </div>
 
@@ -51,6 +61,10 @@ const Education: React.FC = () => {
               <li>Understanding the role of data and its impacts on society</li>
               <li>Collaborate with a company and provide them with a consulting report on their data use</li>
             </ul>
+          </div>
+          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            <span className="badge">Data Science</span>
+            <span className="badge">Societal Impact</span>
           </div>
         </div>
       </div>
@@ -66,6 +80,11 @@ const Education: React.FC = () => {
               <li>Optimize operations within various fields, e.g. manufacturing, project management</li>
             </ul>
           </div>
+          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            <span className="badge">Programming</span>
+            <span className="badge">Operations Optimization</span>
+            <span className="badge">Multivariable Systems</span>
+          </div>
         </div>
       </div>
 
@@ -79,6 +98,10 @@ const Education: React.FC = () => {
               <li>Understand the complex nature of molecules: Structure, Reactivity and Function</li>
             </ul>
           </div>
+          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            <span className="badge">Laboratory Practice</span>
+            <span className="badge">Molecular Chemistry</span>
+          </div>
         </div>
       </div>
 
@@ -89,6 +112,11 @@ const Education: React.FC = () => {
           <div className="description">
             <p style={{ margin: '0 0 10px 0' }}><strong>Higher Level:</strong> Physics, Chemistry, English Language and Literature</p>
             <p style={{ margin: 0 }}><strong>Standard Level:</strong> Geography, Mathematics, Dutch Language and Literature</p>
+          </div>
+          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            <span className="badge">Physics</span>
+            <span className="badge">Chemistry</span>
+            <span className="badge">Mathematics</span>
           </div>
         </div>
       </div>

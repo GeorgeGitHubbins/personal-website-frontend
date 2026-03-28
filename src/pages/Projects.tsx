@@ -141,6 +141,7 @@ const Projects: React.FC = () => {
                   height="400px" 
                   title={work.title}
                   allow="autoplay"
+                  loading="lazy"
                 ></iframe>
               </div>
             </div>

@@ -22,6 +22,12 @@ const Experience: React.FC = () => {
           <div className="description">
             Supported clients in infrastructure, energy, and digitalization by designing data-driven systems and project structures.
           </div>
+          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            <span className="badge">Data Science</span>
+            <span className="badge">Consultancy</span>
+            <span className="badge">Energy</span>
+            <span className="badge">Infrastructure</span>
+          </div>
         </div>
       </div>
 
@@ -32,6 +38,11 @@ const Experience: React.FC = () => {
           <p className="date">October 2025 - November 2025, Amsterdam</p>
           <div className="description">
             Designing data-driven systems and project structures meeting technical and operational requirements for infrastructure and energy clients.
+          </div>
+          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            <span className="badge">Systems Engineering</span>
+            <span className="badge">Project Architecture</span>
+            <span className="badge">Data Management</span>
           </div>
         </div>
       </div>
@@ -44,6 +55,11 @@ const Experience: React.FC = () => {
           <div className="description">
             Planning, organizing and leading a small team to develop and market an AI-powered research tool.
           </div>
+          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            <span className="badge">Entrepreneurship</span>
+            <span className="badge">AI/LLMs</span>
+            <span className="badge">Product Strategy</span>
+          </div>
         </div>
       </div>
 
@@ -54,6 +70,11 @@ const Experience: React.FC = () => {
           <p className="date">September 2022 - January 2025, Delft</p>
           <div className="description">
             Developed business cases, market research, and data visualizations. Rebuilt and maintained the company's Django-based website.
+          </div>
+          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            <span className="badge">Django</span>
+            <span className="badge">Data Visualization</span>
+            <span className="badge">Market Research</span>
           </div>
         </div>
       </div>
@@ -70,6 +91,11 @@ const Experience: React.FC = () => {
               <li>Developed into a data analyst, building dashboards and serving as an internal consultant.</li>
             </ul>
           </div>
+          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            <span className="badge">Operations</span>
+            <span className="badge">Process Optimization</span>
+            <span className="badge">Consulting</span>
+          </div>
         </div>
       </div>
 
@@ -83,6 +109,11 @@ const Experience: React.FC = () => {
               <li>Led a team of 14 driver captains, who serve as coaches and role models for new drivers.</li>
               <li>Selected and trained six new members for the driver captain team from the existing driver pool.</li>
             </ul>
+          </div>
+          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            <span className="badge">Leadership</span>
+            <span className="badge">Team Coaching</span>
+            <span className="badge">Training</span>
           </div>
         </div>
       </div>
@@ -99,6 +130,11 @@ const Experience: React.FC = () => {
               <li>Improved coaching and performance tracking systems.</li>
             </ul>
           </div>
+          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            <span className="badge">Data Optimization</span>
+            <span className="badge">Performance Tracking</span>
+            <span className="badge">Coordination</span>
+          </div>
         </div>
       </div>
 
@@ -109,6 +145,10 @@ const Experience: React.FC = () => {
           <p className="date">August 2018 - April 2019, Groningen</p>
           <div className="description">
             Delivered food for the Scoober Logistics department of Thuisbezorgd.nl, riding an e-bike to restaurants and customers.
+          </div>
+          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            <span className="badge">Logistics</span>
+            <span className="badge">Customer Service</span>
           </div>
         </div>
       </div>
@@ -121,6 +161,10 @@ const Experience: React.FC = () => {
           <div className="description">
             Organised, repaired and cleaned beds in the hospital, with sole responsibility for the children’s department standards.
           </div>
+          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            <span className="badge">Responsibility</span>
+            <span className="badge">Maintenance</span>
+          </div>
         </div>
       </div>
 
@@ -132,6 +176,10 @@ const Experience: React.FC = () => {
           <div className="description">
             Responsible for opening and closing operations, waiting tables, and ensuring customer satisfaction at a beach restaurant.
           </div>
+          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            <span className="badge">Customer Satisfaction</span>
+            <span className="badge">Hospitality</span>
+          </div>
         </div>
       </div>
 
@@ -142,6 +190,10 @@ const Experience: React.FC = () => {
           <p className="date">October 2010 - October 2011, Amsterdam</p>
           <div className="description">
             Organised after-school football training for middle school students aged 7 to 11.
+          </div>
+          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            <span className="badge">Sports Coaching</span>
+            <span className="badge">Mentorship</span>
           </div>
         </div>
       </div>
