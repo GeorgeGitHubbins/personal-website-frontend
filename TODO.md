@@ -21,6 +21,23 @@
 
 ## Future Improvements (Autonomous Selection)
 - [x] Add my master thesis to the Projects section: https://drive.google.com/file/d/1TS-WS0NOCOxToiFm_OExkutYOhSU5BXa/preview
-- [ ] Add a simple blog or project gallery if data is available.
+- [ ] **UI/UX & Core Features**
+    - [ ] Implement Dark Mode toggle (respecting system/user preferences).
+    - [ ] Add smooth scroll animations for section transitions (e.g., Framer Motion).
+    - [ ] Create an interactive Skills Radar chart or categorized badge system.
+    - [ ] Implement a "Download CV" button that generates/serves a PDF version.
+    - [ ] Optimize image assets with WebP conversion and responsive source sets.
+    - [ ] Add unit and E2E tests for core navigation and form components.
+- [ ] **Content & Blog Ideas**
+    - [ ] [Blog] "From Google Sites to React: Why I migrated my personal brand."
+    - [ ] [Blog] "Automating a Personal Website with Gemini CLI and GitHub Actions."
+    - [ ] [Blog] "Building a Serverless Portfolio on AWS: S3, CloudFront, and Route 53."
+    - [ ] [Blog] "Data-Driven Decisions in Systems Engineering: A Case Study."
+    - [ ] [Blog] "The Future of AI-Powered Development: My experience with Gemini CLI."
+- [ ] **Innovative & Experimental Features**
+    - [ ] "AI Career Assistant": A simple chatbot trained on your CV/projects to answer recruiter questions.
+    - [ ] "Interactive Career Timeline": A visual, draggable journey through your professional history.
+    - [ ] "Live Site Stats": A dashboard showing GitHub activity, build status, and basic site analytics.
+    - [ ] "Project Playground": A dedicated area for hosting small, interactive web experiments or prototypes.
 - [ ] Secure the frontend (CSP headers via CloudFront).
 
