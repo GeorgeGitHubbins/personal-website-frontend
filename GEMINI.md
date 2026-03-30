@@ -19,6 +19,8 @@ A React-based personal website for George Gittins, designed for continuous, auto
 ## Gemini CLI: Autonomous Mode Instructions
 This repo is designed to be modified by an autonomous agent daily. 
 - **STRICT RESTRICTION:** NEVER touch or edit 'georgegittins.com' or 'www.georgegittins.com'. These host my Google Sites design and must not be modified or replaced.
+- **COST MANDATE:** ONLY implement "Forever Free" solutions. Do NOT introduce recurring API costs, paid SaaS dependencies, or premium AWS services (e.g., avoid Lambda/Bedrock unless within the Free Tier).
+- **SECURITY & PRIVACY:** Prioritize static, client-side implementations. Do NOT leak API keys into the frontend. If an AI feature is needed, prefer pre-generating content at build-time (static indexing) or using browser-native capabilities.
 - **Deployment Awareness:** Your changes are currently deployed to **ai.georgegittins.com** for iterative improvement. Do NOT attempt to deploy to the production `georgegittins.com` bucket until explicitly instructed in a new task.
 - **No Inquiries:** During automated runs, assume all decisions are your own. 
 - **Task Selection:** Choose tasks from `TODO.md` or identify improvements by auditing the current code/site performance.
