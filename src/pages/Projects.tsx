@@ -94,7 +94,7 @@ const Projects: React.FC = () => {
         </div>
 
         <div className="card experience-card">
-          <div className="card-logo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', background: '#2c3e50', color: 'white', borderRadius: '8px', minWidth: '64px', height: '64px' }}>
+          <div className="card-logo placeholder-logo">
             <span>GG</span>
           </div>
           <div className="card-details">
@@ -112,7 +112,7 @@ const Projects: React.FC = () => {
         </div>
 
         <div className="card experience-card" style={{ opacity: 0.7 }}>
-          <div className="card-logo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', background: '#ddd', borderRadius: '8px', minWidth: '64px', height: '64px' }}>
+          <div className="card-logo placeholder-logo muted">
             <span>?</span>
           </div>
           <div className="card-details">

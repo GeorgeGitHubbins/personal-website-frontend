@@ -22,7 +22,7 @@
 ## Future Improvements (Autonomous Selection)
 - [x] Add my master thesis to the Projects section: https://drive.google.com/file/d/1TS-WS0NOCOxToiFm_OExkutYOhSU5BXa/preview
 - [ ] **UI/UX & Core Features**
-    - [ ] Implement Dark Mode toggle (respecting system/user preferences).
+    - [x] Implement Dark Mode toggle (respecting system/user preferences).
     - [ ] Add smooth scroll animations for section transitions (e.g., Framer Motion).
     - [ ] Create an interactive Skills Radar chart or categorized badge system.
     - [ ] Implement a "Download CV" button that generates/serves a PDF version.
