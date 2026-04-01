@@ -23,8 +23,8 @@ const Experience: React.FC = () => {
             Supported clients in infrastructure, energy, and digitalization by designing data-driven systems and project structures.
           </div>
           <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-            <span className="badge">Data Science</span>
-            <span className="badge">Consultancy</span>
+            <span className="badge badge-data">Data Science</span>
+            <span className="badge badge-leadership">Consultancy</span>
             <span className="badge">Energy</span>
             <span className="badge">Infrastructure</span>
           </div>
@@ -40,9 +40,9 @@ const Experience: React.FC = () => {
             Designing data-driven systems and project structures meeting technical and operational requirements for infrastructure and energy clients.
           </div>
           <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-            <span className="badge">Systems Engineering</span>
+            <span className="badge badge-tech">Systems Engineering</span>
             <span className="badge">Project Architecture</span>
-            <span className="badge">Data Management</span>
+            <span className="badge badge-data">Data Management</span>
           </div>
         </div>
       </div>

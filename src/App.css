@@ -454,3 +454,54 @@ svg.small-icon {
     font-size: 1rem;
   }
 }
+
+/* Skills Section Styles */
+.skills-container {
+  margin-top: 40px;
+}
+
+.skills-container h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  border-bottom: 2px solid var(--accent-color);
+  display: inline-block;
+}
+
+.skills-category {
+  margin-bottom: 20px;
+}
+
+.skills-category h4 {
+  margin: 0 0 12px 0;
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+  border-left: 4px solid var(--accent-color);
+  padding-left: 12px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.badge-tech {
+  background: var(--accent-color);
+}
+
+.badge-data {
+  background: #27ae60;
+}
+
+.badge-leadership {
+  background: #e67e22;
+}
+
+.dark-mode .badge-data {
+  background: #2ecc71;
+}
+
+.dark-mode .badge-leadership {
+  background: #f39c12;
+}
