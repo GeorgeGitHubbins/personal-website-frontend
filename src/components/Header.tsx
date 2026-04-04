@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 
 const Header: React.FC = () => {
@@ -8,10 +8,10 @@ const Header: React.FC = () => {
       <ThemeToggle />
       <h1>George Gittins</h1>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/experience">Work Experience</Link>
-        <Link to="/education">Education</Link>
-        <Link to="/projects">Volunteering & Projects</Link>
+        <NavLink to="/" end>Home</NavLink>
+        <NavLink to="/experience">Work Experience</NavLink>
+        <NavLink to="/education">Education</NavLink>
+        <NavLink to="/projects">Volunteering & Projects</NavLink>
       </nav>
     </header>
   );

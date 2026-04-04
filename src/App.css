@@ -96,19 +96,63 @@ body {
   text-decoration: none;
   color: var(--secondary-color);
   font-weight: 500;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
 }
 
 .header nav a:hover {
   color: var(--accent-color);
 }
 
+.header nav a.active {
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
 .content {
   padding: 40px 0;
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
 .section {
   margin-bottom: 60px;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  font-size: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+.scroll-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top-btn:hover {
+  background: var(--primary-color);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
 
 .section h2 {
@@ -150,6 +194,53 @@ body {
   box-shadow: 0 4px 6px var(--card-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
   border: 1px solid var(--card-border);
+  position: relative;
+}
+
+.experience-card::before {
+  content: '';
+  position: absolute;
+  left: -34px;
+  top: 40px;
+  width: 12px;
+  height: 12px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  border: 2px solid var(--bg-color);
+  box-shadow: 0 0 0 2px var(--accent-border);
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.experience-card:hover::before {
+  transform: scale(1.3);
+  box-shadow: 0 0 0 4px var(--accent-border);
+}
+
+#experience {
+  position: relative;
+  padding-left: 30px;
+}
+
+#experience::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 80px;
+  bottom: 60px;
+  width: 4px;
+  background: var(--accent-color);
+  opacity: 0.2;
+  border-radius: 2px;
+}
+
+@media (max-width: 600px) {
+  #experience {
+    padding-left: 0;
+  }
+  #experience::before {
+    display: none;
+  }
 }
 
 .academic-project-card {

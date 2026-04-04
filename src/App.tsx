@@ -6,6 +6,7 @@ import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 // Pages
 import About from './pages/About';
@@ -28,6 +29,7 @@ const App: React.FC = () => {
           </Routes>
         </main>
         <Footer />
+        <ScrollToTopButton />
       </div>
     </Router>
   );
