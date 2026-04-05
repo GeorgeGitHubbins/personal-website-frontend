@@ -27,8 +27,16 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Pre-configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
       - name: Install Gemini CLI
         run: npm install -g @google/gemini-cli
+
+      - name: Lint Project
+        run: npm run lint || echo "Linting failed, but continuing to allow Gemini to fix it."
 
       - name: Run Gemini CLI Autonomous Session
         env:
@@ -37,15 +45,11 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: 'eu-central-1'
         run: |
-          gemini --prompt "Analyze the current state of the project. Pick the top priority task from TODO.md or identify a critical UI/UX improvement. Implement the change, run 'npm run build' to verify, and commit the results. Spend no more than 45 minutes. Do not ask for user input." --approval-mode yolo
+          gemini --prompt "Follow the 'Gemini CLI: Autonomous Mode Instructions' in GEMINI.md. Pick ONE logical task from TODO.md or identify a small improvement. Implement it, verify with 'npm run build', and commit the change with a clear message. Spend no more than 45 minutes. Do not ask for user input." --approval-mode yolo
 
-      - name: Commit and Push Changes
+      - name: Push Changes
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add .
-          git commit -m "chore: autonomous periodic improvement [skip ci]" || echo "No changes to commit"
-          git push
+          git push || echo "Nothing to push"
 
       - name: Deploy to S3
         env:
