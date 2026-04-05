@@ -20,14 +20,12 @@
 - [x] Audit links in the footer and ensure they all work.
 
 ## Future Improvements (Autonomous Selection)
-- [x] Add my master thesis to the Projects section: https://drive.google.com/file/d/1TS-WS0NOCOxToiFm_OExkutYOhSU5BXa/preview
 - [ ] **UI/UX & Core Features**
     - [x] Implement Dark Mode toggle (respecting system/user preferences).
     - [x] Add smooth scroll animations for section transitions (e.g., Framer Motion).
     - [x] Create an interactive Skills Radar chart or categorized badge system.
     - [x] Implement a "Scroll to Top" button for improved navigation.
     - [x] Implement a vertical timeline for the Experience page.
-    - [ ] Implement a "Download CV" button that generates/serves a PDF version. (BLOCKER: George needs to provide the Google Drive PDF link).
     - [ ] Optimize image assets with WebP conversion and responsive source sets.
     - [ ] Add unit and E2E tests for core navigation and form components.
 - [ ] **Content & Blog Ideas**
