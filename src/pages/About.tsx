@@ -1,6 +1,7 @@
 import React from 'react';
 import headshotImg from '../assets/George_profile.png';
 import Skills from '../components/Skills';
+import GithubStats from '../components/GithubStats';
 
 const About: React.FC = () => {
   return (
@@ -16,7 +17,10 @@ const About: React.FC = () => {
           </div>
         </div>
         
-        <Skills />
+        <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', marginTop: '40px' }}>
+          <Skills />
+          <GithubStats />
+        </div>
       </section>
     </>
   );
