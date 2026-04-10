@@ -27,7 +27,8 @@
     - [x] Implement a "Scroll to Top" button for improved navigation.
     - [x] Implement a vertical timeline for the Experience page.
     - [ ] Optimize image assets with WebP conversion and responsive source sets.
-    - [ ] Add unit and E2E tests for core navigation and form components.
+    - [x] Add unit tests for core components (Header, Skills) using Vitest.
+    - [ ] Add E2E tests for core navigation and form components.
 - [ ] **Content & Blog Ideas**
     - [ ] [Blog] "From Google Sites to React: Why I migrated my personal brand."
     - [ ] [Blog] "Automating a Personal Website with Gemini CLI and GitHub Actions."
