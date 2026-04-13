@@ -36,7 +36,7 @@
     - [ ] [Blog] "Data-Driven Decisions in Systems Engineering: A Case Study."
     - [ ] [Blog] "The Future of AI-Powered Development: My experience with Gemini CLI."
 - [ ] **Innovative & Experimental Features**
-    - [ ] "AI Career Assistant (Static)": A client-side, searchable "Knowledge Base" (using Fuse.js or pre-indexed FAQ) trained on your CV/projects to answer common recruiter questions without API costs.
+    - [x] "AI Career Assistant (Static)": A client-side, searchable "Knowledge Base" (using Fuse.js or pre-indexed FAQ) trained on your CV/projects to answer common recruiter questions without API costs.
     - [ ] "Interactive Career Timeline": A visual, draggable journey through your professional history (SVG or Canvas-based).
     - [x] "Live Site Stats": A dashboard showing GitHub activity (via free public API).
     - [ ] "Project Playground": A dedicated area for hosting small, interactive web experiments or prototypes.
