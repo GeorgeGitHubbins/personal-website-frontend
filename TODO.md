@@ -18,6 +18,7 @@
 
 ## Current Goal: Refine & Improve
 - [x] Audit links in the footer and ensure they all work.
+- [x] Enhance GithubStats with last commit message and repository link.
 
 ## Future Improvements (Autonomous Selection)
 - [ ] **UI/UX & Core Features**
