@@ -26,6 +26,7 @@
     - [x] Add smooth scroll animations for section transitions (e.g., Framer Motion).
     - [x] Create an interactive Skills Radar chart or categorized badge system.
     - [x] Implement a "Scroll to Top" button for improved navigation.
+    - [ ] homepage FAQ has an incorrect bachelor's study. it should be industrial engineering and management. must be corrected
     - [x] Implement a vertical timeline for the Experience page.
     - [ ] Optimize image assets with WebP conversion and responsive source sets.
     - [x] Add unit tests for core components (Header, Skills) using Vitest.
