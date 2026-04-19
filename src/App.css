@@ -457,6 +457,13 @@ svg.small-icon {
   background: var(--primary-color);
 }
 
+.quick-facts {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .contact-section {
   text-align: center;
   padding: 40px 0;

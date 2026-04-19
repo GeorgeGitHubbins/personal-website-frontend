@@ -22,7 +22,7 @@ const Experience: React.FC = () => {
           <div className="description">
             Supported clients in infrastructure, energy, and digitalization by designing data-driven systems and project structures.
           </div>
-          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          <div className="quick-facts">
             <span className="badge badge-data">Data Science</span>
             <span className="badge badge-leadership">Consultancy</span>
             <span className="badge">Energy</span>
@@ -39,7 +39,7 @@ const Experience: React.FC = () => {
           <div className="description">
             Designing data-driven systems and project structures meeting technical and operational requirements for infrastructure and energy clients.
           </div>
-          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          <div className="quick-facts">
             <span className="badge badge-tech">Systems Engineering</span>
             <span className="badge">Project Architecture</span>
             <span className="badge badge-data">Data Management</span>
@@ -55,7 +55,7 @@ const Experience: React.FC = () => {
           <div className="description">
             Planning, organizing and leading a small team to develop and market an AI-powered research tool.
           </div>
-          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          <div className="quick-facts">
             <span className="badge">Entrepreneurship</span>
             <span className="badge">AI/LLMs</span>
             <span className="badge">Product Strategy</span>
@@ -71,7 +71,7 @@ const Experience: React.FC = () => {
           <div className="description">
             Developed business cases, market research, and data visualizations. Rebuilt and maintained the company's Django-based website.
           </div>
-          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          <div className="quick-facts">
             <span className="badge">Django</span>
             <span className="badge">Data Visualization</span>
             <span className="badge">Market Research</span>
@@ -91,7 +91,7 @@ const Experience: React.FC = () => {
               <li>Developed into a data analyst, building dashboards and serving as an internal consultant.</li>
             </ul>
           </div>
-          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          <div className="quick-facts">
             <span className="badge">Operations</span>
             <span className="badge">Process Optimization</span>
             <span className="badge">Consulting</span>
@@ -110,7 +110,7 @@ const Experience: React.FC = () => {
               <li>Selected and trained six new members for the driver captain team from the existing driver pool.</li>
             </ul>
           </div>
-          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          <div className="quick-facts">
             <span className="badge">Leadership</span>
             <span className="badge">Team Coaching</span>
             <span className="badge">Training</span>
@@ -130,7 +130,7 @@ const Experience: React.FC = () => {
               <li>Improved coaching and performance tracking systems.</li>
             </ul>
           </div>
-          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          <div className="quick-facts">
             <span className="badge">Data Optimization</span>
             <span className="badge">Performance Tracking</span>
             <span className="badge">Coordination</span>
@@ -146,7 +146,7 @@ const Experience: React.FC = () => {
           <div className="description">
             Delivered food for the Scoober Logistics department of Thuisbezorgd.nl, riding an e-bike to restaurants and customers.
           </div>
-          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          <div className="quick-facts">
             <span className="badge">Logistics</span>
             <span className="badge">Customer Service</span>
           </div>
@@ -161,7 +161,7 @@ const Experience: React.FC = () => {
           <div className="description">
             Organised, repaired and cleaned beds in the hospital, with sole responsibility for the children’s department standards.
           </div>
-          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          <div className="quick-facts">
             <span className="badge">Responsibility</span>
             <span className="badge">Maintenance</span>
           </div>
@@ -176,7 +176,7 @@ const Experience: React.FC = () => {
           <div className="description">
             Responsible for opening and closing operations, waiting tables, and ensuring customer satisfaction at a beach restaurant.
           </div>
-          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          <div className="quick-facts">
             <span className="badge">Customer Satisfaction</span>
             <span className="badge">Hospitality</span>
           </div>
@@ -191,7 +191,7 @@ const Experience: React.FC = () => {
           <div className="description">
             Organised after-school football training for middle school students aged 7 to 11.
           </div>
-          <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          <div className="quick-facts">
             <span className="badge">Sports Coaching</span>
             <span className="badge">Mentorship</span>
           </div>

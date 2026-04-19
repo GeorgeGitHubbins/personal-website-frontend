@@ -85,7 +85,7 @@ const Projects: React.FC = () => {
             <p className="description">
               Leading the development of the NGO Link platform, connecting NGOs with resources and volunteers. Building the core infrastructure and features to scale the project's impact.
             </p>
-            <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '10px' }}>
+            <div className="quick-facts">
               <span className="badge">React</span>
               <span className="badge">TypeScript</span>
               <span className="badge">Architecture</span>
