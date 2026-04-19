@@ -14,12 +14,12 @@ const faqData: FAQItem[] = [
   },
   {
     question: "What is his educational background?",
-    answer: "George holds an MSc in Complex Systems Engineering and Management (CoSEM) from TU Delft and a BSc in International Relations and Organization from the University of Groningen.",
+    answer: "George holds an MSc in Complex Systems Engineering and Management (CoSEM) from TU Delft and a BSc in Industrial Engineering and Management from the University of Groningen.",
     category: 'Education'
   },
   {
     question: "Did he study abroad?",
-    answer: "Yes, George did an Erasmus exchange at the University of Porto, focusing on Economics and Management.",
+    answer: "Yes, George did an Erasmus exchange at the University of Porto, focusing on Industrial Engineering and Management.",
     category: 'Education'
   },
   {
