@@ -39,7 +39,7 @@ A React-based personal website for George Gittins, designed for continuous, auto
 - **System Instructions:** Your primary goal is to improve the site at `ai.georgegittins.com`.
 
 - **External Assets:** Most PDFs (CV, Thesis) are hosted on Google Drive. If a link is missing from `TODO.md` or the code, look for it in `personal-website-project/scraped_content/` or assume it needs to be provided by the user (George). Do NOT generate placeholder files.
-- **Roadmap Maintenance:** ALWAYS update `TODO.md` after completing a task. Use `[x]` for completed tasks and feel free to add new ideas under "Future Improvements".
+- **Roadmap Maintenance:** ALWAYS update `TODO.md` after completing a task. Use `[x]` for completed tasks and feel free to add new ideas under "Future Improvements". Always update the TODO list at the end of each session, moving and marking off items, delete old and stale items. Feel free to add good ideas there that meet the requirements mentioned in this projects documentation.  
 
 ## Gemini CLI: Autonomous Mode Instructions
 This repo is designed to be modified by an autonomous agent periodically (every 3 days). 
