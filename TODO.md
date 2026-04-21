@@ -23,6 +23,7 @@
 ## Future Improvements (Autonomous Selection)
 - [ ] **UI/UX & Core Features**
     - [x] Implement Dark Mode toggle (respecting system/user preferences).
+    - [ ] dont use the bulletpoints on the education cards, they dont look good with current formatting
     - [x] Add smooth scroll animations for section transitions (e.g., Framer Motion).
     - [x] Create an interactive Skills Radar chart or categorized badge system.
     - [x] Implement a "Scroll to Top" button for improved navigation.
@@ -41,6 +42,7 @@
     - [x] "AI Career Assistant (Static)": A client-side, searchable "Knowledge Base" (using Fuse.js or pre-indexed FAQ) trained on your CV/projects to answer common recruiter questions without API costs.
     - [ ] "Interactive Career Timeline": A visual, draggable journey through your professional history (SVG or Canvas-based).
     - [x] "Live Site Stats": A dashboard showing GitHub activity (via free public API).
+    - [ ] The github dashboard is not clear to the uninformed visitor. I suggest an explainer and maybe a 1-2 sentence description of the last changes (that would have to be updated at the end of every run), also put it below the skills section, doesn't look nice next to it
     - [ ] "Project Playground": A dedicated area for hosting small, interactive web experiments or prototypes.
 - [ ] Secure the frontend (CSP headers via CloudFront).
 
