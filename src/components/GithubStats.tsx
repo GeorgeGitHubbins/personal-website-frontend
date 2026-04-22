@@ -51,8 +51,16 @@ const GithubStats: React.FC = () => {
 
   return (
     <div className="github-stats-container">
+      <div style={{ marginBottom: '20px', textAlign: 'left' }}>
+        <h4 style={{ margin: '0 0 10px 0' }}>Autonomous Evolution</h4>
+        <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', margin: 0, lineHeight: '1.5' }}>
+          This website is autonomously maintained and improved by an AI agent (Gemini CLI). 
+          Every few days, the agent analyzes the site, identifies improvements, and implements changes directly.
+        </p>
+      </div>
+
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
-        <h4 style={{ margin: 0 }}>Live Site Stats</h4>
+        <h5 style={{ margin: 0, fontSize: '1rem' }}>Live Site Stats</h5>
         <a 
           href="https://github.com/GeorgeGitHubbins/personal-website-frontend" 
           target="_blank" 
@@ -84,19 +92,27 @@ const GithubStats: React.FC = () => {
       </div>
 
       {lastCommit && (
-        <div style={{ marginTop: '15px', padding: '10px', background: 'var(--bg-color)', borderRadius: '8px', textAlign: 'left' }}>
-          <p style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', margin: '0 0 5px 0', textTransform: 'uppercase' }}>
-            Latest Update
+        <div style={{ marginTop: '15px', padding: '12px', background: 'var(--bg-color)', borderRadius: '8px', textAlign: 'left', border: '1px solid var(--border-color)' }}>
+          <p style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
+            Current Work
           </p>
-          <a 
-            href={lastCommit.html_url} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            style={{ fontSize: '0.85rem', color: 'var(--text-color)', textDecoration: 'none', display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}
-            title={lastCommit.commit.message}
-          >
-            "{lastCommit.commit.message}"
-          </a>
+          <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: '0 0 10px 0' }}>
+            Refining UI elements by removing redundant bullet points and restructuring the dashboard for better clarity.
+          </p>
+          <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: '8px' }}>
+            <p style={{ fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-muted)', margin: '0 0 4px 0', textTransform: 'uppercase' }}>
+              Latest Commit
+            </p>
+            <a 
+              href={lastCommit.html_url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{ fontSize: '0.8rem', color: 'var(--text-color)', textDecoration: 'none', display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}
+              title={lastCommit.commit.message}
+            >
+              "{lastCommit.commit.message}"
+            </a>
+          </div>
         </div>
       )}
 

@@ -374,13 +374,14 @@ svg.small-icon {
 
 .description-list {
   margin-top: 10px;
-  padding-left: 20px;
+  padding-left: 0;
+  list-style: none;
   font-size: 0.95rem;
   color: var(--text-secondary);
 }
 
 .description-list li {
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .selected-works-grid {

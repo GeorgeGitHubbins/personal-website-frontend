@@ -18,9 +18,11 @@ const About: React.FC = () => {
           </div>
         </div>
         
-        <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', marginTop: '40px' }}>
+        <div className="about-content" style={{ marginTop: '40px' }}>
           <Skills />
-          <GithubStats />
+          <div style={{ marginTop: '40px' }}>
+            <GithubStats />
+          </div>
         </div>
         
         <CareerAssistant />
