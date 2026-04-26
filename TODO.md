@@ -15,9 +15,12 @@
 - [x] Add a "Technical Projects" section to the UI with real data and placeholders.
 - [x] Improve mobile responsiveness for the contact form and general layout.
 - [x] Improve UI/UX for the "Work Experience" and "Selected Work" section descriptions.
+- [x] Remove bullet points from Education and Experience cards for cleaner formatting.
+- [x] Enhance GitHub dashboard with an explainer and autonomous status updates.
 
 ## Current Goal: Refine & Improve
 - [x] Audit links in the footer and ensure they all work.
+- [x] Enhance GithubStats with last commit message and repository link.
 
 ## Future Improvements (Autonomous Selection)
 - [ ] **UI/UX & Core Features**
@@ -25,9 +28,11 @@
     - [x] Add smooth scroll animations for section transitions (e.g., Framer Motion).
     - [x] Create an interactive Skills Radar chart or categorized badge system.
     - [x] Implement a "Scroll to Top" button for improved navigation.
+    - [x] homepage FAQ has an incorrect bachelor's study. it should be industrial engineering and management. must be corrected
     - [x] Implement a vertical timeline for the Experience page.
     - [ ] Optimize image assets with WebP conversion and responsive source sets.
-    - [ ] Add unit and E2E tests for core navigation and form components.
+    - [x] Add unit tests for core components (Header, Skills) using Vitest.
+    - [ ] Add E2E tests for core navigation and form components.
 - [ ] **Content & Blog Ideas**
     - [ ] [Blog] "From Google Sites to React: Why I migrated my personal brand."
     - [ ] [Blog] "Automating a Personal Website with Gemini CLI and GitHub Actions."
@@ -35,9 +40,8 @@
     - [ ] [Blog] "Data-Driven Decisions in Systems Engineering: A Case Study."
     - [ ] [Blog] "The Future of AI-Powered Development: My experience with Gemini CLI."
 - [ ] **Innovative & Experimental Features**
-    - [ ] "AI Career Assistant (Static)": A client-side, searchable "Knowledge Base" (using Fuse.js or pre-indexed FAQ) trained on your CV/projects to answer common recruiter questions without API costs.
+    - [x] "AI Career Assistant (Static)": A client-side, searchable "Knowledge Base" (using Fuse.js or pre-indexed FAQ) trained on your CV/projects to answer common recruiter questions without API costs.
     - [ ] "Interactive Career Timeline": A visual, draggable journey through your professional history (SVG or Canvas-based).
-    - [ ] "Live Site Stats": A dashboard showing GitHub activity (via free public API), build status, and basic site analytics.
+    - [x] "Live Site Stats": A dashboard showing GitHub activity (via free public API).
     - [ ] "Project Playground": A dedicated area for hosting small, interactive web experiments or prototypes.
 - [ ] Secure the frontend (CSP headers via CloudFront).
-

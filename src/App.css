@@ -10,6 +10,7 @@
   --card-shadow: rgba(0, 0, 0, 0.05);
   --card-shadow-hover: rgba(0, 0, 0, 0.1);
   --border-color: #ddd;
+  --accent-border: rgba(52, 152, 219, 0.2);
   --card-border: rgba(0, 0, 0, 0.02);
   --logo-bg: #ffffff;
   --logo-border: #f0f0f0;
@@ -29,6 +30,7 @@
   --card-shadow: rgba(0, 0, 0, 0.3);
   --card-shadow-hover: rgba(0, 0, 0, 0.5);
   --border-color: #4a5568;
+  --accent-border: rgba(52, 152, 219, 0.4);
   --card-border: rgba(255, 255, 255, 0.05);
   --logo-bg: #ffffff; /* Keep white for readability if logos have transparent bg */
   --logo-border: #4a5568;
@@ -372,13 +374,14 @@ svg.small-icon {
 
 .description-list {
   margin-top: 10px;
-  padding-left: 20px;
+  padding-left: 0;
+  list-style: none;
   font-size: 0.95rem;
   color: var(--text-secondary);
 }
 
 .description-list li {
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .selected-works-grid {
@@ -453,6 +456,13 @@ svg.small-icon {
 .badge:hover {
   transform: scale(1.05);
   background: var(--primary-color);
+}
+
+.quick-facts {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .contact-section {
@@ -548,7 +558,69 @@ svg.small-icon {
 
 /* Skills Section Styles */
 .skills-container {
-  margin-top: 40px;
+  /* Margin handled by container */
+}
+
+/* Github Stats Styles */
+.github-stats-container {
+  padding: 20px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 6px var(--card-shadow);
+  text-align: center;
+  height: fit-content;
+}
+
+.github-stats-container h4 {
+  margin: 0 0 15px 0;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.github-stats-grid {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.stat-badge {
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-update {
+  margin: 15px 0 0 0;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.github-stats.loading {
+  padding: 20px;
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
 }
 
 .skills-container h3 {
@@ -587,6 +659,18 @@ svg.small-icon {
 
 .badge-leadership {
   background: #e67e22;
+}
+
+.badge-experience {
+  background: #34495e;
+}
+
+.badge-education {
+  background: #9b59b6;
+}
+
+.badge-personal {
+  background: #e74c3c;
 }
 
 .dark-mode .badge-data {

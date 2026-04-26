@@ -1,6 +1,8 @@
 import React from 'react';
 import headshotImg from '../assets/George_profile.png';
 import Skills from '../components/Skills';
+import GithubStats from '../components/GithubStats';
+import CareerAssistant from '../components/CareerAssistant';
 
 const About: React.FC = () => {
   return (
@@ -16,7 +18,14 @@ const About: React.FC = () => {
           </div>
         </div>
         
-        <Skills />
+        <div className="about-content" style={{ marginTop: '40px' }}>
+          <Skills />
+          <div style={{ marginTop: '40px' }}>
+            <GithubStats />
+          </div>
+        </div>
+        
+        <CareerAssistant />
       </section>
     </>
   );
