@@ -22,9 +22,10 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: package-lock.json
+          cache-dependency-path: personal-website-frontend/package-lock.json
 
       - name: Install Dependencies
+        working-directory: personal-website-frontend
         run: npm install
 
       - name: Pre-configure Git
@@ -36,6 +37,7 @@ jobs:
         run: npm install -g @google/gemini-cli
 
       - name: Lint Project
+        working-directory: personal-website-frontend
         run: npm run lint || echo "Linting failed, but continuing to allow Gemini to fix it."
 
       - name: Run Gemini CLI Autonomous Session
@@ -44,8 +46,9 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: 'eu-central-1'
+        working-directory: personal-website-frontend
         run: |
-          gemini --prompt "Follow the 'Gemini CLI: Autonomous Mode Instructions' in GEMINI.md. Pick ONE logical task from TODO.md or identify a small improvement. Implement it, verify with 'npm run build', and commit the change with a clear message. Spend no more than 45 minutes. Do not ask for user input." --approval-mode yolo
+          gemini --skip-trust --prompt "Follow the 'Gemini CLI: Autonomous Mode Instructions' in GEMINI.md. Pick ONE logical task from TODO.md or identify a small improvement. Implement it, verify with 'npm run build', and commit the change with a clear message. Spend no more than 45 minutes. Do not ask for user input." --approval-mode yolo
 
       - name: Push Changes
         run: |
@@ -56,6 +59,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: 'eu-central-1'
+        working-directory: personal-website-frontend
         run: |
           aws s3 sync dist/ s3://ai.georgegittins.com --delete
 
