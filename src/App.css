@@ -93,7 +93,7 @@ body {
   margin-top: 20px;
 }
 
-.header nav a {
+.header nav a, .header nav .contact-nav-link {
   margin: 0 15px;
   text-decoration: none;
   color: var(--secondary-color);
@@ -103,7 +103,7 @@ body {
   border-bottom: 2px solid transparent;
 }
 
-.header nav a:hover {
+.header nav a:hover, .header nav .contact-nav-link:hover {
   color: var(--accent-color);
 }
 

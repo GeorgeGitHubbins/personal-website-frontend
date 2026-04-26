@@ -12,6 +12,7 @@ const Header: React.FC = () => {
         <NavLink to="/experience">Work Experience</NavLink>
         <NavLink to="/education">Education</NavLink>
         <NavLink to="/projects">Volunteering & Projects</NavLink>
+        <a href="#contact" className="contact-nav-link">Contact</a>
       </nav>
     </header>
   );

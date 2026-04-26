@@ -61,7 +61,7 @@ const Projects: React.FC = () => {
       <section id="volunteering" className="section">
         <h2>Volunteering & Community:</h2>
         <div className="card experience-card">
-          <img src={globalShapersLogo} alt="Global Shapers" className="card-logo" />
+          <img src={globalShapersLogo} alt="Global Shapers" className="card-logo" loading="lazy" decoding="async" />
           <div className="card-details">
             <h3>Global Shapers / Active Member</h3>
             <p className="date">January 2025 - Present, The Hague</p>
@@ -77,7 +77,7 @@ const Projects: React.FC = () => {
         
         <div className="card experience-card">
           <a href="https://www.ngo-link.org" target="_blank" rel="noopener noreferrer">
-            <img src={ngoLinkLogo} alt="NGO Link" className="card-logo" />
+            <img src={ngoLinkLogo} alt="NGO Link" className="card-logo" loading="lazy" decoding="async" />
           </a>
           <div className="card-details">
             <h3>NGO Link Infrastructure</h3>

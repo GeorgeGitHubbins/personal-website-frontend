@@ -4,7 +4,7 @@ import linkedinIcon from '../assets/Linkedin_icon.png';
 const Footer: React.FC = () => {
   return (
     <footer className="footer">
-      <section className="section contact-section">
+      <section id="contact" className="section contact-section">
         <div className="contact-form-wrapper">
           <iframe 
             src="https://docs.google.com/forms/d/e/1FAIpQLSdAF8z6BYhucXHl_oRF5kz4H2aHlpwQqe2abNNmvd7F5S2hAg/viewform?embedded=true" 

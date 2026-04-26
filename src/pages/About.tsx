@@ -9,7 +9,7 @@ const About: React.FC = () => {
     <>
       <section id="about" className="section hero-section">
         <div className="hero-content">
-          <img src={headshotImg} alt="George Gittins" className="profile-img" />
+          <img src={headshotImg} alt="George Gittins" className="profile-img" loading="lazy" decoding="async" />
           <div className="hero-text">
             <h2>Hi, I'm George!</h2>
             <p>Welcome to my website, a place where you can learn about me, what I'm up to, and have been up to.</p>

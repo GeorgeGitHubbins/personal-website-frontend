@@ -12,7 +12,7 @@ const Education: React.FC = () => {
       
       <div className="card experience-card">
         <a href="http://cosem.nl" target="_blank" rel="noopener noreferrer">
-          <img src={tuDelftLogo} alt="TU Delft" className="card-logo" />
+          <img src={tuDelftLogo} alt="TU Delft" className="card-logo" loading="lazy" decoding="async" />
         </a>
         <div className="card-details">
           <h3>Technical University of Delft / MSc Complex Systems Engineering and Management</h3>
@@ -34,7 +34,7 @@ const Education: React.FC = () => {
       </div>
 
       <div className="card experience-card">
-        <img src={uPortoLogo} alt="University of Porto" className="card-logo" />
+        <img src={uPortoLogo} alt="University of Porto" className="card-logo" loading="lazy" decoding="async" />
         <div className="card-details">
           <h3>University of Porto / ERASMUS+ MSc Industrial Engineering and Management</h3>
           <div className="description">
@@ -53,7 +53,7 @@ const Education: React.FC = () => {
       </div>
 
       <div className="card experience-card">
-        <img src={dataWiseLogo} alt="Data Wise" className="card-logo" />
+        <img src={dataWiseLogo} alt="Data Wise" className="card-logo" loading="lazy" decoding="async" />
         <div className="card-details">
           <h3>University of Groningen / Minor Data Wise: Data Science in Society</h3>
           <div className="description">
@@ -70,7 +70,7 @@ const Education: React.FC = () => {
       </div>
 
       <div className="card experience-card">
-        <img src={uGroningenLogo} alt="University of Groningen" className="card-logo" />
+        <img src={uGroningenLogo} alt="University of Groningen" className="card-logo" loading="lazy" decoding="async" />
         <div className="card-details">
           <h3>University of Groningen / BSc Industrial Engineering and Management</h3>
           <div className="description">
@@ -89,7 +89,7 @@ const Education: React.FC = () => {
       </div>
 
       <div className="card experience-card">
-        <img src={uGroningenLogo} alt="University of Groningen" className="card-logo" />
+        <img src={uGroningenLogo} alt="University of Groningen" className="card-logo" loading="lazy" decoding="async" />
         <div className="card-details">
           <h3>University of Groningen / BSc Chemical Engineering</h3>
           <div className="description">
@@ -106,7 +106,7 @@ const Education: React.FC = () => {
       </div>
 
       <div className="card experience-card">
-        <img src={ibLogo} alt="International Baccalaureate" className="card-logo" />
+        <img src={ibLogo} alt="International Baccalaureate" className="card-logo" loading="lazy" decoding="async" />
         <div className="card-details">
           <h3>International School of The Hague / International Baccalaureate</h3>
           <div className="description">

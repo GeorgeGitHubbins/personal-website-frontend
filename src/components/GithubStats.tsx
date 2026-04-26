@@ -93,24 +93,18 @@ const GithubStats: React.FC = () => {
 
       {lastCommit && (
         <div style={{ marginTop: '15px', padding: '12px', background: 'var(--bg-color)', borderRadius: '8px', textAlign: 'left', border: '1px solid var(--border-color)' }}>
-          <p style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
-            Current Work
-          </p>
-          <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: '0 0 10px 0' }}>
-            Refining UI elements by removing redundant bullet points and restructuring the dashboard for better clarity.
-          </p>
-          <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: '8px' }}>
+          <div style={{ marginBottom: '8px' }}>
             <p style={{ fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-muted)', margin: '0 0 4px 0', textTransform: 'uppercase' }}>
-              Latest Commit
+              Latest Autonomous Update
             </p>
             <a 
               href={lastCommit.html_url} 
               target="_blank" 
               rel="noopener noreferrer"
-              style={{ fontSize: '0.8rem', color: 'var(--text-color)', textDecoration: 'none', display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}
+              style={{ fontSize: '0.85rem', color: 'var(--text-color)', textDecoration: 'none', display: 'block', fontWeight: 500 }}
               title={lastCommit.commit.message}
             >
-              "{lastCommit.commit.message}"
+              {lastCommit.commit.message}
             </a>
           </div>
         </div>

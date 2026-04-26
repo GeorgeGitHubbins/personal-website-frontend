@@ -17,6 +17,8 @@
 - [x] Improve UI/UX for the "Work Experience" and "Selected Work" section descriptions.
 - [x] Remove bullet points from Education and Experience cards for cleaner formatting.
 - [x] Enhance GitHub dashboard with an explainer and autonomous status updates.
+- [x] Add loading="lazy" and decoding="async" to all images for better performance.
+- [x] Add a "Contact" link to the header for improved navigation.
 
 ## Current Goal: Refine & Improve
 - [x] Audit links in the footer and ensure they all work.

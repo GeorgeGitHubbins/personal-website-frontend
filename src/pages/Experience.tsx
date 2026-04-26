@@ -15,7 +15,7 @@ const Experience: React.FC = () => {
       <h2>Work Experience:</h2>
       
       <div className="card experience-card">
-        <img src={siaLogo} alt="SIA Partners" className="card-logo" />
+        <img src={siaLogo} alt="SIA Partners" className="card-logo" loading="lazy" decoding="async" />
         <div className="card-details">
           <h3>SIA Partners / Data Science Consultant</h3>
           <p className="date">November 2025 - Present, Amsterdam</p>
@@ -32,7 +32,7 @@ const Experience: React.FC = () => {
       </div>
 
       <div className="card experience-card">
-        <img src={huracanLogo} alt="Huracán Systems" className="card-logo" />
+        <img src={huracanLogo} alt="Huracán Systems" className="card-logo" loading="lazy" decoding="async" />
         <div className="card-details">
           <h3>Huracán / Systems Engineer</h3>
           <p className="date">October 2025 - November 2025, Amsterdam</p>
@@ -48,7 +48,7 @@ const Experience: React.FC = () => {
       </div>
 
       <div className="card experience-card">
-        <img src={instantFlowsLogo} alt="InstantFlows" className="card-logo" />
+        <img src={instantFlowsLogo} alt="InstantFlows" className="card-logo" loading="lazy" decoding="async" />
         <div className="card-details">
           <h3>InstantFlows / Co-Founder</h3>
           <p className="date">September 2024 - October 2025, Delft</p>
@@ -64,7 +64,7 @@ const Experience: React.FC = () => {
       </div>
 
       <div className="card experience-card">
-        <img src={jorLogo} alt="JOR Energy Consultancy" className="card-logo" />
+        <img src={jorLogo} alt="JOR Energy Consultancy" className="card-logo" loading="lazy" decoding="async" />
         <div className="card-details">
           <h3>JOR Energy Consultancy / Data Analyst</h3>
           <p className="date">September 2022 - January 2025, Delft</p>
@@ -80,7 +80,7 @@ const Experience: React.FC = () => {
       </div>
 
       <div className="card experience-card">
-        <img src={flinkLogo} alt="Flink" className="card-logo" />
+        <img src={flinkLogo} alt="Flink" className="card-logo" loading="lazy" decoding="async" />
         <div className="card-details">
           <h3>Flink B. V. / Rider Operations Specialist</h3>
           <p className="date">November 2021 - September 2022, Amsterdam</p>
@@ -100,7 +100,7 @@ const Experience: React.FC = () => {
       </div>
 
       <div className="card experience-card">
-        <img src={takeawayLogo} alt="Just Eat Takeaway" className="card-logo" />
+        <img src={takeawayLogo} alt="Just Eat Takeaway" className="card-logo" loading="lazy" decoding="async" />
         <div className="card-details">
           <h3>Just Eat Takeaway.com N.V. / Driver (Captain) Coordinator</h3>
           <p className="date">June 2021 - August 2021, Groningen</p>
@@ -119,7 +119,7 @@ const Experience: React.FC = () => {
       </div>
 
       <div className="card experience-card">
-        <img src={takeawayLogo} alt="Just Eat Takeaway" className="card-logo" />
+        <img src={takeawayLogo} alt="Just Eat Takeaway" className="card-logo" loading="lazy" decoding="async" />
         <div className="card-details">
           <h3>Just Eat Takeaway.com N.V. / Driver Coordinator</h3>
           <p className="date">April 2019 - August 2021, Groningen</p>
@@ -139,7 +139,7 @@ const Experience: React.FC = () => {
       </div>
 
       <div className="card experience-card">
-        <img src={takeawayLogo} alt="Just Eat Takeaway" className="card-logo" />
+        <img src={takeawayLogo} alt="Just Eat Takeaway" className="card-logo" loading="lazy" decoding="async" />
         <div className="card-details">
           <h3>Just Eat Takeaway.com N.V. / Driver</h3>
           <p className="date">August 2018 - April 2019, Groningen</p>
@@ -154,7 +154,7 @@ const Experience: React.FC = () => {
       </div>
 
       <div className="card experience-card">
-        <img src={hagaLogo} alt="HagaZiekenhuis" className="card-logo" />
+        <img src={hagaLogo} alt="HagaZiekenhuis" className="card-logo" loading="lazy" decoding="async" />
         <div className="card-details">
           <h3>Hagaziekenhuis / Household Maintenance</h3>
           <p className="date">June 2017 - August 2017, Den Haag</p>
@@ -169,7 +169,7 @@ const Experience: React.FC = () => {
       </div>
 
       <div className="card experience-card">
-        <img src={boomerangLogo} alt="Boomerang" className="card-logo" />
+        <img src={boomerangLogo} alt="Boomerang" className="card-logo" loading="lazy" decoding="async" />
         <div className="card-details">
           <h3>Boomerang Beachclub / Waiter</h3>
           <p className="date">May 2015 - June 2017, Den Haag</p>
@@ -184,7 +184,7 @@ const Experience: React.FC = () => {
       </div>
 
       <div className="card experience-card">
-        <img src={aicsLogo} alt="Espritscholen (AICS)" className="card-logo" />
+        <img src={aicsLogo} alt="Espritscholen (AICS)" className="card-logo" loading="lazy" decoding="async" />
         <div className="card-details">
           <h3>Espritscholen (AICS) / Trainer (football)</h3>
           <p className="date">October 2010 - October 2011, Amsterdam</p>
