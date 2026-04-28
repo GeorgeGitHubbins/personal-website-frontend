@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
         </a>
       </div>
 
-      <p>&copy; {new Date().getFullYear()} George Gittins. Built with React and Gemini CLI. <span style={{ opacity: 0.7, fontSize: '0.8rem' }}>(Last updated: {new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })})</span></p>
+      <p>&copy; {new Date().getFullYear()} George Gittins. Built with React and Gemini CLI. <span style={{ opacity: 0.7, fontSize: '0.8rem' }}>(Last updated: {new Date(__BUILD_DATE__).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })})</span></p>
     </footer>
   );
 };

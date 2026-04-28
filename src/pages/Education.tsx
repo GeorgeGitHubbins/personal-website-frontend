@@ -7,7 +7,7 @@ import dataWiseLogo from '../assets/DataWise_logo.png';
 
 const Education: React.FC = () => {
   return (
-    <section id="education" className="section">
+    <section id="education" className="section timeline-container">
       <h2>Education:</h2>
       
       <div className="card experience-card">

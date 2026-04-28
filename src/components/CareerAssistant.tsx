@@ -73,48 +73,38 @@ const CareerAssistant: React.FC = () => {
   }, [searchTerm]);
 
   return (
-    <div className="career-assistant-container section" style={{ marginTop: '40px' }}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '15px' }}>
+    <div className="career-assistant-container section">
+      <div className="career-assistant-header">
         <h2>AI Career Assistant (Static)</h2>
-        <div className="search-wrapper" style={{ position: 'relative', flex: '1', maxWidth: '300px' }}>
+        <div className="search-wrapper">
           <input
             type="text"
+            className="search-input"
             placeholder="Ask about George..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            style={{
-              width: '100%',
-              padding: '10px 15px',
-              borderRadius: '20px',
-              border: '1px solid var(--border-color)',
-              background: 'var(--card-bg)',
-              color: 'var(--text-color)',
-              fontSize: '0.9rem',
-              outline: 'none',
-              transition: 'border-color 0.3s'
-            }}
           />
         </div>
       </div>
-      <p style={{ color: 'var(--text-muted)', marginBottom: '20px', fontSize: '0.9rem' }}>
+      <p className="career-assistant-subtitle">
         A searchable knowledge base to answer common recruiter questions.
       </p>
 
-      <div className="faq-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
+      <div className="faq-grid">
         {filteredFaq.length > 0 ? (
           filteredFaq.map((item, index) => (
-            <div key={index} className="card" style={{ padding: '20px', height: '100%', display: 'flex', flexDirection: 'column' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '10px' }}>
-                <span className={`badge badge-${item.category.toLowerCase()}`} style={{ fontSize: '0.7rem', padding: '4px 8px' }}>
+            <div key={index} className="card faq-card">
+              <div className="faq-card-header">
+                <span className={`badge badge-${item.category.toLowerCase()} faq-category-badge`}>
                   {item.category}
                 </span>
               </div>
-              <h4 style={{ margin: '0 0 10px 0', fontSize: '1rem', color: 'var(--primary-color)' }}>{item.question}</h4>
-              <p style={{ margin: '0', fontSize: '0.9rem', color: 'var(--text-secondary)', flex: '1' }}>{item.answer}</p>
+              <h4 className="faq-question">{item.question}</h4>
+              <p className="faq-answer">{item.answer}</p>
             </div>
           ))
         ) : (
-          <p style={{ textAlign: 'center', gridColumn: '1 / -1', padding: '40px', color: 'var(--text-muted)' }}>
+          <p className="faq-no-results">
             No answers found for "{searchTerm}". Try another keyword!
           </p>
         )}

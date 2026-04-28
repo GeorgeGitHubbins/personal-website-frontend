@@ -16,9 +16,12 @@
 - [x] Improve mobile responsiveness for the contact form and general layout.
 - [x] Improve UI/UX for the "Work Experience" and "Selected Work" section descriptions.
 - [x] Remove bullet points from Education and Experience cards for cleaner formatting.
+- [x] Unify vertical timeline styling across Experience, Education, Volunteering, and Tech Projects.
+- [x] Refactor Career Assistant to use external CSS and improve maintainability.
 - [x] Enhance GitHub dashboard with an explainer and autonomous status updates.
 - [x] Add loading="lazy" and decoding="async" to all images for better performance.
 - [x] Add a "Contact" link to the header for improved navigation.
+- [x] Implement real build-time "Last Updated" timestamp in footer.
 
 ## Current Goal: Refine & Improve
 - [x] Audit links in the footer and ensure they all work.

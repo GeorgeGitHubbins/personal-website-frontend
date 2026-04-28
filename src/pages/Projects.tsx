@@ -58,7 +58,7 @@ const Projects: React.FC = () => {
 
   return (
     <>
-      <section id="volunteering" className="section">
+      <section id="volunteering" className="section timeline-container">
         <h2>Volunteering & Community:</h2>
         <div className="card experience-card">
           <img src={globalShapersLogo} alt="Global Shapers" className="card-logo" loading="lazy" decoding="async" />
@@ -72,7 +72,7 @@ const Projects: React.FC = () => {
         </div>
       </section>
 
-      <section id="tech-projects" className="section">
+      <section id="tech-projects" className="section timeline-container">
         <h2>Technical Projects:</h2>
         
         <div className="card experience-card">

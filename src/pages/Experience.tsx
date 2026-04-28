@@ -11,7 +11,7 @@ import aicsLogo from '../assets/Aics_logo.png';
 
 const Experience: React.FC = () => {
   return (
-    <section id="experience" className="section">
+    <section id="experience" className="section timeline-container">
       <h2>Work Experience:</h2>
       
       <div className="card experience-card">
