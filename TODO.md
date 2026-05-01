@@ -33,6 +33,7 @@
     - [x] Add smooth scroll animations for section transitions (e.g., Framer Motion).
     - [x] Create an interactive Skills Radar chart or categorized badge system.
     - [x] Implement a "Scroll to Top" button for improved navigation.
+    - [x] Implement a reading progress bar for visual scroll feedback.
     - [x] homepage FAQ has an incorrect bachelor's study. it should be industrial engineering and management. must be corrected
     - [x] Implement a vertical timeline for the Experience page.
     - [ ] Optimize image assets with WebP conversion and responsive source sets.
@@ -46,7 +47,9 @@
     - [ ] [Blog] "The Future of AI-Powered Development: My experience with Gemini CLI."
 - [ ] **Innovative & Experimental Features**
     - [x] "AI Career Assistant (Static)": A client-side, searchable "Knowledge Base" (using Fuse.js or pre-indexed FAQ) trained on your CV/projects to answer common recruiter questions without API costs.
+    - [ ] "AI Career Assistant (Enhanced)": Integrate a small, client-side LLM (like WebLLM) for more dynamic question answering.
     - [ ] "Interactive Career Timeline": A visual, draggable journey through your professional history (SVG or Canvas-based).
     - [x] "Live Site Stats": A dashboard showing GitHub activity (via free public API).
     - [ ] "Project Playground": A dedicated area for hosting small, interactive web experiments or prototypes.
+    - [ ] "Accessibility Audit": Ensure full WCAG 2.1 compliance and add an accessibility toggle.
 - [ ] Secure the frontend (CSP headers via CloudFront).

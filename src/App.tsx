@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import ReadingProgressBar from './components/ReadingProgressBar';
 
 // Pages
 import About from './pages/About';
@@ -18,6 +19,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
+      <ReadingProgressBar />
       <div className="app">
         <Header />
         <main className="content">
