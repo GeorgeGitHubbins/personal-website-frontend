@@ -17,6 +17,7 @@
 - [x] Improve UI/UX for the "Work Experience" and "Selected Work" section descriptions.
 - [x] Remove bullet points from Education and Experience cards for cleaner formatting.
 - [x] Unify vertical timeline styling across Experience, Education, Volunteering, and Tech Projects.
+- [x] Implement a filter for "Selected Academic Work" by category (Thesis, Report, Simulation, etc.).
 - [x] Refactor Career Assistant to use external CSS and improve maintainability.
 - [x] Enhance GitHub dashboard with an explainer and autonomous status updates.
 - [x] Add loading="lazy" and decoding="async" to all images for better performance.

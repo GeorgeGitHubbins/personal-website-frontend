@@ -199,6 +199,37 @@ body {
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
+/* Projects Filter */
+.filter-btn:hover {
+  border-color: var(--accent-color) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--card-shadow);
+}
+
+.filter-btn.active {
+  box-shadow: 0 4px 10px var(--accent-border);
+}
+
+.badge-thesis { background-color: #e74c3c; color: white; }
+.badge-report { background-color: #3498db; color: white; }
+.badge-presentation { background-color: #f1c40f; color: #333; }
+.badge-simulation { background-color: #2ecc71; color: white; }
+
+.selected-works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .selected-works-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
 .hero-text {
   flex: 1;
 }
