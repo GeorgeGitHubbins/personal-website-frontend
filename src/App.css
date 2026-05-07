@@ -199,15 +199,47 @@ body {
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
+/* Skip Link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--accent-color);
+  color: white;
+  padding: 8px;
+  z-index: 3000;
+  transition: top 0.3s;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 0 0 4px 4px;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 /* Projects Filter */
+.filter-btn {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  fontSize: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.filter-btn.active {
+  background: var(--accent-color) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 10px var(--accent-border);
+}
+
 .filter-btn:hover {
   border-color: var(--accent-color) !important;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px var(--card-shadow);
-}
-
-.filter-btn.active {
-  box-shadow: 0 4px 10px var(--accent-border);
 }
 
 .badge-thesis { background-color: #e74c3c; color: white; }

@@ -52,5 +52,5 @@
     - [ ] "Interactive Career Timeline": A visual, draggable journey through your professional history (SVG or Canvas-based).
     - [x] "Live Site Stats": A dashboard showing GitHub activity (via free public API).
     - [ ] "Project Playground": A dedicated area for hosting small, interactive web experiments or prototypes.
-    - [ ] "Accessibility Audit": Ensure full WCAG 2.1 compliance and add an accessibility toggle.
-- [ ] Secure the frontend (CSP headers via CloudFront).
+    - [x] Accessibility Audit: Added Skip to Content link, ARIA labels, and improved semantic HTML.
+    - [ ] Secure the frontend (CSP headers via CloudFront).

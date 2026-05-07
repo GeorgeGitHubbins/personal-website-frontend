@@ -20,10 +20,10 @@ const Footer: React.FC = () => {
       </section>
 
       <div className="footer-social">
-        <a href="https://www.linkedin.com/in/george-h-gittins/" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/george-h-gittins/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
           <img src={linkedinIcon} alt="LinkedIn" className="small-icon" />
         </a>
-        <a href="https://github.com/GeorgeGitHubbins" target="_blank" rel="noopener noreferrer" className="github-link">
+        <a href="https://github.com/GeorgeGitHubbins" target="_blank" rel="noopener noreferrer" className="github-link" aria-label="GitHub Profile">
           <svg className="small-icon">
             <use href="/icons.svg#github-icon"></use>
           </svg>

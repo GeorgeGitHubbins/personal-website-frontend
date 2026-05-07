@@ -20,9 +20,10 @@ const App: React.FC = () => {
     <Router>
       <ScrollToTop />
       <ReadingProgressBar />
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <div className="app">
         <Header />
-        <main className="content">
+        <main id="main-content" className="content">
           <Routes>
             <Route path="/" element={<About />} />
             <Route path="/experience" element={<Experience />} />
