@@ -840,6 +840,48 @@ svg.small-icon {
   background: #e74c3c;
 }
 
+.playground-container {
+  text-align: left;
+}
+
+.playground-experiment {
+  margin-top: 30px;
+  padding: 30px;
+  background: var(--section-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.principle-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px var(--card-shadow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.principle-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px var(--card-shadow-hover);
+  border-color: var(--accent-color);
+}
+
+.principle-card.active {
+  background: var(--accent-bg) !important;
+  border-color: var(--accent-color) !important;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.principle-detail {
+  border-left: 5px solid var(--accent-color);
+  background: var(--card-bg);
+  box-shadow: 0 10px 20px var(--card-shadow);
+}
+
 .dark-mode .badge-data {
   background: #2ecc71;
 }

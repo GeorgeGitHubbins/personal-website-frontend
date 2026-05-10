@@ -22,6 +22,7 @@ A React-based personal website for George Gittins, designed for continuous, auto
   - `Experience.tsx`: Professional work history.
   - `Education.tsx`: Academic degrees and minor focus.
   - `Projects.tsx`: "Selected Work" and "Technical Projects" (iFrame-based Google Drive links).
+  - `Playground.tsx`: Interactive technical experiments and demos.
 - **Global Components (`src/components/`):**
   - `Header.tsx`: Navigation menu.
   - `Footer.tsx`: Contact form, links, and "Last Updated" timestamp.

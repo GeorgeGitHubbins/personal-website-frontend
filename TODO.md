@@ -51,6 +51,6 @@
     - [ ] "AI Career Assistant (Enhanced)": Integrate a small, client-side LLM (like WebLLM) for more dynamic question answering.
     - [ ] "Interactive Career Timeline": A visual, draggable journey through your professional history (SVG or Canvas-based).
     - [x] "Live Site Stats": A dashboard showing GitHub activity (via free public API).
-    - [ ] "Project Playground": A dedicated area for hosting small, interactive web experiments or prototypes.
+    - [x] "Project Playground": A dedicated area for hosting small, interactive web experiments or prototypes. (Initial experiment: Systems Engineering Principles explorer).
     - [x] Accessibility Audit: Added Skip to Content link, ARIA labels, and improved semantic HTML.
     - [ ] Secure the frontend (CSP headers via CloudFront).
