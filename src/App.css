@@ -384,6 +384,27 @@ body {
   border-color: var(--accent-color);
 }
 
+.clear-search-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.clear-search-btn:hover {
+  color: var(--accent-color);
+}
+
 .career-assistant-subtitle {
   color: var(--text-muted);
   margin-bottom: 20px;

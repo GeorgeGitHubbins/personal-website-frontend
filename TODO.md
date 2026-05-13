@@ -38,7 +38,8 @@
     - [x] homepage FAQ has an incorrect bachelor's study. it should be industrial engineering and management. must be corrected
     - [x] Implement a vertical timeline for the Experience page.
     - [ ] Optimize image assets with WebP conversion and responsive source sets.
-    - [x] Add unit tests for core components (Header, Skills) using Vitest.
+    - [x] Add unit tests for core components (Header, Skills, CareerAssistant) using Vitest.
+    - [x] Improve CareerAssistant UX with a clear search button.
     - [ ] Add E2E tests for core navigation and form components.
 - [ ] **Content & Blog Ideas**
     - [ ] [Blog] "From Google Sites to React: Why I migrated my personal brand."

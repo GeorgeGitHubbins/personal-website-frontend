@@ -84,6 +84,15 @@ const CareerAssistant: React.FC = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
+          {searchTerm && (
+            <button 
+              className="clear-search-btn" 
+              onClick={() => setSearchTerm('')}
+              aria-label="Clear search"
+            >
+              &times;
+            </button>
+          )}
         </div>
       </div>
       <p className="career-assistant-subtitle">
