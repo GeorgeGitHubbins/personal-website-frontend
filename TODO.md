@@ -54,4 +54,6 @@
     - [x] "Live Site Stats": A dashboard showing GitHub activity (via free public API).
     - [x] "Project Playground": A dedicated area for hosting small, interactive web experiments or prototypes. (Initial experiment: Systems Engineering Principles explorer).
     - [x] Accessibility Audit: Added Skip to Content link, ARIA labels, and improved semantic HTML.
-    - [ ] Secure the frontend (CSP headers via CloudFront).
+    - [x] Secure the frontend (CSP headers via index.html meta tags).
+    - [ ] Implement SRI (Subresource Integrity) for any future external scripts.
+    - [ ] Optimize image assets with WebP conversion and responsive source sets.
