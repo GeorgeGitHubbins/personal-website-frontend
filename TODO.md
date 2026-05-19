@@ -23,6 +23,7 @@
 - [x] Add loading="lazy" and decoding="async" to all images for better performance.
 - [x] Add a "Contact" link to the header for improved navigation.
 - [x] Implement real build-time "Last Updated" timestamp in footer.
+- [x] Add search functionality to the Academic Work section for better discoverability.
 
 ## Current Goal: Refine & Improve
 - [x] Audit links in the footer and ensure they all work.
@@ -51,6 +52,8 @@
     - [x] "AI Career Assistant (Static)": A client-side, searchable "Knowledge Base" (using Fuse.js or pre-indexed FAQ) trained on your CV/projects to answer common recruiter questions without API costs.
     - [ ] "AI Career Assistant (Enhanced)": Integrate a small, client-side LLM (like WebLLM) for more dynamic question answering.
     - [ ] "Interactive Career Timeline": A visual, draggable journey through your professional history (SVG or Canvas-based).
+    - [ ] Implement a "Reading Time" estimate for longer project descriptions or future blog posts.
+    - [ ] Add a "Project Search" to the technical projects section as the portfolio grows.
     - [x] "Live Site Stats": A dashboard showing GitHub activity (via free public API).
     - [x] "Project Playground": A dedicated area for hosting small, interactive web experiments or prototypes. (Initial experiment: Systems Engineering Principles explorer).
     - [x] Accessibility Audit: Added Skip to Content link, ARIA labels, and improved semantic HTML.

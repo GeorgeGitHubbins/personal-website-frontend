@@ -69,11 +69,16 @@ const categories = ['All', 'Thesis', 'Report', 'Presentation', 'Simulation'];
 
 const Projects: React.FC = () => {
   const [filter, setFilter] = useState<string>('All');
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
   const filteredWorks = useMemo(() => {
-    if (filter === 'All') return selectedWorks;
-    return selectedWorks.filter(work => work.category === filter);
-  }, [filter]);
+    return selectedWorks.filter(work => {
+      const matchesFilter = filter === 'All' || work.category === filter;
+      const matchesSearch = work.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                            work.description.toLowerCase().includes(searchQuery.toLowerCase());
+      return matchesFilter && matchesSearch;
+    });
+  }, [filter, searchQuery]);
 
   return (
     <>
@@ -145,48 +150,83 @@ const Projects: React.FC = () => {
       </section>
 
       <section className="section">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap', gap: '10px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap', gap: '20px' }}>
           <h2 style={{ margin: 0 }}>Selected Academic Work:</h2>
-          <div className="filter-container" style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-            {categories.map(cat => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`filter-btn ${filter === cat ? 'active' : ''}`}
-                aria-label={`Filter by ${cat}`}
-                aria-pressed={filter === cat}
-              >
-                {cat}
-              </button>
-            ))}
+          
+          <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap', alignItems: 'center' }}>
+            <div className="search-container" style={{ position: 'relative' }}>
+              <input
+                type="text"
+                placeholder="Search work..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="search-input"
+                style={{
+                  padding: '8px 12px',
+                  borderRadius: '6px',
+                  border: '1px solid var(--border-color)',
+                  background: 'var(--card-bg)',
+                  color: 'var(--text-color)',
+                  fontSize: '0.9rem',
+                  minWidth: '200px'
+                }}
+              />
+            </div>
+
+            <div className="filter-container" style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+              {categories.map(cat => (
+                <button
+                  key={cat}
+                  onClick={() => setFilter(cat)}
+                  className={`filter-btn ${filter === cat ? 'active' : ''}`}
+                  aria-label={`Filter by ${cat}`}
+                  aria-pressed={filter === cat}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
         
-        <div className="selected-works-grid">
-          {filteredWorks.map((work, index) => (
-            <div key={index} className="card work-card">
-              <div className="card-details">
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                  <h3>{work.title}</h3>
-                  <span className={`badge badge-${work.category.toLowerCase()}`} style={{ fontSize: '0.7rem' }}>
-                    {work.category}
-                  </span>
+        {filteredWorks.length > 0 ? (
+          <div className="selected-works-grid">
+            {filteredWorks.map((work, index) => (
+              <div key={index} className="card work-card">
+                <div className="card-details">
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                    <h3>{work.title}</h3>
+                    <span className={`badge badge-${work.category.toLowerCase()}`} style={{ fontSize: '0.7rem' }}>
+                      {work.category}
+                    </span>
+                  </div>
+                  <p className="description">{work.description}</p>
                 </div>
-                <p className="description">{work.description}</p>
+                <div className="pdf-container">
+                  <iframe 
+                    src={work.url} 
+                    width="100%" 
+                    height="400px" 
+                    title={work.title}
+                    allow="autoplay"
+                    loading="lazy"
+                  ></iframe>
+                </div>
               </div>
-              <div className="pdf-container">
-                <iframe 
-                  src={work.url} 
-                  width="100%" 
-                  height="400px" 
-                  title={work.title}
-                  allow="autoplay"
-                  loading="lazy"
-                ></iframe>
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div style={{ textAlign: 'center', padding: '40px', background: 'var(--card-bg)', borderRadius: '12px', border: '1px dashed var(--border-color)' }}>
+            <p style={{ color: 'var(--text-secondary)' }}>No academic work found matching "{searchQuery}"</p>
+            <button 
+              onClick={() => {setFilter('All'); setSearchQuery('');}}
+              className="filter-btn"
+              style={{ marginTop: '10px' }}
+            >
+              Reset Filters
+            </button>
+          </div>
+        )}
       </section>
     </>
   );
