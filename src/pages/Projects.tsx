@@ -1,6 +1,43 @@
 import React, { useState, useMemo } from 'react';
+import { calculateReadingTime } from '../utils/readingTime';
 import ngoLinkLogo from '../assets/NGOLink_logo.png';
 import globalShapersLogo from '../assets/GlobalShapersTheHague_logo.png';
+
+interface TechnicalProject {
+  title: string;
+  company?: string;
+  logo?: string;
+  date: string;
+  description: string;
+  tags: string[];
+  link?: string;
+  isFuture?: boolean;
+}
+
+const technicalProjects: TechnicalProject[] = [
+  {
+    title: "NGO Link Infrastructure",
+    company: "NGO Link",
+    logo: ngoLinkLogo,
+    date: "July 2025 - Present, The Hague",
+    description: "Leading the development of the NGO Link platform, connecting NGOs with resources and volunteers. Building the core infrastructure and features to scale the project's impact.",
+    tags: ["React", "TypeScript", "Architecture"],
+    link: "https://www.ngo-link.org"
+  },
+  {
+    title: "Personal Website (Autonomous Evolution)",
+    date: "Continuous Development",
+    description: "A React-based personal portfolio designed for continuous, autonomous evolution via Gemini CLI. The project explores the intersection of AI-driven development and personal branding.",
+    tags: ["React", "Gemini CLI", "CI/CD"]
+  },
+  {
+    title: "Future Technical Ventures",
+    date: "Coming Soon",
+    description: "New projects focusing on data visualization, AI integration, and systems engineering are currently in the planning phase.",
+    tags: [],
+    isFuture: true
+  }
+];
 
 const selectedWorks = [
   {
@@ -70,6 +107,16 @@ const categories = ['All', 'Thesis', 'Report', 'Presentation', 'Simulation'];
 const Projects: React.FC = () => {
   const [filter, setFilter] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [techSearchQuery, setTechSearchQuery] = useState<string>('');
+
+  const filteredTechProjects = useMemo(() => {
+    return technicalProjects.filter(project => 
+      project.title.toLowerCase().includes(techSearchQuery.toLowerCase()) || 
+      project.description.toLowerCase().includes(techSearchQuery.toLowerCase()) ||
+      (project.company && project.company.toLowerCase().includes(techSearchQuery.toLowerCase())) ||
+      project.tags.some(tag => tag.toLowerCase().includes(techSearchQuery.toLowerCase()))
+    );
+  }, [techSearchQuery]);
 
   const filteredWorks = useMemo(() => {
     return selectedWorks.filter(work => {
@@ -97,56 +144,77 @@ const Projects: React.FC = () => {
       </section>
 
       <section id="tech-projects" className="section timeline-container">
-        <h2>Technical Projects:</h2>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap', gap: '20px' }}>
+          <h2 style={{ margin: 0 }}>Technical Projects:</h2>
+          <input
+            type="text"
+            placeholder="Search projects..."
+            value={techSearchQuery}
+            onChange={(e) => setTechSearchQuery(e.target.value)}
+            className="search-input"
+            style={{
+              padding: '8px 12px',
+              borderRadius: '6px',
+              border: '1px solid var(--border-color)',
+              background: 'var(--card-bg)',
+              color: 'var(--text-color)',
+              fontSize: '0.9rem',
+              minWidth: '200px'
+            }}
+          />
+        </div>
         
-        <div className="card experience-card">
-          <a href="https://www.ngo-link.org" target="_blank" rel="noopener noreferrer">
-            <img src={ngoLinkLogo} alt="NGO Link" className="card-logo" loading="lazy" decoding="async" />
-          </a>
-          <div className="card-details">
-            <h3>NGO Link Infrastructure</h3>
-            <p className="date">July 2025 - Present, The Hague</p>
-            <p className="description">
-              Leading the development of the NGO Link platform, connecting NGOs with resources and volunteers. Building the core infrastructure and features to scale the project's impact.
-            </p>
-            <div className="quick-facts">
-              <span className="badge">React</span>
-              <span className="badge">TypeScript</span>
-              <span className="badge">Architecture</span>
+        {filteredTechProjects.length > 0 ? (
+          filteredTechProjects.map((project, index) => (
+            <div 
+              key={index} 
+              className="card experience-card" 
+              style={project.isFuture ? { opacity: 0.7 } : {}}
+            >
+              {project.logo ? (
+                project.link ? (
+                  <a href={project.link} target="_blank" rel="noopener noreferrer">
+                    <img src={project.logo} alt={project.title} className="card-logo" loading="lazy" decoding="async" />
+                  </a>
+                ) : (
+                  <img src={project.logo} alt={project.title} className="card-logo" loading="lazy" decoding="async" />
+                )
+              ) : (
+                <div className={`card-logo placeholder-logo ${project.isFuture ? 'muted' : ''}`}>
+                  <span>{project.isFuture ? '?' : 'GG'}</span>
+                </div>
+              )}
+              <div className="card-details">
+                <h3>{project.title}</h3>
+                <p className="date">{project.date}</p>
+                <p className="description">
+                  {project.description}
+                  <span className="reading-time" style={{ display: 'block', fontSize: '0.75rem', opacity: 0.6, marginTop: '5px' }}>
+                    {calculateReadingTime(project.description)} min read
+                  </span>
+                </p>
+                {project.tags.length > 0 && (
+                  <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                    {project.tags.map(tag => (
+                      <span key={tag} className="badge">{tag}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
+          ))
+        ) : (
+          <div style={{ textAlign: 'center', padding: '20px', background: 'var(--card-bg)', borderRadius: '12px', border: '1px dashed var(--border-color)' }}>
+            <p style={{ color: 'var(--text-secondary)' }}>No projects found matching "{techSearchQuery}"</p>
+            <button 
+              onClick={() => setTechSearchQuery('')}
+              className="filter-btn"
+              style={{ marginTop: '10px' }}
+            >
+              Clear Search
+            </button>
           </div>
-        </div>
-
-        <div className="card experience-card">
-          <div className="card-logo placeholder-logo">
-            <span>GG</span>
-          </div>
-          <div className="card-details">
-            <h3>Personal Website (Autonomous Evolution)</h3>
-            <p className="date">Continuous Development</p>
-            <p className="description">
-              A React-based personal portfolio designed for continuous, autonomous evolution via Gemini CLI. The project explores the intersection of AI-driven development and personal branding.
-            </p>
-            <div className="quick-facts" style={{ marginTop: '10px', display: 'flex', gap: '10px' }}>
-              <span className="badge">React</span>
-              <span className="badge">Gemini CLI</span>
-              <span className="badge">CI/CD</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="card experience-card" style={{ opacity: 0.7 }}>
-          <div className="card-logo placeholder-logo muted">
-            <span>?</span>
-          </div>
-          <div className="card-details">
-            <h3>Future Technical Ventures</h3>
-            <p className="date">Coming Soon</p>
-            <p className="description">
-              New projects focusing on data visualization, AI integration, and systems engineering are currently in the planning phase.
-            </p>
-          </div>
-        </div>
+        )}
       </section>
 
       <section className="section">
@@ -195,12 +263,17 @@ const Projects: React.FC = () => {
               <div key={index} className="card work-card">
                 <div className="card-details">
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                    <h3>{work.title}</h3>
+                    <div style={{ flex: 1, paddingRight: '10px' }}>
+                      <h3>{work.title}</h3>
+                      <p style={{ fontSize: '0.75rem', opacity: 0.6, marginTop: '2px' }}>
+                        Overview: {calculateReadingTime(work.description)} min read
+                      </p>
+                    </div>
                     <span className={`badge badge-${work.category.toLowerCase()}`} style={{ fontSize: '0.7rem' }}>
                       {work.category}
                     </span>
                   </div>
-                  <p className="description">{work.description}</p>
+                  <p className="description" style={{ marginTop: '10px' }}>{work.description}</p>
                 </div>
                 <div className="pdf-container">
                   <iframe 
