@@ -24,6 +24,7 @@
 - [x] Add a "Contact" link to the header for improved navigation.
 - [x] Implement real build-time "Last Updated" timestamp in footer.
 - [x] Add search functionality to the Academic Work section for better discoverability.
+- [x] Implement a filter for the Work Experience section by category (Data, Engineering, Leadership, etc.).
 
 ## Current Goal: Refine & Improve
 - [x] Audit links in the footer and ensure they all work.
@@ -39,7 +40,7 @@
     - [x] homepage FAQ has an incorrect bachelor's study. it should be industrial engineering and management. must be corrected
     - [x] Implement a vertical timeline for the Experience page.
     - [ ] Optimize image assets with WebP conversion and responsive source sets.
-    - [x] Add unit tests for core components (Header, Skills, CareerAssistant) using Vitest.
+    - [x] Add unit tests for core components (Header, Skills, CareerAssistant, Experience) using Vitest.
     - [x] Improve CareerAssistant UX with a clear search button.
     - [ ] Add E2E tests for core navigation and form components.
 - [ ] **Content & Blog Ideas**

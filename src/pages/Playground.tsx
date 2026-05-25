@@ -31,6 +31,11 @@ const principles: Principle[] = [
     title: "Equifinality",
     definition: "The principle that a system can reach the same final state from different initial conditions and by different paths.",
     example: "There are multiple ways to achieve a successful software launch, regardless of the initial choice of programming language."
+  },
+  {
+    title: "Leverage Points",
+    definition: "Places within a complex system where a small shift in one thing can produce big changes in everything.",
+    example: "Changing the goal of a system (e.g., from 'maximizing profit' to 'maximizing sustainability') is a high-leverage point that reshapes all subordinate processes."
   }
 ];
 
