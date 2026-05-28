@@ -25,10 +25,13 @@
 - [x] Implement real build-time "Last Updated" timestamp in footer.
 - [x] Add search functionality to the Academic Work section for better discoverability.
 - [x] Implement a filter for the Work Experience section by category (Data, Engineering, Leadership, etc.).
+- [x] Implement category filters for the Technical Projects section to match the Academic Work section.
 
 ## Current Goal: Refine & Improve
 - [x] Audit links in the footer and ensure they all work.
 - [x] Enhance GithubStats with last commit message and repository link.
+- [ ] Implement SVG-based Skills visualization (e.g., a simple bar or spider chart).
+- [ ] Add social sharing buttons for individual projects and academic work.
 
 ## Future Improvements (Autonomous Selection)
 - [ ] **UI/UX & Core Features**

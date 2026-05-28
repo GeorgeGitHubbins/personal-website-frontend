@@ -12,6 +12,7 @@ interface TechnicalProject {
   tags: string[];
   link?: string;
   isFuture?: boolean;
+  category: 'Infrastructure' | 'AI & Data' | 'System Design' | 'Other';
 }
 
 const technicalProjects: TechnicalProject[] = [
@@ -22,20 +23,23 @@ const technicalProjects: TechnicalProject[] = [
     date: "July 2025 - Present, The Hague",
     description: "Leading the development of the NGO Link platform, connecting NGOs with resources and volunteers. Building the core infrastructure and features to scale the project's impact.",
     tags: ["React", "TypeScript", "Architecture"],
-    link: "https://www.ngo-link.org"
+    link: "https://www.ngo-link.org",
+    category: "Infrastructure"
   },
   {
     title: "Personal Website (Autonomous Evolution)",
     date: "Continuous Development",
     description: "A React-based personal portfolio designed for continuous, autonomous evolution via Gemini CLI. The project explores the intersection of AI-driven development and personal branding.",
-    tags: ["React", "Gemini CLI", "CI/CD"]
+    tags: ["React", "Gemini CLI", "CI/CD"],
+    category: "AI & Data"
   },
   {
     title: "Future Technical Ventures",
     date: "Coming Soon",
     description: "New projects focusing on data visualization, AI integration, and systems engineering are currently in the planning phase.",
     tags: [],
-    isFuture: true
+    isFuture: true,
+    category: "Other"
   }
 ];
 
@@ -102,21 +106,26 @@ const selectedWorks = [
   }
 ];
 
-const categories = ['All', 'Thesis', 'Report', 'Presentation', 'Simulation'];
+const academicCategories = ['All', 'Thesis', 'Report', 'Presentation', 'Simulation'];
+const techCategories = ['All', 'Infrastructure', 'AI & Data', 'System Design', 'Other'];
 
 const Projects: React.FC = () => {
   const [filter, setFilter] = useState<string>('All');
+  const [techFilter, setTechFilter] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [techSearchQuery, setTechSearchQuery] = useState<string>('');
 
   const filteredTechProjects = useMemo(() => {
-    return technicalProjects.filter(project => 
-      project.title.toLowerCase().includes(techSearchQuery.toLowerCase()) || 
-      project.description.toLowerCase().includes(techSearchQuery.toLowerCase()) ||
-      (project.company && project.company.toLowerCase().includes(techSearchQuery.toLowerCase())) ||
-      project.tags.some(tag => tag.toLowerCase().includes(techSearchQuery.toLowerCase()))
-    );
-  }, [techSearchQuery]);
+    return technicalProjects.filter(project => {
+      const matchesFilter = techFilter === 'All' || project.category === techFilter;
+      const matchesSearch = 
+        project.title.toLowerCase().includes(techSearchQuery.toLowerCase()) || 
+        project.description.toLowerCase().includes(techSearchQuery.toLowerCase()) ||
+        (project.company && project.company.toLowerCase().includes(techSearchQuery.toLowerCase())) ||
+        project.tags.some(tag => tag.toLowerCase().includes(techSearchQuery.toLowerCase()));
+      return matchesFilter && matchesSearch;
+    });
+  }, [techSearchQuery, techFilter]);
 
   const filteredWorks = useMemo(() => {
     return selectedWorks.filter(work => {
@@ -146,22 +155,39 @@ const Projects: React.FC = () => {
       <section id="tech-projects" className="section timeline-container">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap', gap: '20px' }}>
           <h2 style={{ margin: 0 }}>Technical Projects:</h2>
-          <input
-            type="text"
-            placeholder="Search projects..."
-            value={techSearchQuery}
-            onChange={(e) => setTechSearchQuery(e.target.value)}
-            className="search-input"
-            style={{
-              padding: '8px 12px',
-              borderRadius: '6px',
-              border: '1px solid var(--border-color)',
-              background: 'var(--card-bg)',
-              color: 'var(--text-color)',
-              fontSize: '0.9rem',
-              minWidth: '200px'
-            }}
-          />
+          
+          <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap', alignItems: 'center' }}>
+            <input
+              type="text"
+              placeholder="Search projects..."
+              value={techSearchQuery}
+              onChange={(e) => setTechSearchQuery(e.target.value)}
+              className="search-input"
+              style={{
+                padding: '8px 12px',
+                borderRadius: '6px',
+                border: '1px solid var(--border-color)',
+                background: 'var(--card-bg)',
+                color: 'var(--text-color)',
+                fontSize: '0.9rem',
+                minWidth: '200px'
+              }}
+            />
+
+            <div className="filter-container" style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+              {techCategories.map(cat => (
+                <button
+                  key={cat}
+                  onClick={() => setTechFilter(cat)}
+                  className={`filter-btn ${techFilter === cat ? 'active' : ''}`}
+                  aria-label={`Filter by ${cat}`}
+                  aria-pressed={techFilter === cat}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
         
         {filteredTechProjects.length > 0 ? (
@@ -185,7 +211,14 @@ const Projects: React.FC = () => {
                 </div>
               )}
               <div className="card-details">
-                <h3>{project.title}</h3>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                  <h3 style={{ margin: 0 }}>{project.title}</h3>
+                  {!project.isFuture && (
+                    <span className={`badge badge-${project.category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`} style={{ fontSize: '0.7rem' }}>
+                      {project.category}
+                    </span>
+                  )}
+                </div>
                 <p className="date">{project.date}</p>
                 <p className="description">
                   {project.description}
@@ -205,13 +238,13 @@ const Projects: React.FC = () => {
           ))
         ) : (
           <div style={{ textAlign: 'center', padding: '20px', background: 'var(--card-bg)', borderRadius: '12px', border: '1px dashed var(--border-color)' }}>
-            <p style={{ color: 'var(--text-secondary)' }}>No projects found matching "{techSearchQuery}"</p>
+            <p style={{ color: 'var(--text-secondary)' }}>No projects found matching your criteria.</p>
             <button 
-              onClick={() => setTechSearchQuery('')}
+              onClick={() => {setTechFilter('All'); setTechSearchQuery('');}}
               className="filter-btn"
               style={{ marginTop: '10px' }}
             >
-              Clear Search
+              Reset Filters
             </button>
           </div>
         )}
@@ -242,7 +275,7 @@ const Projects: React.FC = () => {
             </div>
 
             <div className="filter-container" style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-              {categories.map(cat => (
+              {academicCategories.map(cat => (
                 <button
                   key={cat}
                   onClick={() => setFilter(cat)}
