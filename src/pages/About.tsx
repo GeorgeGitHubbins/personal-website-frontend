@@ -3,11 +3,13 @@ import headshotImg from '../assets/George_profile.png';
 import Skills from '../components/Skills';
 import GithubStats from '../components/GithubStats';
 import CareerAssistant from '../components/CareerAssistant';
+import CanvasVisual from '../components/CanvasVisual';
 
 const About: React.FC = () => {
   return (
     <>
       <section id="about" className="section hero-section">
+        <CanvasVisual />
         <div className="hero-content">
           <img src={headshotImg} alt="George Gittins" className="profile-img" loading="lazy" decoding="async" />
           <div className="hero-text">
