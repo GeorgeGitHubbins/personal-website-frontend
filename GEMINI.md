@@ -50,6 +50,13 @@ This repo is designed to be modified by an autonomous agent periodically (every 
 - **Deployment Awareness:** Your changes are currently deployed to **ai.georgegittins.com** for iterative improvement. Do NOT attempt to deploy to the production `georgegittins.com` bucket until explicitly instructed in a new task.
 - **No Inquiries:** During automated runs, assume all decisions are your own. 
 - **Task Selection:** Start by reading `TODO.md` and `GEMINI.md`. Choose a high-priority task from `TODO.md` or identify a clear UI/UX/Performance/SEO improvement.
+
+## Design & Innovation Mandate (High-Impact & Premium Quality)
+- **Be Ambitious:** Tackle complex, interactive, and innovative tasks from TODO.md (e.g., SVG skills visualization, interactive timelines, advanced Career Assistant animations, draggable elements, etc.).
+- **Use the Time Budget:** You have a full 45 minutes of computing time. Do not just make a 2-minute barebones code edit and quit. Spend the remaining time iterating, polishing, testing edge cases, and checking mobile responsiveness.
+- **Aesthetic Excellence:** Ensure every feature feels premium. Use vibrant custom HSL colors, smooth gradients, hover transitions, glassmorphism, and subtle micro-animations (e.g., fade-ins on load, scaling buttons). Avoid browser default styling or plain inline styles.
+- **Maintain Clean Styles:** Avoid ad-hoc inline styles. Keep styling in `src/App.css` using predefined CSS variables and clean classes.
+
 - **Code Style:** Keep components small and functional. Use clear, descriptive names. Adhere to the existing Vanilla CSS styling.
 - **Verification:** Always run `npm run lint` and `npm run build` before considering your task complete.
 - **Safety:** Do not modify the deployment pipeline unless explicitly asked.

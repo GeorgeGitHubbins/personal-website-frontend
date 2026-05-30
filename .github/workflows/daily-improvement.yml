@@ -45,7 +45,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: 'eu-central-1'
         run: |
-          gemini --skip-trust --prompt "Follow the 'Gemini CLI: Autonomous Mode Instructions' in GEMINI.md. Pick ONE logical task from TODO.md or identify a small improvement. Implement it, verify with 'npm run build', and commit the change with a clear message. Spend no more than 45 minutes. Do not ask for user input." --approval-mode yolo
+          gemini --skip-trust --prompt "Follow the 'Gemini CLI: Autonomous Mode Instructions' in GEMINI.md. We want high-quality, innovative, and visually premium improvements. You have a full 45 minutes—do not rush or settle for the simplest option. If you complete a task quickly, use the remaining time to polish the UI/UX, add fluid animations, improve responsiveness, and refine styles using CSS variables in App.css. Do not ask for user input." --approval-mode yolo
 
       - name: Push Changes
         run: |
