@@ -2,7 +2,7 @@ name: Periodic Website Improvement
 
 on:
   schedule:
-    - cron: '0 4 */3 * *' # Runs every 3 days at 4:00 AM UTC (Off-peak)
+    - cron: '37 5 */3 * *' # Runs every 3 days at 5:37 AM UTC (Off-peak to avoid cron traffic spikes)
   workflow_dispatch: # Allows you to trigger it manually for testing
 
 jobs:
@@ -46,6 +46,15 @@ jobs:
           AWS_DEFAULT_REGION: 'eu-central-1'
         run: |
           gemini --skip-trust --prompt "Follow the 'Gemini CLI: Autonomous Mode Instructions' in GEMINI.md. We want high-quality, innovative, and visually premium improvements. You have a full 45 minutes—do not rush or settle for the simplest option. If you complete a task quickly, use the remaining time to polish the UI/UX, add fluid animations, improve responsiveness, and refine styles using CSS variables in App.css. Do not ask for user input." --approval-mode yolo
+
+      - name: Commit Changes (Fallback)
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git add .
+            git commit -m "chore: autonomous periodic improvement [skip ci]"
+          else
+            echo "No changes to commit"
+          fi
 
       - name: Push Changes
         run: |
