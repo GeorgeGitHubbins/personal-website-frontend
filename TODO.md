@@ -30,7 +30,7 @@
 ## Current Goal: Refine & Improve
 - [x] Audit links in the footer and ensure they all work.
 - [x] Enhance GithubStats with last commit message and repository link.
-- [ ] Implement SVG-based Skills visualization (e.g., a simple bar or spider chart).
+- [x] Implement SVG-based Skills visualization (e.g., a simple bar or spider chart).
 - [ ] Add social sharing buttons for individual projects and academic work.
 
 ## Future Improvements (Autonomous Selection)
