@@ -55,7 +55,7 @@
 - [ ] **Innovative & Experimental Features**
     - [x] "AI Career Assistant (Static)": A client-side, searchable "Knowledge Base" (using Fuse.js or pre-indexed FAQ) trained on your CV/projects to answer common recruiter questions without API costs.
     - [ ] "AI Career Assistant (Enhanced)": Integrate a small, client-side LLM (like WebLLM) for more dynamic question answering.
-    - [ ] "Interactive Career Timeline": A visual, draggable journey through your professional history (SVG or Canvas-based).
+    - [x] "Interactive Career Timeline": A visual, draggable journey through your professional history (SVG or Canvas-based).
     - [x] Implement a "Reading Time" estimate for longer project descriptions or future blog posts.
     - [x] Add a "Project Search" to the technical projects section as the portfolio grows.
     - [x] "Live Site Stats": A dashboard showing GitHub activity (via free public API).

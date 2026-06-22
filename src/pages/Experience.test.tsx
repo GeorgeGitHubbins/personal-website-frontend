@@ -21,9 +21,9 @@ const renderWithRouter = (ui: React.ReactElement) => {
 describe('Experience Page', () => {
   it('renders all experience items initially', () => {
     renderWithRouter(<Experience />);
-    expect(screen.getByText(/SIA Partners/i)).toBeInTheDocument();
-    expect(screen.getByText(/Huracán/i)).toBeInTheDocument();
-    expect(screen.getByText(/InstantFlows/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/SIA Partners/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Huracán/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/InstantFlows/i).length).toBeGreaterThan(0);
   });
 
   it('filters items based on category selection', () => {
@@ -34,10 +34,14 @@ describe('Experience Page', () => {
     fireEvent.click(filterBtn);
     
     // SIA Partners should still be there (it's in Data & Analytics)
-    expect(screen.getByText(/SIA Partners/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/SIA Partners/i).length).toBeGreaterThan(0);
     
-    // Boomerang Beachclub should be gone (it's in Operations & Logistics)
-    expect(screen.queryByText(/Boomerang Beachclub/i)).not.toBeInTheDocument();
+    // Boomerang Beachclub should be gone from the detailed experience list
+    const cards = document.querySelectorAll('.experience-card');
+    const hasBoomerang = Array.from(cards).some(card => 
+      card.textContent?.includes('Boomerang Beachclub')
+    );
+    expect(hasBoomerang).toBe(false);
   });
 
   it('filters items based on search query', () => {
@@ -46,7 +50,13 @@ describe('Experience Page', () => {
     const searchInput = screen.getByPlaceholderText(/Search roles\.\.\./i);
     fireEvent.change(searchInput, { target: { value: 'SIA' } });
     
-    expect(screen.getByText(/SIA Partners/i)).toBeInTheDocument();
-    expect(screen.queryByText(/Huracán/i)).not.toBeInTheDocument();
+    expect(screen.getAllByText(/SIA Partners/i).length).toBeGreaterThan(0);
+    
+    // Huracán should be gone from the detailed experience list
+    const cards = document.querySelectorAll('.experience-card');
+    const hasHuracan = Array.from(cards).some(card => 
+      card.textContent?.includes('Huracán')
+    );
+    expect(hasHuracan).toBe(false);
   });
 });

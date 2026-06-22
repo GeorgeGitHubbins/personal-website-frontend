@@ -1228,10 +1228,133 @@ svg.small-icon {
   box-shadow: 0 10px 20px var(--card-shadow);
 }
 
-.dark-mode .badge-data {
-  background: #2ecc71;
+/* ==========================================
+   Interactive Career Timeline Styles
+   ========================================== */
+.timeline-section-container {
+  position: relative;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
-.dark-mode .badge-leadership {
-  background: #f39c12;
+.timeline-header-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.timeline-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.timeline-nav-buttons,
+.timeline-zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--pdf-bg);
+  padding: 4px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.timeline-ctrl-btn {
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.timeline-ctrl-btn:hover {
+  background: var(--accent-color);
+  color: #fff;
+  border-color: var(--accent-color);
+}
+
+.timeline-ctrl-btn.zoom-btn {
+  padding: 6px 10px;
+  font-size: 0.85rem;
+}
+
+.timeline-viewport {
+  position: relative;
+  scrollbar-width: thin;
+}
+
+/* Custom scrollbar styles for timeline viewport */
+.timeline-viewport::-webkit-scrollbar {
+  height: 6px;
+}
+
+.timeline-viewport::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.timeline-viewport::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 10px;
+}
+
+.timeline-viewport::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent-color);
+}
+
+.timeline-html-card {
+  user-select: none;
+}
+
+.timeline-html-card:hover {
+  transform: translateY(-2px);
+}
+
+.timeline-html-card.selected {
+  transform: scale(1.03);
+}
+
+.timeline-detail-pane {
+  position: relative;
+  transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Animations and transitions for nodes and lines */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glow highlight for targeted experience card on scroll jump */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba(52, 152, 219, 0.4);
+    border-color: var(--accent-color);
+  }
+  50% {
+    box-shadow: 0 0 20px 4px rgba(52, 152, 219, 0.6);
+    border-color: var(--accent-color);
+    background: var(--accent-border);
+  }
+  100% {
+    box-shadow: 0 0 0 0px rgba(52, 152, 219, 0);
+  }
+}
+
+.glow-highlight {
+  animation: glowPulse 2.2s ease-out;
 }
