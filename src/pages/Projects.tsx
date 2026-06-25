@@ -109,6 +109,66 @@ const selectedWorks = [
 const academicCategories = ['All', 'Thesis', 'Report', 'Presentation', 'Simulation'];
 const techCategories = ['All', 'Infrastructure', 'AI & Data', 'System Design', 'Other'];
 
+interface ShareButtonsProps {
+  title: string;
+  shareUrl: string;
+}
+
+const ShareButtons: React.FC<ShareButtonsProps> = ({ title, shareUrl }) => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    }).catch(() => {});
+  };
+
+  const encodedTitle = encodeURIComponent(`Check out George Gittins' project: ${title}`);
+  const encodedUrl = encodeURIComponent(shareUrl);
+
+  const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+  const twitterUrl = `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`;
+
+  return (
+    <div className="share-btn-group">
+      <span className="share-label">Share:</span>
+      <a 
+        href={linkedinUrl} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="share-btn share-linkedin"
+        title="Share on LinkedIn"
+        aria-label={`Share ${title} on LinkedIn`}
+      >
+        <svg viewBox="0 0 24 24" className="share-icon"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+      </a>
+      <a 
+        href={twitterUrl} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="share-btn share-twitter"
+        title="Share on Twitter/X"
+        aria-label={`Share ${title} on Twitter`}
+      >
+        <svg viewBox="0 0 24 24" className="share-icon"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <button 
+        onClick={handleCopy} 
+        className="share-btn share-copy"
+        title="Copy Link"
+        aria-label={`Copy link for ${title}`}
+      >
+        {copied ? (
+          <span className="copied-tooltip">Copied!</span>
+        ) : (
+          <svg viewBox="0 0 24 24" className="share-icon"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        )}
+      </button>
+    </div>
+  );
+};
+
 const Projects: React.FC = () => {
   const [filter, setFilter] = useState<string>('All');
   const [techFilter, setTechFilter] = useState<string>('All');
@@ -233,6 +293,12 @@ const Projects: React.FC = () => {
                     ))}
                   </div>
                 )}
+                {!project.isFuture && (
+                  <ShareButtons 
+                    title={project.title} 
+                    shareUrl={project.link || "https://ai.georgegittins.com/projects"} 
+                  />
+                )}
               </div>
             </div>
           ))
@@ -307,6 +373,7 @@ const Projects: React.FC = () => {
                     </span>
                   </div>
                   <p className="description" style={{ marginTop: '10px' }}>{work.description}</p>
+                  <ShareButtons title={work.title} shareUrl={work.url} />
                 </div>
                 <div className="pdf-container">
                   <iframe 

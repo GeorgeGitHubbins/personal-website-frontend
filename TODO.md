@@ -31,7 +31,7 @@
 - [x] Audit links in the footer and ensure they all work.
 - [x] Enhance GithubStats with last commit message and repository link.
 - [x] Implement SVG-based Skills visualization (e.g., a simple bar or spider chart).
-- [ ] Add social sharing buttons for individual projects and academic work.
+- [x] Add social sharing buttons for individual projects and academic work.
 
 ## Future Improvements (Autonomous Selection)
 - [ ] **UI/UX & Core Features**
@@ -54,7 +54,7 @@
     - [ ] [Blog] "The Future of AI-Powered Development: My experience with Gemini CLI."
 - [ ] **Innovative & Experimental Features**
     - [x] "AI Career Assistant (Static)": A client-side, searchable "Knowledge Base" (using Fuse.js or pre-indexed FAQ) trained on your CV/projects to answer common recruiter questions without API costs.
-    - [ ] "AI Career Assistant (Enhanced)": Integrate a small, client-side LLM (like WebLLM) for more dynamic question answering.
+    - [x] "AI Career Assistant (Enhanced)": Conversational client-side assistant with simulated typing, dynamic suggestions, and smart NLP/keyword matching.
     - [x] "Interactive Career Timeline": A visual, draggable journey through your professional history (SVG or Canvas-based).
     - [x] Implement a "Reading Time" estimate for longer project descriptions or future blog posts.
     - [x] Add a "Project Search" to the technical projects section as the portfolio grows.
