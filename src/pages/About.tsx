@@ -1,5 +1,5 @@
 import React from 'react';
-import headshotImg from '../assets/George_profile.png';
+import headshotImg from '../assets/George_profile.webp';
 import Skills from '../components/Skills';
 import GithubStats from '../components/GithubStats';
 import CareerAssistant from '../components/CareerAssistant';

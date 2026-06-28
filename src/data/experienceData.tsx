@@ -1,13 +1,13 @@
 import React from 'react';
-import siaLogo from '../assets/SIA_logo.png';
-import flinkLogo from '../assets/Flink_logo.png';
-import takeawayLogo from '../assets/Takeaway_logo.png';
-import hagaLogo from '../assets/HagaZiekenhuis_logo.png';
-import boomerangLogo from '../assets/Boomerang_logo.png';
-import jorLogo from '../assets/JOR_logo.png';
-import huracanLogo from '../assets/Huracan_logo.png';
-import instantFlowsLogo from '../assets/Instantflows_logo.png';
-import aicsLogo from '../assets/Aics_logo.png';
+import siaLogo from '../assets/SIA_logo.webp';
+import flinkLogo from '../assets/Flink_logo.webp';
+import takeawayLogo from '../assets/Takeaway_logo.webp';
+import hagaLogo from '../assets/HagaZiekenhuis_logo.webp';
+import boomerangLogo from '../assets/Boomerang_logo.webp';
+import jorLogo from '../assets/JOR_logo.webp';
+import huracanLogo from '../assets/Huracan_logo.webp';
+import instantFlowsLogo from '../assets/Instantflows_logo.webp';
+import aicsLogo from '../assets/Aics_logo.webp';
 
 export interface ExperienceItem {
   company: string;

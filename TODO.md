@@ -42,7 +42,7 @@
     - [x] Implement a reading progress bar for visual scroll feedback.
     - [x] homepage FAQ has an incorrect bachelor's study. it should be industrial engineering and management. must be corrected
     - [x] Implement a vertical timeline for the Experience page.
-    - [ ] Optimize image assets with WebP conversion and responsive source sets.
+    - [x] Optimize image assets with WebP conversion and responsive source sets.
     - [x] Add unit tests for core components (Header, Skills, CareerAssistant, Experience) using Vitest.
     - [x] Improve CareerAssistant UX with a clear search button.
     - [ ] Add E2E tests for core navigation and form components.
@@ -60,7 +60,8 @@
     - [x] Add a "Project Search" to the technical projects section as the portfolio grows.
     - [x] "Live Site Stats": A dashboard showing GitHub activity (via free public API).
     - [x] "Project Playground": A dedicated area for hosting small, interactive web experiments or prototypes. (Initial experiment: Systems Engineering Principles explorer).
+- [x] "Interactive Systems Node Graph": A visually stunning physics-based interactive canvas simulation in the Project Playground.
     - [x] Accessibility Audit: Added Skip to Content link, ARIA labels, and improved semantic HTML.
     - [x] Secure the frontend (CSP headers via index.html meta tags).
     - [ ] Implement SRI (Subresource Integrity) for any future external scripts.
-    - [ ] Optimize image assets with WebP conversion and responsive source sets.
+    - [x] Optimize image assets with WebP conversion and responsive source sets.

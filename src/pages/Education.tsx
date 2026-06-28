@@ -1,9 +1,9 @@
 import React from 'react';
-import tuDelftLogo from '../assets/TUDelft_Logo.png';
-import uGroningenLogo from '../assets/UniversityofGroningen_logo.png';
-import uPortoLogo from '../assets/UPorto_logo.png';
-import ibLogo from '../assets/InternationalBaccalaureate_logo.png';
-import dataWiseLogo from '../assets/DataWise_logo.png';
+import tuDelftLogo from '../assets/TUDelft_Logo.webp';
+import uGroningenLogo from '../assets/UniversityofGroningen_logo.webp';
+import uPortoLogo from '../assets/UPorto_logo.webp';
+import ibLogo from '../assets/InternationalBaccalaureate_logo.webp';
+import dataWiseLogo from '../assets/DataWise_logo.webp';
 
 const Education: React.FC = () => {
   return (

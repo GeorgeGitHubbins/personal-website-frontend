@@ -4,15 +4,15 @@ import Experience from './Experience';
 import { BrowserRouter } from 'react-router-dom';
 
 // Mock the assets
-vi.mock('../assets/SIA_logo.png', () => ({ default: 'sia-logo.png' }));
-vi.mock('../assets/Flink_logo.png', () => ({ default: 'flink-logo.png' }));
-vi.mock('../assets/Takeaway_logo.png', () => ({ default: 'takeaway-logo.png' }));
-vi.mock('../assets/HagaZiekenhuis_logo.png', () => ({ default: 'haga-logo.png' }));
-vi.mock('../assets/Boomerang_logo.png', () => ({ default: 'boomerang-logo.png' }));
-vi.mock('../assets/JOR_logo.png', () => ({ default: 'jor-logo.png' }));
-vi.mock('../assets/Huracan_logo.png', () => ({ default: 'huracan-logo.png' }));
-vi.mock('../assets/Instantflows_logo.png', () => ({ default: 'instantflows-logo.png' }));
-vi.mock('../assets/Aics_logo.png', () => ({ default: 'aics-logo.png' }));
+vi.mock('../assets/SIA_logo.webp', () => ({ default: 'sia-logo.webp' }));
+vi.mock('../assets/Flink_logo.webp', () => ({ default: 'flink-logo.webp' }));
+vi.mock('../assets/Takeaway_logo.webp', () => ({ default: 'takeaway-logo.webp' }));
+vi.mock('../assets/HagaZiekenhuis_logo.webp', () => ({ default: 'haga-logo.webp' }));
+vi.mock('../assets/Boomerang_logo.webp', () => ({ default: 'boomerang-logo.webp' }));
+vi.mock('../assets/JOR_logo.webp', () => ({ default: 'jor-logo.webp' }));
+vi.mock('../assets/Huracan_logo.webp', () => ({ default: 'huracan-logo.webp' }));
+vi.mock('../assets/Instantflows_logo.webp', () => ({ default: 'instantflows-logo.webp' }));
+vi.mock('../assets/Aics_logo.webp', () => ({ default: 'aics-logo.webp' }));
 
 const renderWithRouter = (ui: React.ReactElement) => {
   return render(ui, { wrapper: BrowserRouter });

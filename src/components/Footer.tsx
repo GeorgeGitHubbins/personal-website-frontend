@@ -1,5 +1,5 @@
 import React from 'react';
-import linkedinIcon from '../assets/Linkedin_icon.png';
+import linkedinIcon from '../assets/Linkedin_icon.webp';
 
 const Footer: React.FC = () => {
   return (

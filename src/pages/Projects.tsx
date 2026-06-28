@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { calculateReadingTime } from '../utils/readingTime';
-import ngoLinkLogo from '../assets/NGOLink_logo.png';
-import globalShapersLogo from '../assets/GlobalShapersTheHague_logo.png';
+import ngoLinkLogo from '../assets/NGOLink_logo.webp';
+import globalShapersLogo from '../assets/GlobalShapersTheHague_logo.webp';
 
 interface TechnicalProject {
   title: string;
