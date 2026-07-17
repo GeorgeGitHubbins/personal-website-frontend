@@ -12,6 +12,7 @@ const Footer: React.FC = () => {
             height="585" 
             title="Contact Form"
             style={{ border: 'none', maxWidth: '100%' }}
+            loading="lazy"
             sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-modals allow-storage-access-by-user-activation"
           >
             Loading…
