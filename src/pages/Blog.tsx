@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { blogPosts, BlogPost } from '../data/blogData';
+import { blogPosts } from '../data/blogData';
 import { calculateReadingTime } from '../utils/readingTime';
 
 const Blog: React.FC = () => {

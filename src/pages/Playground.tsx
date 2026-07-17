@@ -1,5 +1,6 @@
 import React from 'react';
 import SystemsNodeGraph from '../components/SystemsNodeGraph';
+import BreakfastFoosball from '../components/BreakfastFoosball';
 
 const Playground: React.FC = () => {
   return (
@@ -10,15 +11,15 @@ const Playground: React.FC = () => {
       </p>
 
       <section className="playground-experiment" style={{ marginTop: '40px' }}>
+        <BreakfastFoosball />
+      </section>
+
+      <section className="playground-experiment" style={{ marginTop: '50px' }}>
         <h3>Interactive System Design Principles</h3>
         <p style={{ marginBottom: '20px' }}>Explore the interconnected nature of complex systems. Click and drag nodes to interact with the system graph.</p>
         
         <SystemsNodeGraph />
       </section>
-
-      <div style={{ marginTop: '60px', opacity: 0.6, textAlign: 'center' }}>
-        <p>More experiments coming soon...</p>
-      </div>
     </div>
   );
 };
