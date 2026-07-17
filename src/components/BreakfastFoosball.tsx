@@ -248,11 +248,23 @@ const BreakfastFoosball: React.FC = () => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (gameState !== 'playing') return;
+
+      // Don't intercept keyboard controls if typing in input fields (like the career assistant search)
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+
+      // Prevent browser scroll for arrow keys and spacebar
+      if (['Space', ' ', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+        e.preventDefault();
+      }
       
       const speed = 18;
       const rods = rodsRef.current;
 
-      // Toast Goalie controls: W/S to move, Space or D to swing
+      // ==========================================
+      // PLAYER 1 (Left Team) CONTROLS
+      // ==========================================
+      
+      // Toast Goalie: W/S to move, Space/A to swing
       if (e.key.toLowerCase() === 'w') {
         const r = rods.find(x => x.id === 'rod-1');
         if (r) r.yOffset = Math.max(50, Math.min(fieldHeight - 50, r.yOffset - speed));
@@ -261,26 +273,43 @@ const BreakfastFoosball: React.FC = () => {
         const r = rods.find(x => x.id === 'rod-1');
         if (r) r.yOffset = Math.max(50, Math.min(fieldHeight - 50, r.yOffset + speed));
       }
-      if (e.key.toLowerCase() === 'd' || e.key === ' ') {
+      if (e.key.toLowerCase() === 'a' || e.key === ' ' || e.key.toLowerCase() === 'd') {
         swingRod('rod-1');
       }
 
-      // Egg Attackers controls: ArrowUp/ArrowDown to move, Enter or RightArrow to swing
-      if (e.key === 'ArrowUp') {
-        const r = rods.find(x => x.id === 'rod-2');
-        if (r) r.yOffset = Math.max(120, Math.min(fieldHeight - 120, r.yOffset - speed));
-      }
-      if (e.key === 'ArrowDown') {
-        const r = rods.find(x => x.id === 'rod-2');
-        if (r) r.yOffset = Math.max(120, Math.min(fieldHeight - 120, r.yOffset + speed));
-      }
-      if (e.key === 'ArrowRight' || e.key === 'Control') {
-        swingRod('rod-2');
+      // Egg Attackers (1P Mode: ArrowUp/ArrowDown to move, ArrowRight to swing)
+      // (2P Mode: E/D to move, F to swing)
+      if (aiMode) {
+        if (e.key === 'ArrowUp') {
+          const r = rods.find(x => x.id === 'rod-2');
+          if (r) r.yOffset = Math.max(120, Math.min(fieldHeight - 120, r.yOffset - speed));
+        }
+        if (e.key === 'ArrowDown') {
+          const r = rods.find(x => x.id === 'rod-2');
+          if (r) r.yOffset = Math.max(120, Math.min(fieldHeight - 120, r.yOffset + speed));
+        }
+        if (e.key === 'ArrowRight' || e.key === 'Control') {
+          swingRod('rod-2');
+        }
+      } else {
+        if (e.key.toLowerCase() === 'e') {
+          const r = rods.find(x => x.id === 'rod-2');
+          if (r) r.yOffset = Math.max(120, Math.min(fieldHeight - 120, r.yOffset - speed));
+        }
+        if (e.key.toLowerCase() === 'd') {
+          const r = rods.find(x => x.id === 'rod-2');
+          if (r) r.yOffset = Math.max(120, Math.min(fieldHeight - 120, r.yOffset + speed));
+        }
+        if (e.key.toLowerCase() === 'f') {
+          swingRod('rod-2');
+        }
       }
 
-      // Multiplayer mode keyboard mapping (if AI is disabled)
+      // ==========================================
+      // PLAYER 2 (Right Team) CONTROLS (Only in 2P mode)
+      // ==========================================
       if (!aiMode) {
-        // Player 2 Goalie: O/L to move, K to swing
+        // Waffle Goalie: O/L to move, P to swing
         if (e.key.toLowerCase() === 'o') {
           const r = rods.find(x => x.id === 'rod-4');
           if (r) r.yOffset = Math.max(50, Math.min(fieldHeight - 50, r.yOffset - speed));
@@ -289,19 +318,20 @@ const BreakfastFoosball: React.FC = () => {
           const r = rods.find(x => x.id === 'rod-4');
           if (r) r.yOffset = Math.max(50, Math.min(fieldHeight - 50, r.yOffset + speed));
         }
-        if (e.key.toLowerCase() === 'k') {
+        if (e.key.toLowerCase() === 'p') {
           swingRod('rod-4');
         }
-        // Player 2 Attackers: I/K to move, J to swing
-        if (e.key.toLowerCase() === 'u') {
+        
+        // Pancake Defenders: I/K to move, J to swing
+        if (e.key.toLowerCase() === 'i') {
           const r = rods.find(x => x.id === 'rod-3');
           if (r) r.yOffset = Math.max(120, Math.min(fieldHeight - 120, r.yOffset - speed));
         }
-        if (e.key.toLowerCase() === 'j') {
+        if (e.key.toLowerCase() === 'k') {
           const r = rods.find(x => x.id === 'rod-3');
           if (r) r.yOffset = Math.max(120, Math.min(fieldHeight - 120, r.yOffset + speed));
         }
-        if (e.key.toLowerCase() === 'h') {
+        if (e.key.toLowerCase() === 'j') {
           swingRod('rod-3');
         }
       }
@@ -932,18 +962,33 @@ const BreakfastFoosball: React.FC = () => {
             <p style={{ maxWidth: '400px', textAlign: 'center', opacity: 0.8, fontSize: '0.95rem', lineHeight: '1.5', marginBottom: '20px' }}>
               Control your rods by **clicking and dragging them up or down** to block. **Click/tap** a rod or press keys to **twist and kick** the ball!
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '20px', width: '100%', maxWidth: '400px', textAlign: 'left', fontSize: '0.85rem' }}>
-              <div style={{ background: 'rgba(255,255,255,0.08)', padding: '10px', borderRadius: '6px' }}>
-                <strong style={{ color: '#e67e22' }}>Goalie (Toast):</strong><br/>
-                Keyboard: <code>W</code> / <code>S</code> to slide, <code>Space</code> to Twist.<br/>
-                Or: Drag with mouse.
+            {aiMode ? (
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '20px', width: '100%', maxWidth: '400px', textAlign: 'left', fontSize: '0.85rem' }}>
+                <div style={{ background: 'rgba(255,255,255,0.08)', padding: '10px', borderRadius: '6px' }}>
+                  <strong style={{ color: '#e67e22' }}>Goalie (Toast):</strong><br/>
+                  Keyboard: <code>W</code> / <code>S</code> to slide, <code>Space</code> or <code>A</code> to Twist.<br/>
+                  Or: Drag with mouse.
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.08)', padding: '10px', borderRadius: '6px' }}>
+                  <strong style={{ color: '#e67e22' }}>Attackers (Eggs):</strong><br/>
+                  Keyboard: <code>Up</code> / <code>Down</code> to slide, <code>Right Arrow</code> to Twist.<br/>
+                  Or: Drag with mouse.
+                </div>
               </div>
-              <div style={{ background: 'rgba(255,255,255,0.08)', padding: '10px', borderRadius: '6px' }}>
-                <strong style={{ color: '#e67e22' }}>Attackers (Eggs):</strong><br/>
-                Keyboard: <code>Up</code> / <code>Down</code> to slide, <code>Right Arrow</code> to Twist.<br/>
-                Or: Drag with mouse.
+            ) : (
+              <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', width: '100%', maxWidth: '500px', textAlign: 'left', fontSize: '0.8rem' }}>
+                <div style={{ flex: 1, background: 'rgba(230, 126, 34, 0.1)', border: '1px solid rgba(230, 126, 34, 0.3)', padding: '8px 12px', borderRadius: '6px' }}>
+                  <strong style={{ color: '#e67e22' }}>PLAYER 1 (Left Team):</strong><br/>
+                  - **Goalie (Toast):** <code>W</code>/<code>S</code> to slide, <code>A</code> to Twist.<br/>
+                  - **Attackers (Eggs):** <code>E</code>/<code>D</code> to slide, <code>F</code> to Twist.
+                </div>
+                <div style={{ flex: 1, background: 'rgba(241, 196, 15, 0.1)', border: '1px solid rgba(241, 196, 15, 0.3)', padding: '8px 12px', borderRadius: '6px' }}>
+                  <strong style={{ color: '#f1c40f' }}>PLAYER 2 (Right Team):</strong><br/>
+                  - **Goalie (Waffle):** <code>O</code>/<code>L</code> to slide, <code>P</code> to Twist.<br/>
+                  - **Attackers (Pancakes):** <code>I</code>/<code>K</code> to slide, <code>J</code> to Twist.
+                </div>
               </div>
-            </div>
+            )}
             <button className="btn" onClick={startGame} style={{
               background: 'linear-gradient(135deg, #e67e22, #f39c12)',
               border: 'none',
