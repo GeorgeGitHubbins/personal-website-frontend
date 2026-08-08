@@ -1167,6 +1167,7 @@ svg.small-icon {
 .radar-svg {
   width: 100%;
   max-width: 380px;
+  aspect-ratio: 400 / 370;
   height: auto;
   overflow: visible;
 }
