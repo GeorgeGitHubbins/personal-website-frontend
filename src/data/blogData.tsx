@@ -329,5 +329,46 @@ Autonomous agents will not replace developers; they will elevate them. By taking
         <p>Autonomous agents will not replace developers; they will elevate them. By taking over routine maintenance, writing unit tests, implementing standard features, and maintaining infrastructure, agents free up human engineers to focus on what matters most: high-level architecture, creative UX design, security modeling, and strategic product innovation. This website is a living, breathing proof-of-concept of that collaborative future.</p>
       </article>
     )
+  },
+  {
+    slug: 'exposure-to-value-agentic-diagnostic',
+    title: 'From Exposure to Value: Rebuilding the Sia OrgReview AI Diagnostic',
+    excerpt: 'How we rebuilt Sia Partners\' AI OrgReview engine using agentic workflows and LLM orchestration to measure task-level AI exposure and design the work of the future.',
+    date: '2026-07-29',
+    category: 'AI & Automation',
+    tags: ['Agentic AI', 'Workflow Design', 'Systems Engineering', 'LLMs'],
+    contentText: `From Exposure to Value: Rebuilding the Sia OrgReview AI Diagnostic. AI capability is no longer the constraint. Organizational readiness is. In 2024, the primary question was whether AI could perform a given task. In 2026, the answer is almost always yes. Yet, despite 71% of large organizations utilizing generative AI, more than 80% report no impact on results, and only 21% have redesigned a single workflow. Rebuilding AI OrgReview: To bridge this gap between deployment and actual P&L impact, I led the technical rebuild of Sia Partners' AI OrgReview. The diagnostic connects task-level AI exposure to measurable financial value. The Core Methodology: OrgReview weighs what AI could technically perform (task-level exposure) against what people in that role are actually using it for today (adoption gap). E.g., a marketing manager might have 60% of their work exposed to AI, but real adoption is only 20%. Redesigning Workflows: This adoption gap is not a technology problem—it is a workflow design problem. The key takeaway is: redesign the workflow before you redesign the roles. The Technical Rebuild: Rebuilding OrgReview required moving from simple static models to a fully dynamic, agent-driven architecture. We built agentic workflows that parse role descriptions, break them down into constituent tasks, estimate exposure, evaluate adoption gaps, and recommend workflow optimizations. Rebuilding this tool taught us that the AI transition is fundamentally about people and how they collaborate with automated processes.`,
+    content: (
+      <article className="blog-post-body">
+        <p>For the past few years, the conversation surrounding Artificial Intelligence in the enterprise focused almost entirely on capability: <em>"Can AI write this code?"</em>, <em>"Can AI analyze this dataset?"</em>, <em>"Can AI draft this copy?"</em></p>
+        <p>In 2026, the answer to these questions is almost always <strong>yes</strong>. Yet, a massive paradox remains. While over 71% of large organizations have deployed generative AI somewhere in their operations, more than 80% report no measurable impact on their bottom-line results, and only 21% have redesigned a single workflow to accommodate the technology.</p>
+        <p>The bottleneck is no longer AI capability. It is <strong>organizational readiness and workflow design</strong>. This gap is precisely what we set out to address in our recent rebuild of the <strong>Sia Partners AI OrgReview</strong> diagnostic engine.</p>
+
+        <blockquote>
+          "Redesign the workflow before you redesign the roles."
+        </blockquote>
+
+        <h2>The Adoption Gap: Task Exposure vs. Real Value</h2>
+        <p>To move from AI experimentation to actual P&L impact, organizations must measure the gap between what AI <em>can</em> do and what employees are <em>actually</em> using it for on a daily basis. We call this the <strong>Adoption Gap</strong>.</p>
+        <p>Consider a standard Marketing Manager role:</p>
+        <ul>
+          <li><strong>Technical Exposure:</strong> Approximately 60% of the tasks in a typical marketing manager's workload are highly exposed to AI (copywriting, keyword research, initial performance analysis).</li>
+          <li><strong>Real Adoption:</strong> Real-world adoption of AI tools in that same role is often closer to 20%.</li>
+        </ul>
+        <p>This remaining 40% gap is not a technology problem. It is value sitting in plain sight, waiting for the organization to redesign the work around the new automated capabilities. Simply giving employees access to LLM chats does not capture this value; the workflow itself must be restructured.</p>
+
+        <h2>The Technical Rebuild: Scaling with Agentic Workflows</h2>
+        <p>Rebuilding the OrgReview diagnostic required moving away from static database lookup sheets toward a dynamic, agentic architecture. The engine we developed utilizes LLMs and custom agentic workflows to analyze organizational structures at scale:</p>
+        <ol>
+          <li><strong>Task Decomposition:</strong> Agents parse unstructured role descriptions and break them down into discrete, atomic tasks.</li>
+          <li><strong>Exposure Assessment:</strong> The engine scores each task against standard exposure frameworks, calculating the theoretical time and quality improvements AI could provide.</li>
+          <li><strong>Adoption Modeling:</strong> By comparing task-level exposure against employee surveys and usage data, the model maps the adoption gap.</li>
+          <li><strong>Workflow Optimization:</strong> Finally, the agent recommends concrete workflow redesigns, suggesting which tasks to delegate to AI and how humans can reallocate their freed-up time toward high-value strategic work.</li>
+        </ol>
+
+        <h2>Conclusion: It's About People</h2>
+        <p>The most important lesson from rebuilding OrgReview is that well-implemented automation makes work <em>more</em> about people, not less. By delegating repetitive, data-heavy tasks to AI agents, human employees are freed up to focus on the creative, advisory, and relational aspects of their jobs that actually require them. Capture the value by designing workflows that treat AI as a collaborator, not just a tool.</p>
+      </article>
+    )
   }
 ];
