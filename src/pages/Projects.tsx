@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { calculateReadingTime } from '../utils/readingTime';
 import ngoLinkLogo from '../assets/NGOLink_logo.webp';
 import globalShapersLogo from '../assets/GlobalShapersTheHague_logo.webp';
+import siaLogo from '../assets/SIA_logo.webp';
 
 interface TechnicalProject {
   title: string;
@@ -16,6 +17,16 @@ interface TechnicalProject {
 }
 
 const technicalProjects: TechnicalProject[] = [
+  {
+    title: "AI OrgReview Rebuild",
+    company: "Sia Partners",
+    logo: siaLogo,
+    date: "July 2026, Amsterdam",
+    description: "Led the rebuild of AI OrgReview (published as 'From Exposure to Value: A New Diagnostic for the Agentic Era'), a strategic consulting tool designed to close the gap between generative AI deployment and actual P&L impact. Developed agentic workflows and LLM orchestration to assess organizational readiness and design new workflows across diverse sectors.",
+    tags: ["Agentic AI", "Python", "Systems Engineering", "Workflow Design"],
+    link: "https://www.sia-partners.com/en/insights/publications/exposure-value-a-new-diagnostic-agentic-era",
+    category: "AI & Data"
+  },
   {
     title: "NGO Link Infrastructure",
     company: "NGO Link",
