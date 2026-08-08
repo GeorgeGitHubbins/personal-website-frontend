@@ -65,7 +65,7 @@ In subsequent posts, I'll share how I keep this site self-improving and how I ho
         <p>By moving to a custom React architecture, I succeeded in transforming a passive resume into an interactive engineering playground. The site now hosts:</p>
         <ul>
           <li>An <strong>Interactive Systems Node Graph</strong> simulation in the Playground.</li>
-          <li>A fully searchable <strong>AI Career Assistant</strong> with keyword matching and simulated typing.</li>
+          <li>A fully searchable <strong>Chat Assistant</strong> with keyword matching and simulated typing.</li>
           <li>An <strong>Interactive Work Timeline</strong>.</li>
           <li>Smooth dark-mode transitions, a visual reading progress bar, and perfect Lighthouse performance scores.</li>
         </ul>

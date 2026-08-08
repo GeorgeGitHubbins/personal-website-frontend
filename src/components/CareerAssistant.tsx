@@ -92,18 +92,21 @@ const CareerAssistant: React.FC = () => {
     {
       id: 'init',
       sender: 'assistant',
-      text: "Hi! I'm George's AI Assistant. Ask me anything about his work experience, academic background, tech skills, or volunteer work! Or select one of the quick suggestions below.",
+      text: "Hi! I'm George's Chat Assistant. Ask me anything about his work experience, academic background, tech skills, or volunteer work! Or select one of the quick suggestions below.",
       category: 'Personal',
       timestamp: getTimestamp()
     }
   ]);
 
-  const chatBottomRef = useRef<HTMLDivElement>(null);
+  const chatHistoryRef = useRef<HTMLDivElement>(null);
 
-  // Scroll to bottom on new messages
+  // Scroll to bottom on new messages internally within the container
   useEffect(() => {
-    if (activeTab === 'chat' && messages.length > 0) {
-      chatBottomRef.current?.scrollIntoView?.({ behavior: 'smooth' });
+    if (activeTab === 'chat' && chatHistoryRef.current) {
+      chatHistoryRef.current.scrollTo?.({
+        top: chatHistoryRef.current.scrollHeight,
+        behavior: 'smooth'
+      });
     }
   }, [messages, isTyping, activeTab]);
 
@@ -312,14 +315,14 @@ const CareerAssistant: React.FC = () => {
   return (
     <div className="career-assistant-container section">
       <div className="career-assistant-header">
-        <h2>AI Career Assistant (Static)</h2>
+        <h2>Chat Assistant (Static)</h2>
         
         {/* Toggle between Chat and FAQ mode */}
         <div className="career-assistant-tabs">
           <button 
             className={`tab-btn ${activeTab === 'chat' ? 'active' : ''}`}
             onClick={() => setActiveTab('chat')}
-            aria-label="Switch to AI Chat Mode"
+            aria-label="Switch to Chat Mode"
           >
             💬 Interactive Chat
           </button>
@@ -363,7 +366,7 @@ const CareerAssistant: React.FC = () => {
       {activeTab === 'chat' && (
         <div className="career-assistant-chat-view">
           <div className="chat-window card">
-            <div className="chat-history">
+            <div className="chat-history" ref={chatHistoryRef}>
               {messages.map((msg) => (
                 <div 
                   key={msg.id} 
@@ -394,7 +397,6 @@ const CareerAssistant: React.FC = () => {
                   </div>
                 </div>
               )}
-              <div ref={chatBottomRef} />
             </div>
 
             {/* Suggestion Chips */}

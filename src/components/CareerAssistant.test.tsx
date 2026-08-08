@@ -5,7 +5,7 @@ import CareerAssistant from './CareerAssistant';
 describe('CareerAssistant Component', () => {
   it('renders the component heading and subtitle', () => {
     render(<CareerAssistant />);
-    expect(screen.getByText('AI Career Assistant (Static)')).toBeInTheDocument();
+    expect(screen.getByText('Chat Assistant (Static)')).toBeInTheDocument();
     expect(screen.getByText(/A searchable knowledge base/i)).toBeInTheDocument();
   });
 
@@ -100,7 +100,7 @@ describe('CareerAssistant Component', () => {
     render(<CareerAssistant />);
     
     // Check for chat mode indicators
-    expect(screen.getByText(/Hi! I'm George's AI Assistant/i)).toBeInTheDocument();
+    expect(screen.getByText(/Hi! I'm George's Chat Assistant/i)).toBeInTheDocument();
     expect(screen.getByText('Suggested:')).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/Ask me a question/i)).toBeInTheDocument();
   });
