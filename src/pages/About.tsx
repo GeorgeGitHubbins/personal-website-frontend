@@ -1,7 +1,6 @@
 import React from 'react';
 import headshotImg from '../assets/George_profile.webp';
 import Skills from '../components/Skills';
-import GithubStats from '../components/GithubStats';
 import CareerAssistant from '../components/CareerAssistant';
 import CanvasVisual from '../components/CanvasVisual';
 
@@ -22,9 +21,6 @@ const About: React.FC = () => {
         
         <div className="about-content" style={{ marginTop: '40px' }}>
           <Skills />
-          <div style={{ marginTop: '40px' }}>
-            <GithubStats />
-          </div>
         </div>
         
         <CareerAssistant />
