@@ -27,11 +27,11 @@ const technicalProjects: TechnicalProject[] = [
     category: "Infrastructure"
   },
   {
-    title: "Personal Website (Autonomous Evolution)",
+    title: "Personal Website",
     date: "Continuous Development",
-    description: "A React-based personal portfolio designed for continuous, autonomous evolution via Gemini CLI. The project explores the intersection of AI-driven development and personal branding.",
-    tags: ["React", "Gemini CLI", "CI/CD"],
-    category: "AI & Data"
+    description: "A React-based personal portfolio website built with TypeScript and Vite, hosted on AWS S3 and served via CloudFront.",
+    tags: ["React", "TypeScript", "AWS", "CI/CD"],
+    category: "Infrastructure"
   },
   {
     title: "Future Technical Ventures",
@@ -296,7 +296,7 @@ const Projects: React.FC = () => {
                 {!project.isFuture && (
                   <ShareButtons 
                     title={project.title} 
-                    shareUrl={project.link || "https://ai.georgegittins.com/projects"} 
+                    shareUrl={project.link || "https://www.georgegittins.com/projects"} 
                   />
                 )}
               </div>

@@ -51,13 +51,6 @@ const GithubStats: React.FC = () => {
 
   return (
     <div className="github-stats-container">
-      <div style={{ marginBottom: '20px', textAlign: 'left' }}>
-        <h4 style={{ margin: '0 0 10px 0' }}>Autonomous Evolution</h4>
-        <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', margin: 0, lineHeight: '1.5' }}>
-          This website is autonomously maintained and improved by an AI agent (Gemini CLI). 
-          Every few days, the agent analyzes the site, identifies improvements, and implements changes directly.
-        </p>
-      </div>
 
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
         <h5 style={{ margin: 0, fontSize: '1rem' }}>Live Site Stats</h5>
@@ -80,22 +73,13 @@ const GithubStats: React.FC = () => {
           <span className="stat-value">{stats.followers}</span>
           <span className="stat-label">Followers</span>
         </div>
-        <div className="stat-item">
-          <div className="stat-badge">
-            <img 
-              src="https://img.shields.io/github/actions/workflow/status/GeorgeGitHubbins/personal-website-frontend/daily-improvement.yml?branch=main&label=Daily%20Build" 
-              alt="Build Status" 
-            />
-          </div>
-          <span className="stat-label">Build Status</span>
-        </div>
       </div>
 
       {lastCommit && (
         <div style={{ marginTop: '15px', padding: '12px', background: 'var(--bg-color)', borderRadius: '8px', textAlign: 'left', border: '1px solid var(--border-color)' }}>
           <div style={{ marginBottom: '8px' }}>
             <p style={{ fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-muted)', margin: '0 0 4px 0', textTransform: 'uppercase' }}>
-              Latest Autonomous Update
+              Latest Update
             </p>
             <a 
               href={lastCommit.html_url} 
