@@ -39,13 +39,13 @@ const radarAxes: RadarAxis[] = [
     skills: ['Data Science', 'AI & LLMs', 'Data Visualization']
   },
   {
-    name: 'Operations & Process',
+    name: 'Operations',
     score: 85,
     description: 'Optimizing resource workflows, lean methodologies, and automated data sheets.',
     skills: ['Process Optimization', 'Operations', 'Advanced Google Sheets']
   },
   {
-    name: 'Business Strategy',
+    name: 'Strategy',
     score: 80,
     description: 'Formulating commercial strategy, product roadmaps, and validation criteria.',
     skills: ['Entrepreneurship', 'Product Strategy', 'Market Research']
@@ -271,6 +271,8 @@ const Skills: React.FC = () => {
                   x={labelPos.x}
                   y={labelPos.y}
                   textAnchor={labelPos.textAnchor}
+                  fontSize={13}
+                  fontWeight="600"
                   className={`radar-label ${isCurrent ? 'active' : ''}`}
                   onMouseEnter={() => setHoveredAxisIndex(i)}
                   onMouseLeave={() => setHoveredAxisIndex(null)}

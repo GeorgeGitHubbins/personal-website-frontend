@@ -2621,33 +2621,49 @@ pre, code, table {
   }
 
   /* Skills dashboard vertical stack */
+  .skills-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
   .skills-dashboard {
-    grid-template-columns: 1fr !important;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .skills-radar-container {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 auto;
-    padding: 16px 10px;
-    box-sizing: border-box;
-    min-height: auto;
+    padding: 12px 6px !important;
+    box-sizing: border-box !important;
+    min-height: auto !important;
+    overflow: hidden !important;
   }
 
   .radar-svg {
-    width: 100%;
-    max-width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    overflow: hidden !important;
   }
 
   .skill-browser-container {
     width: 100% !important;
     max-width: 100% !important;
-    padding: 16px 12px;
-    box-sizing: border-box;
-    min-height: auto;
+    padding: 14px 10px !important;
+    box-sizing: border-box !important;
+    min-height: auto !important;
+    overflow: hidden !important;
   }
 
   .scroll-to-top-btn {
