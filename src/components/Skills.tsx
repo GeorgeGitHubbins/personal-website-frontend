@@ -121,8 +121,8 @@ const Skills: React.FC = () => {
 
   // SVG dimensions
   const centerX = 200;
-  const centerY = 195;
-  const maxRadius = 125;
+  const centerY = 185;
+  const maxRadius = 115;
   const totalAxes = radarAxes.length;
 
   // Calculate coordinates helper
@@ -213,7 +213,7 @@ const Skills: React.FC = () => {
       <div className="skills-dashboard">
         {/* Left Side: Radar Chart */}
         <div className="skills-radar-container">
-          <svg className="radar-svg" viewBox="0 0 400 370" role="img" aria-label="George's Skills Radar Chart">
+          <svg className="radar-svg" viewBox="-45 -20 490 410" role="img" aria-label="George's Skills Radar Chart">
             <defs>
               <linearGradient id="radar-glow" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="var(--accent-color)" stopOpacity="0.4" />
