@@ -2496,29 +2496,47 @@ pre, code, table {
 /* Mobile Media Queries (<= 768px) */
 @media (max-width: 768px) {
   .app {
-    padding: 0 15px;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 12px !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  .content, .section, .card {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .header {
     padding: 15px 0;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .header-top-row {
     justify-content: space-between;
     padding: 0 5px;
+    width: 100%;
   }
 
   .header h1 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    max-width: 60vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .theme-toggle {
     position: static;
     transform: none;
+    flex-shrink: 0;
   }
 
   .hamburger-menu-btn {
     display: flex;
+    flex-shrink: 0;
   }
 
   .header nav.nav-links {
@@ -2566,12 +2584,16 @@ pre, code, table {
   /* Hero section responsiveness */
   .hero-section {
     padding: 24px 16px;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .hero-section .hero-content {
     flex-direction: column;
     text-align: center;
     gap: 20px;
+    width: 100%;
   }
 
   .profile-img {
@@ -2581,14 +2603,32 @@ pre, code, table {
 
   /* Skills dashboard vertical stack */
   .skills-dashboard {
+    grid-template-columns: 1fr !important;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
+    width: 100%;
   }
 
   .skills-radar-container {
-    width: 100%;
-    max-width: 360px;
+    width: 100% !important;
+    max-width: 100% !important;
     margin: 0 auto;
+    padding: 16px 10px;
+    box-sizing: border-box;
+    min-height: auto;
+  }
+
+  .radar-svg {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .skill-browser-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 16px 12px;
+    box-sizing: border-box;
+    min-height: auto;
   }
 
   /* Filter and search headers wrapping */
@@ -2602,18 +2642,33 @@ pre, code, table {
     min-width: 100% !important;
     width: 100% !important;
     max-width: 100% !important;
+    box-sizing: border-box;
   }
 
-  /* Experience and Education cards on mobile */
+  /* Experience, Timeline and Education cards on mobile */
+  .timeline-container {
+    padding-left: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .timeline-container::before {
+    display: none !important;
+  }
+
   .experience-card {
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
     padding: 18px;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   .experience-card::before {
-    display: none;
+    display: none !important;
   }
 
   .card-logo {
@@ -2622,14 +2677,21 @@ pre, code, table {
   }
 
   /* Selected Works grid on mobile */
-  .selected-works-grid {
-    grid-template-columns: 1fr;
+  .selected-works-grid,
+  .projects-grid,
+  .faq-grid,
+  .blog-grid,
+  .blog-related-grid {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
     gap: 20px;
+    box-sizing: border-box;
   }
 
   /* PDF Preview on mobile */
   .pdf-container {
     height: 260px;
+    width: 100%;
   }
 
   .pdf-mobile-action {
@@ -2639,6 +2701,12 @@ pre, code, table {
   /* Career assistant quick prompts on mobile */
   .prompt-chips {
     flex-wrap: wrap;
+  }
+
+  .chat-window {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
   }
 
   /* Blog category tabs scrollable container */
@@ -2663,24 +2731,20 @@ pre, code, table {
   .blog-detail-title {
     font-size: 1.75rem;
   }
-
-  .blog-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* Extra Small Phones (<= 480px) */
 @media (max-width: 480px) {
   .app {
-    padding: 0 10px;
+    padding: 0 8px !important;
   }
 
   .header h1 {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
   }
 
   .section h2 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .filter-btn {
