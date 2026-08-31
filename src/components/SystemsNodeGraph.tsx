@@ -274,7 +274,7 @@ const SystemsNodeGraph: React.FC = () => {
         ref={containerRef} 
         style={{ 
           width: '100%', 
-          height: '500px', 
+          height: 'min(500px, 60vh)', 
           position: 'relative', 
           borderRadius: '12px',
           background: 'var(--accent-bg)',

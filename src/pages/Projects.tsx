@@ -396,6 +396,15 @@ const Projects: React.FC = () => {
                     loading="lazy"
                   ></iframe>
                 </div>
+                <a 
+                  href={work.url.replace('/preview', '/view')} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="pdf-mobile-action"
+                  aria-label={`Open ${work.title} PDF in a new tab`}
+                >
+                  📄 Open PDF Document
+                </a>
               </div>
             ))}
           </div>

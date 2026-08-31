@@ -862,6 +862,56 @@ const BreakfastFoosball: React.FC = () => {
     activeDragRef.current = null;
   };
 
+  // Touch handlers for mobile/tablet screens
+  const handleCanvasTouchStart = (e: React.TouchEvent<HTMLCanvasElement>) => {
+    if (gameState !== 'playing' || e.touches.length !== 1) return;
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const rect = canvas.getBoundingClientRect();
+    const touch = e.touches[0];
+    const scaleX = fieldWidth / rect.width;
+    const x = (touch.clientX - rect.left) * scaleX;
+
+    const rods = rodsRef.current;
+    const userRods = rods.filter(r => r.team === 'left');
+
+    let clickedRod: Rod | null = null;
+    userRods.forEach(rod => {
+      if (Math.abs(x - rod.x) < 60) {
+        clickedRod = rod;
+      }
+    });
+
+    if (clickedRod) {
+      activeDragRef.current = {
+        rodId: (clickedRod as Rod).id,
+        startY: touch.clientY,
+        startYOffset: (clickedRod as Rod).yOffset,
+      };
+      swingRod((clickedRod as Rod).id);
+    }
+  };
+
+  const handleCanvasTouchMove = (e: React.TouchEvent<HTMLCanvasElement>) => {
+    const drag = activeDragRef.current;
+    if (!drag || e.touches.length !== 1) return;
+
+    const touch = e.touches[0];
+    const dy = touch.clientY - drag.startY;
+    const rod = rodsRef.current.find(r => r.id === drag.rodId);
+    
+    if (rod) {
+      rod.yOffset = drag.startYOffset + dy;
+      const limit = rod.players.length === 1 ? 50 : 120;
+      rod.yOffset = Math.max(limit, Math.min(fieldHeight - limit, rod.yOffset));
+    }
+  };
+
+  const handleCanvasTouchEnd = () => {
+    activeDragRef.current = null;
+  };
+
   return (
     <div className="foosball-playground" ref={containerRef} style={{ width: '100%' }}>
       <div className="foosball-controls-panel" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap', gap: '15px' }}>
@@ -1044,13 +1094,16 @@ const BreakfastFoosball: React.FC = () => {
           onMouseMove={handleCanvasMouseMove}
           onMouseUp={handleCanvasMouseUp}
           onMouseLeave={handleCanvasMouseUp}
-          style={{ display: 'block', width: '100%', height: 'auto' }}
+          onTouchStart={handleCanvasTouchStart}
+          onTouchMove={handleCanvasTouchMove}
+          onTouchEnd={handleCanvasTouchEnd}
+          style={{ display: 'block', width: '100%', height: 'auto', touchAction: 'none' }}
         />
       </div>
 
       {/* On-screen controls for mobile/mouse users */}
       {gameState === 'playing' && (
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '15px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '15px', flexWrap: 'wrap' }}>
           <button 
             className="btn"
             onClick={() => swingRod('rod-1')}

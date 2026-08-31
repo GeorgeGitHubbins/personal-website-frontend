@@ -112,6 +112,25 @@ const InteractiveTimeline: React.FC = () => {
     setIsDragging(false);
   };
 
+  // Handle Touch Drag Events for Mobile
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (!containerRef.current || e.touches.length !== 1) return;
+    setIsDragging(true);
+    setStartX(e.touches[0].pageX - containerRef.current.offsetLeft);
+    setScrollLeftState(containerRef.current.scrollLeft);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (!isDragging || !containerRef.current || e.touches.length !== 1) return;
+    const x = e.touches[0].pageX - containerRef.current.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    containerRef.current.scrollLeft = scrollLeftState - walk;
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
+
   // Center on a specific experience item
   const centerOnItem = useCallback((item: ExperienceItem, smooth: boolean = true) => {
     if (!containerRef.current) return;
@@ -248,6 +267,9 @@ const InteractiveTimeline: React.FC = () => {
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUpOrLeave}
         onMouseLeave={handleMouseUpOrLeave}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
         style={{
           width: '100%',
           height: '310px',
