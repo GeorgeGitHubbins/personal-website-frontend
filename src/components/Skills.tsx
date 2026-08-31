@@ -51,7 +51,7 @@ const radarAxes: RadarAxis[] = [
     skills: ['Entrepreneurship', 'Product Strategy', 'Market Research']
   },
   {
-    name: 'Consultancy & Leadership',
+    name: 'Leadership',
     score: 90,
     description: 'Coordinating cross-functional teams, solving problems, and stakeholder advisory.',
     skills: ['Consultancy', 'Team Leadership']
@@ -213,7 +213,7 @@ const Skills: React.FC = () => {
       <div className="skills-dashboard">
         {/* Left Side: Radar Chart */}
         <div className="skills-radar-container">
-          <svg className="radar-svg" viewBox="-45 -20 490 410" role="img" aria-label="George's Skills Radar Chart">
+          <svg className="radar-svg" viewBox="-90 -20 580 410" role="img" aria-label="George's Skills Radar Chart">
             <defs>
               <linearGradient id="radar-glow" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="var(--accent-color)" stopOpacity="0.4" />

@@ -1097,7 +1097,10 @@ svg.small-icon {
 
 /* Skills Section Styles */
 .skills-container {
-  /* Margin handled by container */
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* Github Stats Styles */
@@ -1206,6 +1209,9 @@ svg.small-icon {
   grid-template-columns: 1fr;
   gap: 30px;
   margin-top: 20px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 @media (min-width: 900px) {
@@ -1227,6 +1233,10 @@ svg.small-icon {
   align-items: center;
   transition: all 0.3s ease;
   min-height: 480px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .skills-radar-container:hover {
