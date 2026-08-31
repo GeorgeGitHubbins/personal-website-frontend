@@ -1247,7 +1247,7 @@ svg.small-icon {
 .radar-svg {
   width: 100%;
   max-width: 100%;
-  aspect-ratio: 490 / 410;
+  aspect-ratio: 480 / 400;
   height: auto;
   overflow: hidden;
   display: block;
@@ -2648,6 +2648,15 @@ pre, code, table {
     padding: 16px 12px;
     box-sizing: border-box;
     min-height: auto;
+  }
+
+  .scroll-to-top-btn {
+    right: 12px;
+    bottom: 16px;
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+    z-index: 90;
   }
 
   /* Filter and search headers wrapping */

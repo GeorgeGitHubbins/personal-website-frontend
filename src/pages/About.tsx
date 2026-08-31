@@ -6,7 +6,7 @@ import CanvasVisual from '../components/CanvasVisual';
 
 const About: React.FC = () => {
   return (
-    <>
+    <div className="about-page">
       <section id="about" className="section hero-section">
         <CanvasVisual />
         <div className="hero-content">
@@ -18,14 +18,16 @@ const About: React.FC = () => {
             <p>I can make anything you want, you just have to describe it well enough.</p>
           </div>
         </div>
-        
-        <div className="about-content" style={{ marginTop: '40px' }}>
-          <Skills />
-        </div>
-        
+      </section>
+
+      <section id="skills" className="section skills-section">
+        <Skills />
+      </section>
+
+      <section id="career-assistant" className="section assistant-section">
         <CareerAssistant />
       </section>
-    </>
+    </div>
   );
 };
 
