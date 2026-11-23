@@ -64,8 +64,9 @@ const InteractiveTimeline: React.FC = () => {
   const cardWidth = 190;
   const cardHeight = 65;
 
+  // Timeline scale (pixels per year)
+  const zoomLevel = 170;
   // States
-  const [zoomLevel, setZoomLevel] = useState<number>(170); // Pixels per year
   const [selectedItem, setSelectedItem] = useState<ExperienceItem>(experienceData[0]);
   const [hoveredItem, setHoveredItem] = useState<ExperienceItem | null>(null);
   
@@ -167,25 +168,6 @@ const InteractiveTimeline: React.FC = () => {
     return () => clearTimeout(timer);
   }, [centerOnItem]); // Also re-center when zoom level changes
 
-  // Keyboard navigation
-  const navigateTimeline = (direction: 'prev' | 'next') => {
-    const currentIndex = experienceData.findIndex(
-      (item) => item.company === selectedItem.company && item.role === selectedItem.role
-    );
-    if (currentIndex === -1) return;
-
-    let targetIndex = currentIndex;
-    if (direction === 'prev' && currentIndex < experienceData.length - 1) {
-      targetIndex = currentIndex + 1; // In list, older experiences are at the end
-    } else if (direction === 'next' && currentIndex > 0) {
-      targetIndex = currentIndex - 1; // Newer experiences are at the beginning
-    }
-
-    if (targetIndex !== currentIndex) {
-      handleSelect(experienceData[targetIndex]);
-    }
-  };
-
   // Smooth-scroll down to the detailed experience card on the page
   const scrollToDetailedCard = (companyName: string) => {
     const cards = document.querySelectorAll('.experience-card');
@@ -212,50 +194,6 @@ const InteractiveTimeline: React.FC = () => {
           <p className="timeline-subtitle" style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: '5px 0 0 0' }}>
             ↔ Drag to scroll. Click cards to inspect. Double-click to jump to complete details below.
           </p>
-        </div>
-        
-        {/* Navigation & Zoom controls */}
-        <div className="timeline-actions">
-          <div className="timeline-nav-buttons">
-            <button 
-              className="timeline-ctrl-btn" 
-              onClick={() => navigateTimeline('prev')}
-              title="Older experience"
-              aria-label="Older experience"
-            >
-              ← Older
-            </button>
-            <button 
-              className="timeline-ctrl-btn" 
-              onClick={() => navigateTimeline('next')}
-              title="Newer experience"
-              aria-label="Newer experience"
-            >
-              Newer →
-            </button>
-          </div>
-
-          <div className="timeline-zoom-controls">
-            <button 
-              className="timeline-ctrl-btn zoom-btn" 
-              onClick={() => setZoomLevel(prev => Math.max(110, prev - 30))}
-              title="Zoom out"
-              aria-label="Zoom out"
-            >
-              🔍−
-            </button>
-            <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', minWidth: '35px', textAlign: 'center' }}>
-              {Math.round((zoomLevel / 170) * 100)}%
-            </span>
-            <button 
-              className="timeline-ctrl-btn zoom-btn" 
-              onClick={() => setZoomLevel(prev => Math.min(260, prev + 30))}
-              title="Zoom in"
-              aria-label="Zoom in"
-            >
-              🔍+
-            </button>
-          </div>
         </div>
       </div>
 

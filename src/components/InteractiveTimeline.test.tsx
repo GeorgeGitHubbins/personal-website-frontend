@@ -20,14 +20,6 @@ describe('InteractiveTimeline Component', () => {
     expect(screen.getByText(/Drag to scroll. Click cards to inspect./i)).toBeInTheDocument();
   });
 
-  it('renders zoom and navigation controls', () => {
-    render(<InteractiveTimeline />);
-    expect(screen.getByRole('button', { name: /Older/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Newer/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Zoom in/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Zoom out/i })).toBeInTheDocument();
-  });
-
   it('renders experience cards on the timeline', () => {
     render(<InteractiveTimeline />);
     expect(screen.getAllByText('SIA Partners').length).toBeGreaterThan(0);
@@ -54,31 +46,5 @@ describe('InteractiveTimeline Component', () => {
     
     expect(screen.getByText('InstantFlows /')).toBeInTheDocument();
     expect(screen.getByText(/Planning, organizing and leading a small team/i)).toBeInTheDocument();
-  });
-
-  it('navigates with next and prev buttons', () => {
-    render(<InteractiveTimeline />);
-    
-    expect(screen.getByText('SIA Partners /')).toBeInTheDocument();
-    
-    const olderBtn = screen.getByRole('button', { name: /Older/i });
-    fireEvent.click(olderBtn);
-    
-    expect(screen.getByText('Huracán /')).toBeInTheDocument();
-  });
-
-  it('adjusts zoom level when zoom buttons are clicked', () => {
-    render(<InteractiveTimeline />);
-    
-    const zoomInBtn = screen.getByRole('button', { name: /Zoom in/i });
-    const zoomOutBtn = screen.getByRole('button', { name: /Zoom out/i });
-    
-    expect(screen.getByText('100%')).toBeInTheDocument();
-    
-    fireEvent.click(zoomInBtn);
-    expect(screen.getByText('118%')).toBeInTheDocument();
-    
-    fireEvent.click(zoomOutBtn);
-    expect(screen.getByText('100%')).toBeInTheDocument();
   });
 });
