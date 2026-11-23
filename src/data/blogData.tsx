@@ -90,7 +90,7 @@ How the Autonomous Loop Works:
 6. Deployment: Once everything is verified, the agent updates TODO.md (marking the task as completed) and commits the changes. The commit triggers the AWS deployment workflow.
 Key Safety and Quality Guardrails:
 To ensure the AI agent behaves safely and respects my brand, several rules are established:
-- Never touch the primary domain (georgegittins.com) without explicit permission; iterate on ai.georgegittins.com first.
+- Automated verification: Every change must pass linting, TypeScript builds, and unit tests before deployment to georgegittins.com.
 - Strict cost controls: Avoid third-party server-side API dependencies.
 - Unit testing: All core components must have tests, and changes must not break existing ones.
 This workflow proves that personal portfolios do not have to be stale, forgotten pages; they can be living repositories of continuous, AI-augmented engineering.`,
@@ -126,7 +126,7 @@ This workflow proves that personal portfolios do not have to be stale, forgotten
         <h2>Safety & Quality Guardrails</h2>
         <p>Entrusting a production codebase to an AI agent requires ironclad guardrails to prevent broken deployments or styling regressions:</p>
         <ul>
-          <li><strong>Sandbox Isolation:</strong> The build process is completely isolated. Changes are deployed to <code>ai.georgegittins.com</code> first, keeping the legacy resume page untouched.</li>
+          <li><strong>Isolated CI Verification:</strong> Every build runs in a clean GitHub Actions runner and must pass ESLint, TypeScript compilation, and Vitest checks before syncing to <code>georgegittins.com</code>.</li>
           <li><strong>Cost Mandate:</strong> The agent is restricted from adding any paid SaaS or premium cloud resources. Every feature must be "Forever Free"—accomplished via static pre-indexing or client-side execution.</li>
           <li><strong>No Hidden Logic:</strong> Hacks, type-assertions, or warning-suppressions are strictly banned. The agent must solve issues using clean, idiomatic TypeScript and standard CSS.</li>
         </ul>
@@ -149,7 +149,7 @@ The Architecture:
 2. Amazon CloudFront (CDN): Serves as the global content delivery network. CloudFront caches the files at edge locations worldwide, drastically reducing latency and providing SSL (HTTPS) protection via AWS Certificate Manager (ACM).
 3. Amazon Route 53 (DNS): Manages the custom domain name resolution, routing traffic directly to the closest CloudFront edge location.
 Solving the Single-Page Application (SPA) Routing Problem on Static Hosts:
-When deploying a React app with client-side routing (like react-router-dom) to a static host like S3, you run into a major issue. If a user visits the homepage and clicks on /experience, React Router handles the transition smoothly. But if the user refreshes the page or types ai.georgegittins.com/experience directly into the browser, S3 looks for a folder named experience or a file named experience in the bucket. Since that file does not exist, S3 returns a 404 Error.
+When deploying a React app with client-side routing (like react-router-dom) to a static host like S3, you run into a major issue. If a user visits the homepage and clicks on /experience, React Router handles the transition smoothly. But if the user refreshes the page or types georgegittins.com/experience directly into the browser, S3 looks for a folder named experience or a file named experience in the bucket. Since that file does not exist, S3 returns a 404 Error.
 The CloudFront Solution:
 To solve this cleanly without running a server, we configure a Custom Error Response in CloudFront:
 - Error Code: 404 (Not Found)
@@ -171,11 +171,11 @@ By utilizing S3, CloudFront, and Route 53, we achieve a modern serverless deploy
         <p>While S3 can host websites directly, it does not natively support HTTPS using custom domains, and serving content from a single geographic region is slow for international visitors. Amazon CloudFront (AWS's global CDN) caches the static files at edge locations worldwide. It handles SSL/TLS handshakes using a free wildcard certificate from AWS Certificate Manager (ACM), guaranteeing secure HTTPS traffic.</p>
 
         <h3>3. Domain Management: Amazon Route 53</h3>
-        <p>Route 53 acts as the highly available Domain Name System (DNS) service. It maps requests for <code>ai.georgegittins.com</code> directly to the CloudFront distribution using efficient alias records, ensuring sub-millisecond DNS lookups.</p>
+        <p>Route 53 acts as the highly available Domain Name System (DNS) service. It maps requests for <code>georgegittins.com</code> and <code>www.georgegittins.com</code> directly to the CloudFront distribution using efficient alias records, ensuring sub-millisecond DNS lookups.</p>
 
         <h2>Solving the SPA Routing Problem</h2>
         <p>When hosting a Single-Page Application (SPA) that utilizes client-side routing (e.g., React Router) on static web storage, you will immediately encounter a hurdle. If a user lands on the homepage (<code>/</code>) and clicks "Work Experience," React Router intercepts the click and changes the view to <code>/experience</code>. This works flawlessly.</p>
-        <p>However, if the user presses refresh, or directly visits <code>https://ai.georgegittins.com/experience</code>, the browser sends a request directly to the host. S3 looks for an object named <code>experience</code> or a folder containing <code>index.html</code>. Because it is an SPA, no such file exists, and S3 returns a <strong>404 Not Found</strong> error.</p>
+        <p>However, if the user presses refresh, or directly visits <code>https://www.georgegittins.com/experience</code>, the browser sends a request directly to the host. S3 looks for an object named <code>experience</code> or a folder containing <code>index.html</code>. Because it is an SPA, no such file exists, and S3 returns a <strong>404 Not Found</strong> error.</p>
 
         <h3>The CloudFront Error Document Trick</h3>
         <p>We solve this cleanly and serverlessly by configuring a <strong>Custom Error Response</strong> inside our CloudFront distribution:</p>

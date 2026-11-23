@@ -5,7 +5,7 @@ A React-based personal website for George Gittins, designed for continuous, auto
 
 ## Tech Stack
 - **Framework:** React (Vite/TypeScript)
-- **Deployment Target:** `ai.georgegittins.com` (S3 Bucket)
+- **Deployment Target:** `www.georgegittins.com` / `georgegittins.com` via CloudFront (S3 origin bucket `ai.georgegittins.com`)
 - **Styling:** Tailwind CSS v4 (`@tailwindcss/vite`) + shadcn/ui v4 primitives (`src/components/ui/`) with semantic OKLCH CSS variables in `src/index.css` and `lucide-react` icons. Use `cn()` from `@/lib/utils` for conditional classes, semantic color tokens (`bg-card`, `text-muted-foreground`, `bg-brand`), and full `Card`/`Dialog`/`Sheet`/`Badge`/`Button`/`Input` composition. Specialized canvas/playground/blog prose styles live in `src/App.css`.
 
 ## Content & Structure Guidelines
@@ -37,17 +37,17 @@ A React-based personal website for George Gittins, designed for continuous, auto
   2. `npm run build`: To verify the production bundle.
 - **Plan Mode:** If you enter Plan Mode, save your plan to `./.gemini/plans/session-plan.md`. This path is always available and safe.
 - **Atomic Commits:** Focus on one logical improvement at a time. The repo name is `personal-website-frontend`.
-- **System Instructions:** Your primary goal is to improve the site at `www.georgegittins.com` and `ai.georgegittins.com`.
+- **System Instructions:** Your primary goal is to improve the site at `www.georgegittins.com` and `georgegittins.com`.
 
 - **External Assets:** Most PDFs (CV, Thesis) are hosted on Google Drive. If a link is missing from `TODO.md` or the code, look for it in `personal-website-project/scraped_content/` or assume it needs to be provided by the user (George). Do NOT generate placeholder files.
 - **Roadmap Maintenance:** ALWAYS update `TODO.md` after completing a task. Use `[x]` for completed tasks and feel free to add new ideas under "Future Improvements". Always update the TODO list at the end of each session, moving and marking off items, delete old and stale items. Feel free to add good ideas there that meet the requirements mentioned in this projects documentation.  
 
 ## Gemini CLI: Autonomous Mode Instructions
 This repo is designed to be modified by an autonomous agent periodically (every 3 days). 
-- **Domain Scope:** Both `ai.georgegittins.com` and `www.georgegittins.com` (along with the apex `georgegittins.com`) serve the React-based website from the S3 bucket `ai.georgegittins.com` via CloudFront. Your changes are live on all these domains.
+- **Domain Scope:** `www.georgegittins.com` and the apex `georgegittins.com` serve the React-based website via CloudFront (`E1IOHS3BJD2FUN`). Your changes are live on both domains.
 - **COST MANDATE:** ONLY implement "Forever Free" solutions. Do NOT introduce recurring API costs, paid SaaS dependencies, or premium AWS services (e.g., avoid Lambda/Bedrock unless within the Free Tier).
 - **SECURITY & PRIVACY:** Prioritize static, client-side implementations. Do NOT leak API keys into the frontend. If an AI feature is needed, prefer pre-generating content at build-time (static indexing) or using browser-native capabilities.
-- **Deployment Awareness:** Your changes are deployed to S3 bucket `ai.georgegittins.com` which serves all domains via CloudFront.
+- **Deployment Awareness:** Your changes are deployed to S3 and served via CloudFront for `georgegittins.com` and `www.georgegittins.com`.
 - **No Inquiries:** During automated runs, assume all decisions are your own. 
 - **Task Selection:** Start by reading `TODO.md` and `GEMINI.md`. Choose a high-priority task from `TODO.md` or identify a clear UI/UX/Performance/SEO improvement.
 
