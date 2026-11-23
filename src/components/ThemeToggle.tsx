@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Moon, Sun } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const ThemeToggle: React.FC = () => {
   const [isDark, setIsDark] = useState(() => {
@@ -10,28 +12,26 @@ const ThemeToggle: React.FC = () => {
   });
 
   useEffect(() => {
-    if (isDark) {
-      document.body.classList.add('dark-mode');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.body.classList.remove('dark-mode');
-      localStorage.setItem('theme', 'light');
-    }
+    document.documentElement.classList.toggle('dark', isDark);
+    document.body.classList.toggle('dark-mode', isDark);
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
   }, [isDark]);
 
   const toggleTheme = () => {
-    setIsDark(!isDark);
+    setIsDark((prev) => !prev);
   };
 
   return (
-    <button 
-      className="theme-toggle" 
+    <Button
+      variant="ghost"
+      size="icon"
       onClick={toggleTheme}
       aria-label="Toggle dark mode"
-      title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+      className="rounded-full"
     >
-      {isDark ? '☀️' : '🌙'}
-    </button>
+      {isDark ? <Sun className="size-4" /> : <Moon className="size-4" />}
+    </Button>
   );
 };
 

@@ -1,124 +1,182 @@
 import React from 'react';
+import { Calendar, ExternalLink, GraduationCap, MapPin } from 'lucide-react';
 import tuDelftLogo from '../assets/TUDelft_Logo.webp';
 import uGroningenLogo from '../assets/UniversityofGroningen_logo.webp';
 import uPortoLogo from '../assets/UPorto_logo.webp';
 import ibLogo from '../assets/InternationalBaccalaureate_logo.webp';
 import dataWiseLogo from '../assets/DataWise_logo.webp';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+
+interface EducationItem {
+  institution: string;
+  program: string;
+  logo: string;
+  date?: string;
+  location: string;
+  link?: string;
+  highlights: string[];
+  tags: string[];
+}
+
+const educationData: EducationItem[] = [
+  {
+    institution: 'Technical University of Delft',
+    program: 'MSc Complex Systems Engineering and Management (CoSEM)',
+    logo: tuDelftLogo,
+    date: 'August 2021 – August 2024',
+    location: 'Delft, Netherlands',
+    link: 'http://cosem.nl',
+    highlights: [
+      'Project planning, socio-technical design, and systems management',
+      'Understanding complex markets, market failures, and strategic positioning',
+      'Handling multi-stakeholder, multivariable engineering and policy challenges',
+      'Specialization in Data, Information, and Communication',
+    ],
+    tags: ['Systems Engineering', 'Management', 'Data Specialization'],
+  },
+  {
+    institution: 'University of Porto',
+    program: 'ERASMUS+ MSc Industrial Engineering and Management',
+    logo: uPortoLogo,
+    location: 'Porto, Portugal',
+    highlights: [
+      'Modeling and Data Analytics for complex industrial operations',
+      'Supply Chain Management and Technology Entrepreneurship',
+      'Industrial Ecology and Sustainable Operations Strategies',
+    ],
+    tags: ['Industrial Engineering', 'Modelling', 'Analytics', 'Erasmus+'],
+  },
+  {
+    institution: 'University of Groningen',
+    program: 'Minor Data Wise: Data Science in Society',
+    logo: dataWiseLogo,
+    location: 'Groningen, Netherlands',
+    highlights: [
+      'Understanding the role of data science, ethics, and societal impact',
+      'Collaborated with a partner company to deliver a consulting report on their data architecture and use',
+    ],
+    tags: ['Data Science', 'Societal Impact', 'Consulting'],
+  },
+  {
+    institution: 'University of Groningen',
+    program: 'BSc Industrial Engineering and Management',
+    logo: uGroningenLogo,
+    location: 'Groningen, Netherlands',
+    highlights: [
+      'Developed strong programming skills across Python, MATLAB, R, JavaScript, and Excel',
+      'Modeled and controlled multivariable dynamic systems',
+      'Optimized operations across manufacturing, supply chains, and project management',
+    ],
+    tags: ['Programming', 'Operations Optimization', 'Multivariable Systems'],
+  },
+  {
+    institution: 'University of Groningen',
+    program: 'BSc Chemical Engineering',
+    logo: uGroningenLogo,
+    location: 'Groningen, Netherlands',
+    highlights: [
+      'Trained in rigorous analytical and experimental laboratory practices',
+      'Studied molecular structure, reactivity, and process engineering fundamentals',
+    ],
+    tags: ['Laboratory Practice', 'Molecular Chemistry'],
+  },
+  {
+    institution: 'International School of The Hague',
+    program: 'International Baccalaureate (IB Diploma)',
+    logo: ibLogo,
+    location: 'The Hague, Netherlands',
+    highlights: [
+      'Higher Level: Physics, Chemistry, English Language & Literature',
+      'Standard Level: Mathematics, Geography, Dutch Language & Literature',
+    ],
+    tags: ['Physics', 'Chemistry', 'Mathematics'],
+  },
+];
 
 const Education: React.FC = () => {
   return (
-    <section id="education" className="section timeline-container">
-      <h2>Education:</h2>
-      
-      <div className="card experience-card">
-        <a href="http://cosem.nl" target="_blank" rel="noopener noreferrer">
-          <img src={tuDelftLogo} alt="TU Delft" className="card-logo" loading="lazy" decoding="async" />
-        </a>
-        <div className="card-details">
-          <h3>Technical University of Delft / MSc Complex Systems Engineering and Management</h3>
-          <p className="date">August 2021 - August 2024, Delft</p>
-          <div className="description">
-            <ul className="description-list">
-              <li>Project planning, design and management</li>
-              <li>Understanding markets, how they fail and how to succeed</li>
-              <li>Handling the complexities of working with many stakeholders and variables</li>
-              <li>Specialisation in data, information and communication</li>
-            </ul>
-          </div>
-          <div className="quick-facts">
-            <span className="badge">Systems Engineering</span>
-            <span className="badge">Management</span>
-            <span className="badge">Data Specialization</span>
-          </div>
+    <section id="education" className="flex flex-col gap-8">
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-2 text-xs font-medium tracking-wider text-brand uppercase">
+          <GraduationCap className="size-3.5" />
+          Academic Background
         </div>
+        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          Education
+        </h1>
+        <p className="max-w-2xl text-base text-muted-foreground">
+          Multidisciplinary engineering training spanning complex systems, industrial operations, data science, and international exchange.
+        </p>
       </div>
 
-      <div className="card experience-card">
-        <img src={uPortoLogo} alt="University of Porto" className="card-logo" loading="lazy" decoding="async" />
-        <div className="card-details">
-          <h3>University of Porto / ERASMUS+ MSc Industrial Engineering and Management</h3>
-          <div className="description">
-            <ul className="description-list">
-              <li>Modeling and Data Analytics</li>
-              <li>Supply Chain Management and Entrepreneurship</li>
-              <li>Industrial Ecology and Sustainable strategies</li>
-            </ul>
-          </div>
-          <div className="quick-facts">
-            <span className="badge">Industrial Engineering</span>
-            <span className="badge">Modelling</span>
-            <span className="badge">Analytics</span>
-          </div>
-        </div>
-      </div>
+      <div className="relative flex flex-col gap-4 md:pl-6 md:before:absolute md:before:top-4 md:before:bottom-4 md:before:left-1.5 md:before:w-px md:before:bg-border">
+        {educationData.map((edu, index) => (
+          <Card
+            key={`${edu.institution}-${index}`}
+            className="relative py-5 transition-all duration-200 hover:border-brand/50 hover:shadow-md md:before:absolute md:before:top-7 md:before:-left-[23px] md:before:size-2.5 md:before:rounded-full md:before:border-2 md:before:border-background md:before:bg-brand"
+          >
+            <CardContent className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-5">
+              <div className="flex size-14 shrink-0 items-center justify-center overflow-hidden rounded-xl border bg-white p-1.5 shadow-xs">
+                <img
+                  src={edu.logo}
+                  alt={edu.institution}
+                  className="size-full object-contain"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
 
-      <div className="card experience-card">
-        <img src={dataWiseLogo} alt="Data Wise" className="card-logo" loading="lazy" decoding="async" />
-        <div className="card-details">
-          <h3>University of Groningen / Minor Data Wise: Data Science in Society</h3>
-          <div className="description">
-            <ul className="description-list">
-              <li>Understanding the role of data and its impacts on society</li>
-              <li>Collaborate with a company and provide them with a consulting report on their data use</li>
-            </ul>
-          </div>
-          <div className="quick-facts">
-            <span className="badge">Data Science</span>
-            <span className="badge">Societal Impact</span>
-          </div>
-        </div>
-      </div>
+              <div className="flex flex-1 flex-col gap-2.5">
+                <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
+                  <div className="flex flex-col gap-1">
+                    <h2 className="text-lg font-semibold tracking-tight text-foreground">
+                      {edu.institution}{' '}
+                      <span className="font-normal text-muted-foreground">/</span>{' '}
+                      <span className="text-brand">{edu.program}</span>
+                    </h2>
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
+                      {edu.date && (
+                        <span className="inline-flex items-center gap-1">
+                          <Calendar className="size-3.5" />
+                          {edu.date}
+                        </span>
+                      )}
+                      <span className="inline-flex items-center gap-1">
+                        <MapPin className="size-3.5" />
+                        {edu.location}
+                      </span>
+                    </div>
+                  </div>
 
-      <div className="card experience-card">
-        <img src={uGroningenLogo} alt="University of Groningen" className="card-logo" loading="lazy" decoding="async" />
-        <div className="card-details">
-          <h3>University of Groningen / BSc Industrial Engineering and Management</h3>
-          <div className="description">
-            <ul className="description-list">
-              <li>Develop strong programming skills, e.g. Matlab, Python, R, Javascript, Excel</li>
-              <li>Comprehend and control multivariable dynamic systems</li>
-              <li>Optimize operations within various fields, e.g. manufacturing, project management</li>
-            </ul>
-          </div>
-          <div className="quick-facts">
-            <span className="badge">Programming</span>
-            <span className="badge">Operations Optimization</span>
-            <span className="badge">Multivariable Systems</span>
-          </div>
-        </div>
-      </div>
+                  {edu.link && (
+                    <Button asChild variant="outline" size="xs" className="w-fit">
+                      <a href={edu.link} target="_blank" rel="noopener noreferrer">
+                        Program Info
+                        <ExternalLink className="size-3" />
+                      </a>
+                    </Button>
+                  )}
+                </div>
 
-      <div className="card experience-card">
-        <img src={uGroningenLogo} alt="University of Groningen" className="card-logo" loading="lazy" decoding="async" />
-        <div className="card-details">
-          <h3>University of Groningen / BSc Chemical Engineering</h3>
-          <div className="description">
-            <ul className="description-list">
-              <li>Learn effective laboratory practices</li>
-              <li>Understand the complex nature of molecules: Structure, Reactivity and Function</li>
-            </ul>
-          </div>
-          <div className="quick-facts">
-            <span className="badge">Laboratory Practice</span>
-            <span className="badge">Molecular Chemistry</span>
-          </div>
-        </div>
-      </div>
+                <ul className="flex list-disc flex-col gap-1 pl-5 text-sm leading-relaxed text-muted-foreground">
+                  {edu.highlights.map((point, idx) => (
+                    <li key={idx}>{point}</li>
+                  ))}
+                </ul>
 
-      <div className="card experience-card">
-        <img src={ibLogo} alt="International Baccalaureate" className="card-logo" loading="lazy" decoding="async" />
-        <div className="card-details">
-          <h3>International School of The Hague / International Baccalaureate</h3>
-          <div className="description">
-            <p style={{ margin: '0 0 10px 0' }}><strong>Higher Level:</strong> Physics, Chemistry, English Language and Literature</p>
-            <p style={{ margin: 0 }}><strong>Standard Level:</strong> Geography, Mathematics, Dutch Language and Literature</p>
-          </div>
-          <div className="quick-facts">
-            <span className="badge">Physics</span>
-            <span className="badge">Chemistry</span>
-            <span className="badge">Mathematics</span>
-          </div>
-        </div>
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {edu.tags.map((tag) => (
+                    <Badge key={tag} variant="secondary">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
       </div>
     </section>
   );

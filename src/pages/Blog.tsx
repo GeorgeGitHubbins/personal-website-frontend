@@ -1,23 +1,45 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
+import {
+  ArrowLeft,
+  ArrowRight,
+  BookOpen,
+  Calendar,
+  Check,
+  Clock,
+  Copy,
+  Search,
+  Share2,
+  X,
+} from 'lucide-react';
+import { LinkedInIcon } from '@/components/ui/brand-icons';
 import { blogPosts } from '../data/blogData';
 import { calculateReadingTime } from '../utils/readingTime';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Separator } from '@/components/ui/separator';
 
 const Blog: React.FC = () => {
   const { slug } = useParams<{ slug?: string }>();
   const navigate = useNavigate();
 
-  // State for search and filtering in listing view
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [copied, setCopied] = useState(false);
 
-  // Scroll to top when slug changes
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [slug]);
 
-  // Handle Share / Copy Link
   const handleCopyLink = () => {
     const url = window.location.href;
     navigator.clipboard.writeText(url).then(() => {
@@ -26,124 +48,151 @@ const Blog: React.FC = () => {
     });
   };
 
-  // If a slug is specified, render the single article view
   if (slug) {
     const post = blogPosts.find((p) => p.slug === slug);
 
     if (!post) {
       return (
-        <div className="section blog-not-found">
-          <h2>Article Not Found</h2>
-          <p>The article you are looking for does not exist or has been moved.</p>
-          <Link to="/blog" className="back-blog-btn">
-            ← Back to Blog
-          </Link>
-        </div>
+        <Card className="mx-auto max-w-xl py-12 text-center">
+          <CardContent className="flex flex-col items-center gap-4">
+            <h2 className="text-2xl font-bold">Article Not Found</h2>
+            <p className="text-sm text-muted-foreground">
+              The article you are looking for does not exist or has been moved.
+            </p>
+            <Button asChild variant="outline">
+              <Link to="/blog">
+                <ArrowLeft className="size-4" />
+                Back to Blog
+              </Link>
+            </Button>
+          </CardContent>
+        </Card>
       );
     }
 
-    // Get related posts (up to 2, in the same category or just other posts)
     const relatedPosts = blogPosts
       .filter((p) => p.slug !== post.slug)
-      .filter((p) => p.category === post.category || true)
       .slice(0, 2);
-
     const readingTime = calculateReadingTime(post.contentText);
 
     return (
-      <section className="section blog-detail-section">
-        <div className="blog-detail-navigation">
-          <Link to="/blog" className="back-blog-btn">
-            <span className="arrow">←</span> Back to all articles
-          </Link>
+      <section className="mx-auto flex max-w-3xl flex-col gap-8">
+        <div>
+          <Button asChild variant="ghost" size="sm" className="-ml-2 text-muted-foreground">
+            <Link to="/blog">
+              <ArrowLeft className="size-4" />
+              Back to all articles
+            </Link>
+          </Button>
         </div>
 
-        <header className="blog-detail-header">
-          <div className="blog-detail-meta">
-            <span className="blog-category-badge" data-category={post.category}>
-              {post.category}
-            </span>
-            <span className="blog-detail-date">
+        <header className="flex flex-col gap-4">
+          <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+            <Badge variant="brand">{post.category}</Badge>
+            <span className="inline-flex items-center gap-1">
+              <Calendar className="size-3.5" />
               {new Date(post.date).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric',
               })}
             </span>
-            <span className="blog-detail-reading-time">
-              ⏱️ {readingTime} min read
+            <span className="inline-flex items-center gap-1">
+              <Clock className="size-3.5" />
+              {readingTime} min read
             </span>
           </div>
-          <h1 className="blog-detail-title">{post.title}</h1>
-          <p className="blog-detail-excerpt">{post.excerpt}</p>
-          <div className="blog-detail-tags">
+
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            {post.title}
+          </h1>
+          <p className="text-lg leading-relaxed text-muted-foreground">{post.excerpt}</p>
+
+          <div className="flex flex-wrap gap-1.5">
             {post.tags.map((tag) => (
-              <span key={tag} className="blog-tag">
+              <Badge key={tag} variant="secondary">
                 #{tag}
-              </span>
+              </Badge>
             ))}
           </div>
         </header>
 
-        <div className="blog-detail-content-wrapper">
-          {post.content}
-        </div>
+        <Separator />
 
-        {/* Share Panel */}
-        <div className="blog-share-panel">
-          <h3>Share this article</h3>
-          <div className="blog-share-buttons">
-            <button 
-              onClick={handleCopyLink} 
-              className={`share-btn copy-btn ${copied ? 'copied' : ''}`}
-              aria-label="Copy link to clipboard"
-            >
-              {copied ? '✓ Link Copied!' : '🔗 Copy Link'}
-            </button>
-            <a 
-              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="share-btn linkedin-btn"
-              aria-label="Share on LinkedIn"
-            >
-              💼 LinkedIn
-            </a>
-            <a 
-              href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(post.title)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="share-btn twitter-btn"
-              aria-label="Share on X"
-            >
-              🐦 X / Twitter
-            </a>
-          </div>
-        </div>
+        <div className="blog-detail-content-wrapper">{post.content}</div>
 
-        {/* Related Articles */}
+        {/* Share Card */}
+        <Card className="bg-muted/30 py-5">
+          <CardContent className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+            <div>
+              <h3 className="text-base font-semibold text-foreground">Share this article</h3>
+              <p className="text-xs text-muted-foreground">
+                Found this helpful? Share it with your network.
+              </p>
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <Button variant="outline" size="sm" onClick={handleCopyLink} aria-label="Copy link to clipboard">
+                {copied ? <Check className="size-3.5 text-brand" /> : <Copy className="size-3.5" />}
+                {copied ? 'Link Copied' : 'Copy Link'}
+              </Button>
+              <Button asChild variant="outline" size="sm">
+                <a
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Share on LinkedIn"
+                >
+                  <LinkedInIcon className="size-3.5" />
+                  LinkedIn
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="sm">
+                <a
+                  href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(post.title)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Share on X"
+                >
+                  <Share2 className="size-3.5" />
+                  X / Twitter
+                </a>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+
         {relatedPosts.length > 0 && (
-          <div className="blog-related-section">
-            <hr className="blog-divider" />
-            <h2>Related Articles</h2>
-            <div className="blog-related-grid">
+          <div className="flex flex-col gap-4 pt-4">
+            <Separator />
+            <h2 className="text-xl font-bold tracking-tight text-foreground">Related Articles</h2>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {relatedPosts.map((related) => {
                 const rReadingTime = calculateReadingTime(related.contentText);
                 return (
-                  <div 
-                    key={related.slug} 
-                    className="blog-related-card"
+                  <Card
+                    key={related.slug}
+                    className="cursor-pointer py-5 transition-all hover:border-brand/50 hover:shadow-md"
                     onClick={() => navigate(`/blog/${related.slug}`)}
                   >
-                    <span className="blog-category-badge" data-category={related.category}>
-                      {related.category}
-                    </span>
-                    <h3>{related.title}</h3>
-                    <div className="blog-card-footer-meta">
-                      <span>{new Date(related.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}</span>
-                      <span>⏱️ {rReadingTime} min</span>
-                    </div>
-                  </div>
+                    <CardHeader className="gap-2 pb-2">
+                      <Badge variant="secondary" className="w-fit">
+                        {related.category}
+                      </Badge>
+                      <CardTitle className="text-base">{related.title}</CardTitle>
+                    </CardHeader>
+                    <CardFooter className="justify-between text-xs text-muted-foreground">
+                      <span>
+                        {new Date(related.date).toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: 'short',
+                        })}
+                      </span>
+                      <span className="inline-flex items-center gap-1">
+                        <Clock className="size-3" />
+                        {rReadingTime} min
+                      </span>
+                    </CardFooter>
+                  </Card>
                 );
               })}
             </div>
@@ -153,144 +202,167 @@ const Blog: React.FC = () => {
     );
   }
 
-  // --- List View ---
-  
-  // Categorize blog posts for counts
   const categories = ['All', 'Web Dev', 'AI & Automation', 'Cloud', 'Systems Eng'];
-  
+
   const getCategoryCount = (cat: string) => {
     if (cat === 'All') return blogPosts.length;
     return blogPosts.filter((p) => p.category === cat).length;
   };
 
-  // Filter posts based on search query and category
   const filteredPosts = blogPosts.filter((post) => {
     const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
     const searchLower = searchQuery.toLowerCase();
-    const matchesSearch = 
+    const matchesSearch =
       post.title.toLowerCase().includes(searchLower) ||
       post.excerpt.toLowerCase().includes(searchLower) ||
       post.tags.some((tag) => tag.toLowerCase().includes(searchLower)) ||
       post.contentText.toLowerCase().includes(searchLower);
-    
     return matchesCategory && matchesSearch;
   });
 
   return (
-    <section className="section blog-section">
-      <div className="blog-header-container">
-        <h2 className="blog-section-title">Insights & Perspectives</h2>
-        <p className="blog-section-subtitle">
-          Thoughts and detailed guides on software engineering, serverless architectures, autonomous systems, and modern AI pipelines.
+    <section className="flex flex-col gap-8">
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-2 text-xs font-medium tracking-wider text-brand uppercase">
+          <BookOpen className="size-3.5" />
+          Writing &amp; Engineering Notes
+        </div>
+        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          Insights &amp; Perspectives
+        </h1>
+        <p className="max-w-2xl text-base text-muted-foreground">
+          Deep dives on software engineering, serverless architectures, autonomous systems, and modern AI pipelines.
         </p>
       </div>
 
-      {/* Controls: Search & Category Filter */}
-      <div className="blog-controls">
-        <div className="blog-search-container">
-          <input
-            type="text"
-            className="blog-search-input"
-            placeholder="Search articles, tags, or content..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            aria-label="Search articles"
-          />
-          {searchQuery && (
-            <button 
-              className="blog-search-clear" 
-              onClick={() => setSearchQuery('')}
-              aria-label="Clear search"
-            >
-              ✕
-            </button>
-          )}
+      {/* Controls */}
+      <div className="flex flex-col gap-4">
+        <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+          <div className="relative w-full sm:max-w-sm">
+            <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" />
+            <Input
+              type="text"
+              placeholder="Search articles, tags, or content..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              aria-label="Search articles"
+              className="pr-9 pl-9"
+            />
+            {searchQuery && (
+              <button
+                type="button"
+                onClick={() => setSearchQuery('')}
+                aria-label="Clear search"
+                className="absolute top-1/2 right-2.5 -translate-y-1/2 cursor-pointer text-muted-foreground hover:text-foreground"
+              >
+                <X className="size-4" />
+              </button>
+            )}
+          </div>
+
+          <span className="text-xs font-medium text-muted-foreground">
+            {filteredPosts.length === 1
+              ? 'Showing 1 article'
+              : `Showing ${filteredPosts.length} articles`}
+          </span>
         </div>
 
-        <div className="blog-category-tabs" role="tablist" aria-label="Filter blog posts by category">
+        <div className="flex flex-wrap gap-2" role="tablist" aria-label="Filter blog posts by category">
           {categories.map((cat) => (
-            <button
+            <Button
               key={cat}
+              type="button"
               role="tab"
+              size="sm"
               aria-selected={selectedCategory === cat}
-              className={`blog-category-tab-btn ${selectedCategory === cat ? 'active' : ''}`}
+              variant={selectedCategory === cat ? 'brand' : 'outline'}
               onClick={() => setSelectedCategory(cat)}
+              className="rounded-full"
             >
-              {cat} <span className="cat-count">({getCategoryCount(cat)})</span>
-            </button>
+              {cat} ({getCategoryCount(cat)})
+            </Button>
           ))}
         </div>
       </div>
 
-      {/* Results Count */}
-      <div className="blog-results-meta">
-        {filteredPosts.length === 1 
-          ? 'Showing 1 article' 
-          : `Showing ${filteredPosts.length} articles`}
-      </div>
-
-      {/* Articles Grid */}
+      {/* Grid */}
       {filteredPosts.length > 0 ? (
-        <div className="blog-grid">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {filteredPosts.map((post) => {
             const readingTime = calculateReadingTime(post.contentText);
             return (
-              <article key={post.slug} className="blog-card" onClick={() => navigate(`/blog/${post.slug}`)}>
-                <div className="blog-card-header">
-                  <span className="blog-category-badge" data-category={post.category}>
-                    {post.category}
-                  </span>
-                  <span className="blog-card-date">
-                    {new Date(post.date).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'short',
-                      day: 'numeric',
-                    })}
-                  </span>
-                </div>
-                
-                <h3 className="blog-card-title">
-                  <Link to={`/blog/${post.slug}`} className="blog-card-link" onClick={(e) => e.stopPropagation()}>
-                    {post.title}
-                  </Link>
-                </h3>
-                
-                <p className="blog-card-excerpt">{post.excerpt}</p>
-                
-                <div className="blog-card-tags">
-                  {post.tags.map((tag) => (
-                    <span key={tag} className="blog-card-tag-pill">
-                      #{tag}
+              <Card
+                key={post.slug}
+                className="group flex h-full cursor-pointer flex-col justify-between transition-all duration-200 hover:-translate-y-0.5 hover:border-brand/50 hover:shadow-md"
+                onClick={() => navigate(`/blog/${post.slug}`)}
+              >
+                <CardHeader className="gap-3">
+                  <div className="flex items-center justify-between gap-2 text-xs text-muted-foreground">
+                    <Badge variant="brand">{post.category}</Badge>
+                    <span>
+                      {new Date(post.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                      })}
                     </span>
-                  ))}
-                </div>
+                  </div>
+                  <CardTitle className="text-lg transition-colors group-hover:text-brand">
+                    <Link
+                      to={`/blog/${post.slug}`}
+                      onClick={(e) => e.stopPropagation()}
+                      className="focus:outline-none"
+                    >
+                      {post.title}
+                    </Link>
+                  </CardTitle>
+                  <CardDescription className="line-clamp-3 leading-relaxed">
+                    {post.excerpt}
+                  </CardDescription>
+                </CardHeader>
 
-                <div className="blog-card-footer">
-                  <span className="blog-card-reading-time">
-                    ⏱️ {readingTime} min read
+                <CardContent className="flex flex-wrap gap-1.5">
+                  {post.tags.map((tag) => (
+                    <Badge key={tag} variant="secondary">
+                      #{tag}
+                    </Badge>
+                  ))}
+                </CardContent>
+
+                <CardFooter className="justify-between border-t pt-4 text-xs text-muted-foreground">
+                  <span className="inline-flex items-center gap-1">
+                    <Clock className="size-3.5" />
+                    {readingTime} min read
                   </span>
-                  <span className="blog-card-read-more">
-                    Read Article <span className="arrow">→</span>
+                  <span className="inline-flex items-center gap-1 font-medium text-brand">
+                    Read Article
+                    <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
                   </span>
-                </div>
-              </article>
+                </CardFooter>
+              </Card>
             );
           })}
         </div>
       ) : (
-        <div className="blog-no-results">
-          <h3>No articles found</h3>
-          <p>Try clearing your search query or choosing a different category.</p>
-          <button 
-            className="blog-reset-btn" 
-            onClick={() => {
-              setSearchQuery('');
-              setSelectedCategory('All');
-            }}
-          >
-            Reset Filters
-          </button>
-        </div>
+        <Card className="border-dashed py-12 text-center">
+          <CardContent className="flex flex-col items-center gap-3">
+            <Search className="size-8 text-muted-foreground/60" />
+            <h3 className="text-base font-semibold">No articles found</h3>
+            <p className="text-sm text-muted-foreground">
+              Try clearing your search query or choosing a different category.
+            </p>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => {
+                setSearchQuery('');
+                setSelectedCategory('All');
+              }}
+            >
+              Reset Filters
+            </Button>
+          </CardContent>
+        </Card>
       )}
     </section>
   );

@@ -1,5 +1,7 @@
 # Project Roadmap & Tasks
 ## Completed
+- [x] Design & content audit + full UI overhaul powered by Tailwind CSS v4, OKLCH semantic tokens, and shadcn/ui v4 primitives (`Button`, `Card`, `Badge`, `Input`, `Tabs`, `Separator`, `Dialog`, `Sheet`) with `lucide-react` icons.
+- [x] Replaced 10 heavy inline Google Drive PDF iframes on Projects page with lazy-loaded shadcn/ui `Dialog` PDF previews and cleaned academic work titles.
 - [x] Initial React scaffolding (Vite + TypeScript).
 - [x] S3 Bucket creation and Static Website Hosting configuration.
 - [x] GitHub Action for daily automation (04:00 UTC).

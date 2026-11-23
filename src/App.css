@@ -1,59 +1,5 @@
-:root {
-  --primary-color: #2c3e50;
-  --secondary-color: #34495e;
-  --accent-color: #3498db;
-  --text-color: #333;
-  --text-secondary: #4a5568;
-  --text-muted: #718096;
-  --bg-color: #f4f7f6;
-  --card-bg: #ffffff;
-  --card-shadow: rgba(0, 0, 0, 0.05);
-  --card-shadow-hover: rgba(0, 0, 0, 0.1);
-  --border-color: #ddd;
-  --accent-border: rgba(52, 152, 219, 0.2);
-  --card-border: rgba(0, 0, 0, 0.02);
-  --logo-bg: #ffffff;
-  --logo-border: #f0f0f0;
-  --pdf-bg: #f7fafc;
-  --section-bg: #f9f9f9;
-}
-
-.dark-mode {
-  --primary-color: #ecf0f1;
-  --secondary-color: #bdc3c7;
-  --accent-color: #3498db;
-  --text-color: #f4f7f6;
-  --text-secondary: #e2e8f0;
-  --text-muted: #a0aec0;
-  --bg-color: #1a202c;
-  --card-bg: #2d3748;
-  --card-shadow: rgba(0, 0, 0, 0.3);
-  --card-shadow-hover: rgba(0, 0, 0, 0.5);
-  --border-color: #4a5568;
-  --accent-border: rgba(52, 152, 219, 0.4);
-  --card-border: rgba(255, 255, 255, 0.05);
-  --logo-bg: #ffffff; /* Keep white for readability if logos have transparent bg */
-  --logo-border: #4a5568;
-  --pdf-bg: #1a202c;
-  --section-bg: #2d3748;
-}
-
-body {
-  margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.app {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
+/* Theme tokens, typography, and layout are managed by Tailwind v4 & shadcn/ui in src/index.css.
+   Specialized styles below support interactive canvas visuals, playground demos, timeline, and blog prose. */
 
 /* Reading Progress Bar */
 .progress-bar-container {
@@ -288,7 +234,7 @@ body {
   background: var(--card-bg);
   color: var(--text-color);
   cursor: pointer;
-  fontSize: 0.85rem;
+  font-size: 0.85rem;
   transition: all 0.2s ease;
 }
 
@@ -328,39 +274,7 @@ body {
   flex: 1;
 }
 
-.experience-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 25px;
-  padding: 25px;
-  margin-bottom: 25px;
-  background: var(--card-bg);
-  border-radius: 12px;
-  box-shadow: 0 4px 6px var(--card-shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
-  border: 1px solid var(--card-border);
-  position: relative;
-}
-
-.experience-card::before {
-  content: '';
-  position: absolute;
-  left: -34px;
-  top: 40px;
-  width: 12px;
-  height: 12px;
-  background: var(--accent-color);
-  border-radius: 50%;
-  border: 2px solid var(--bg-color);
-  box-shadow: 0 0 0 2px var(--accent-border);
-  z-index: 2;
-  transition: transform 0.3s ease;
-}
-
-.experience-card:hover::before {
-  transform: scale(1.3);
-  box-shadow: 0 0 0 4px var(--accent-border);
-}
+/* .experience-card styling is now managed by shadcn/ui Card and Tailwind utilities in Experience.tsx */
 
 .timeline-container {
   position: relative;
