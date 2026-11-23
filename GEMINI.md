@@ -5,7 +5,7 @@ A React-based personal website for George Gittins, designed for continuous, auto
 
 ## Tech Stack
 - **Framework:** React (Vite/TypeScript)
-- **Deployment Target:** `www.georgegittins.com` / `georgegittins.com` via CloudFront (S3 origin bucket `ai.georgegittins.com`)
+- **Deployment Target:** `www.georgegittins.com` / `georgegittins.com` via CloudFront (`E1IOHS3BJD2FUN`, S3 bucket `georgegittins.com`)
 - **Styling:** Tailwind CSS v4 (`@tailwindcss/vite`) + shadcn/ui v4 primitives (`src/components/ui/`) with semantic OKLCH CSS variables in `src/index.css` and `lucide-react` icons. Use `cn()` from `@/lib/utils` for conditional classes, semantic color tokens (`bg-card`, `text-muted-foreground`, `bg-brand`), and full `Card`/`Dialog`/`Sheet`/`Badge`/`Button`/`Input` composition. Specialized canvas/playground/blog prose styles live in `src/App.css`.
 
 ## Content & Structure Guidelines
