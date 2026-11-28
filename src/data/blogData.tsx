@@ -5,7 +5,7 @@ export interface BlogPost {
   title: string;
   excerpt: string;
   date: string;
-  category: 'Web Dev' | 'AI & Automation' | 'Cloud' | 'Systems Eng';
+  category: 'Web Dev' | 'AI & Automation' | 'Cloud' | 'Systems Eng' | 'Startups';
   tags: string[];
   contentText: string; // Plain text version for searching and reading time calculation
   content: React.ReactNode;
@@ -368,6 +368,82 @@ Autonomous agents will not replace developers; they will elevate them. By taking
 
         <h2>Conclusion: It's About People</h2>
         <p>The most important lesson from rebuilding OrgReview is that well-implemented automation makes work <em>more</em> about people, not less. By delegating repetitive, data-heavy tasks to AI agents, human employees are freed up to focus on the creative, advisory, and relational aspects of their jobs that actually require them. Capture the value by designing workflows that treat AI as a collaborator, not just a tool.</p>
+      </article>
+    )
+  },
+  {
+    slug: 'young-startup-ceo-instantflows',
+    title: 'Becoming a Startup CEO Out of University—and Knowing When to Walk Away',
+    excerpt: 'What I learned co-founding and running InstantFlows straight after my master’s: leading a remote team of 12 talented students, finding community through Global Shapers The Hague, moving to London, and making the hard call to leave.',
+    date: '2026-11-28',
+    category: 'Startups',
+    tags: ['Startups', 'Leadership', 'Entrepreneurship', 'InstantFlows', 'Global Shapers', 'Career'],
+    contentText: `Becoming a Startup CEO Out of University—and Knowing When to Walk Away. Straight after finishing my master's degree, I stepped into a role I never expected to hold that early in my career: CEO and co-founder of InstantFlows, an AI-powered market research startup using large language models and virtual personas to simulate survey responses.
+From Part-Time Student Analyst to Co-Founder.
+While I was still studying, I worked part-time as a data analyst for an entrepreneur who ran his own consultancy. When I graduated, he asked if I wanted to build something new together. InstantFlows was his brainchild—his idea, funded under his holding company as a part-time venture alongside his consultancy. I didn't have capital to invest, so we talked about stock options to recognize my sweat equity, and in return he gave me enormous room to operate. It was a genuinely healthy working relationship: he trusted me to carry the brunt of the day-to-day execution and make operational decisions while learning on the job.
+Building and Leading a Remote Team of 12 Talented Students.
+With no physical office—even though we always hoped to have one someday—everything happened over calls, screen shares, and online pair coding. I owned recruitment from start to finish: screening candidates, deciding who to hire, setting up a final interview with my co-founder, and onboarding them. Over time, I was managing a team of 12 very talented students, several of whom later graduated and transitioned into full-time roles.
+Our weekly rhythm centered on two stand-ups, translating meetings into clear goals and to-do lists, bi-monthly check-ins, and yearly reviews. Whenever someone got stuck, they could message me and we would jump on a call, share screens, and solve it together. Managing part-time students also meant embracing uneven velocity: some weeks exams or coursework slowed everything down, and the next week a massive wave of work would suddenly land.
+Collaborating Across Remote Islands—and Learning Without a Playbook.
+Even with a brilliant group of people, leading 12 part-time students fully remotely came with a real structural challenge. We intentionally organized social gatherings to build camaraderie and bring everyone together, yet day to day, remote work inevitably leaves people operating on separate islands. Truly tight collaboration is hard to replicate when almost every interaction happens over scheduled calls, screen sharing, and online pair coding.
+Barely out of university myself, I had to build my management style in real time—leaning on regular one-on-ones with my co-founder and an experienced DevOps practitioner he introduced me to, who became an invaluable technical sounding board and second opinion.
+The Isolation of Being "King of the Hill"—and Finding Global Shapers The Hague.
+Running a fully remote startup with very little seniority above me also came with a quiet personal cost. I found myself missing the camaraderie of an office—working side by side with peers rather than always being "the boss." To fill that gap outside of work, I went looking for a social, collaborative community and discovered Global Shapers The Hague, a World Economic Forum initiative. Being from The Hague, it was also a meaningful way to stay rooted in my hometown. That single decision kept me in good spirits while working remotely non-stop, and it opened unexpected doors—eventually leading me to serve on the hub's leadership team as Vice Curator and Tech Officer, and to help build local impact projects like NGO Link.
+Why I Chose to Leave—and How London Unlocked the Move.
+Walking away from a company you helped build is brutally difficult, especially when you respect your co-founder and take pride in the team. In the end, three realities converged:
+1. Misalignment with my long-term goals: InstantFlows was fun to build, and I was proud of my contribution, but it was originally my co-founder's vision. Market research didn't connect deeply to where I wanted my career to go—whether in the future of the energy sector, deeper into AI, or even toward policy and politics.
+2. Unresolved equity: We discussed stock options from the start, but navigating the tax implications meant we never finalized a concrete structure. Even though I believed we would eventually find a way to recognize my efforts, the lack of a settled agreement made it feel increasingly distant.
+3. Real-world financial strain and pace: Growth wasn't moving fast enough to close the gap with everyday life. The startup salary wasn't enough for my stage of life—to the point where, when I had to move out of my accommodation, I couldn't qualify for a new local rental on that income.
+That housing crunch unexpectedly became the turning point. Since the work was fully remote, I realized I could live anywhere. I reached out to a friend and spent a few months living in London—which I know is a real privilege. Stepping into a completely new city gave me a sudden sense of mental levity: if I could make a change that big and enjoy it, I could make a career switch too. That was when I started searching for my next chapter.
+Where That Led—and Why I'm Still Grateful.
+Moving into my current role at Sia Partners has been the exact right dynamic for this stage of my life. Working in an office with peers beside me, junior colleagues to support, and experienced leaders above me has accelerated how much I can learn and achieve.
+Even though I am candid about the tough parts of InstantFlows, I am genuinely thankful for the opportunity. Not many people get to build a team straight out of university, call themselves a CEO—and still laugh when their friends tease them about it. Leaving didn't erase what I built; it taught me that real leadership also means having the clarity to know when it is time to move on.`,
+    content: (
+      <article className="blog-post-body">
+        <p>Straight after finishing my master's degree, I stepped into a role I never expected to hold that early in my career: CEO and co-founder of <strong>InstantFlows</strong>, a Rotterdam-based AI market research startup using large language models and virtual personas to simulate survey responses in minutes rather than months.</p>
+        <p>From the outside, "young AI startup CEO" sounds glossy. From the inside, it was a crash course in autonomy, remote leadership, building a team from scratch, and—eventually—learning when to walk away.</p>
+
+        <h2>From Part-Time Student Analyst to Co-Founder</h2>
+        <p>Before InstantFlows, I was working part-time as a student data analyst for an entrepreneur who ran his own consultancy. When I graduated, he asked if I wanted to start something together.</p>
+        <p>The setup was unusual, and surprisingly healthy. InstantFlows was his brainchild—his idea, funded under his holding company while he continued running his consultancy part-time. I didn't have capital to put in, so we discussed stock options to reflect my contribution, and he gave me wide-open room to run the operation. I took on the brunt of the day-to-day work: making operational calls, building processes from scratch, and learning on the job.</p>
+
+        <h2>Leading a Remote Team of 12 Talented Students</h2>
+        <p>We always hoped to get an office at some point, but in practice we were fully remote. I owned recruitment end-to-end—interviewing candidates, deciding who was a strong fit, bringing finalists to my co-founder for a conversation, and onboarding them. Over time, I was leading a team of <strong>12 very talented students</strong>, several of whom eventually graduated into full-time roles.</p>
+        <p>My week-to-week rhythm revolved around keeping everyone unblocked and moving forward:</p>
+        <ul>
+          <li><strong>Two weekly stand-ups:</strong> Reviewing what shipped, setting upcoming goals, and translating every meeting into a concrete to-do list.</li>
+          <li><strong>Open-door troubleshooting:</strong> Anyone could text me when stuck, jump on an immediate call, share their screen, and pair-code through the problem together.</li>
+          <li><strong>Coaching &amp; reviews:</strong> Running bi-monthly check-ins and yearly reviews to track growth and make sure people felt supported.</li>
+        </ul>
+        <p>Managing part-time students also taught me to adapt to uneven velocity. One week exams or university deadlines meant very little moved; the next week, a huge wave of work would suddenly land all at once.</p>
+
+        <h2>Working on Remote Islands—and Learning Without a Playbook</h2>
+        <p>Even with such a capable team, coordinating 12 people fully remotely comes with real friction. We made a point of organizing social gatherings to build camaraderie and stay connected as humans, not just avatars on a screen. Still, remote work inevitably leaves people operating on separate islands—it is genuinely hard to collaborate as tightly and organically as you want when almost all of the work happens through scheduled calls, screen sharing, and online pair coding.</p>
+
+        <blockquote>
+          "You can organize social gatherings and jump on endless screen shares, but in a fully remote startup, it still takes constant effort to stop a talented team from drifting onto separate islands."
+        </blockquote>
+
+        <p>Barely out of university myself, I had to build my management style in real time. I leaned heavily on regular one-on-ones with my co-founder, who also joined our main group calls. He also connected me with an experienced DevOps practitioner he had worked with previously—someone I could meet one-on-one as a technical sounding board and trusted second opinion.</p>
+
+        <h2>The Isolation of "King of the Hill"—and Finding Global Shapers The Hague</h2>
+        <p>Being fully remote as the person at the top—with very little seniority above me—had a quieter personal downside too. I regularly caught myself wishing for a physical office and the everyday camaraderie of working alongside peers, rather than always being "the boss."</p>
+        <p>Because I was missing that in-person collaboration, I went looking for a space outside of work where I could build things with other people. That search led me to <strong>Global Shapers The Hague</strong>, a World Economic Forum initiative. Growing up in The Hague, it was also a great way to stay connected to my hometown.</p>
+        <p>Joining the hub kept me in good spirits through months of non-stop remote startup work—and it ended up opening doors I never anticipated. Over time, I stepped into the hub's leadership team as <strong>Vice Curator &amp; Tech Officer</strong>, helping shape our operations and digital systems and contributing to local impact initiatives like <strong>NGO Link</strong>, a platform connecting NGOs with volunteers and resources.</p>
+
+        <h2>Why I Chose to Leave—and How London Unlocked the Move</h2>
+        <p>Deciding to leave InstantFlows was the hardest decision of the entire journey. The working relationship with my co-founder was healthy, the product was genuinely fun to build, and I felt real pride in having helped bring the company to life. Walking away felt like letting go of something I had poured myself into.</p>
+        <p>In the end, three realities converged until I could no longer ignore them:</p>
+        <ol>
+          <li><strong>Misalignment with my long-term goals:</strong> Because InstantFlows was originally my co-founder's idea, I felt connected to the act of building it, but not deeply tied to the domain itself. Market research didn't line up with where I wanted my career to go—whether in the future of the energy industry, deeper into AI, or even toward a more political or policy-oriented direction.</li>
+          <li><strong>Unresolved equity:</strong> Stock options were part of the plan from the beginning, but navigating the various tax structures meant we never landed on a concrete agreement. Even though I trusted we would eventually find a way to recognize my efforts, watching it remain unresolved made it start to feel like it might never happen.</li>
+          <li><strong>Financial strain and pace:</strong> The company simply wasn't growing fast enough to bridge the gap with everyday life. The salary wasn't sustainable for my stage of life—to the point where, when I had to move out of my accommodation, I couldn't even qualify for a new local rental on that income.</li>
+        </ol>
+        <p>Ironically, that housing crunch became the catalyst. Because InstantFlows was fully remote, I realized I could work from anywhere. I got in touch with a friend and spent a few months living in <strong>London</strong>—an opportunity I recognize as a real privilege. Making that leap gave me an unexpected mental levity: if I could pick up my life, move to a new city, and genuinely thrive there, I could make a career switch too. That realization is what finally pushed me to start looking for my next chapter.</p>
+
+        <h2>What Came Next—and Staying Grateful</h2>
+        <p>Moving into my current role at <strong>Sia Partners</strong> confirmed what I had been missing. Working in a collaborative environment with peers beside me, junior colleagues to mentor, and experienced leaders above me to learn from fits this stage of my life far better—I am learning faster and achieving more because of that dynamic.</p>
+        <p>Even though I am honest about the frustrations and the hard ending, I am deeply thankful for the InstantFlows chapter. Not many people get the chance to recruit a team right out of university, carry real responsibility, and call themselves a CEO—and I still enjoy having my friends joke about it. Leaving didn't erase what I built; it taught me that leadership isn't just about knowing how to start, it's also about having the clarity to know when it is time to move on.</p>
       </article>
     )
   }

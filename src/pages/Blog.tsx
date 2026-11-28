@@ -202,7 +202,7 @@ const Blog: React.FC = () => {
     );
   }
 
-  const categories = ['All', 'Web Dev', 'AI & Automation', 'Cloud', 'Systems Eng'];
+  const categories = ['All', 'Web Dev', 'AI & Automation', 'Cloud', 'Systems Eng', 'Startups'];
 
   const getCategoryCount = (cat: string) => {
     if (cat === 'All') return blogPosts.length;
