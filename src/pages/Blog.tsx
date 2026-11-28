@@ -209,16 +209,18 @@ const Blog: React.FC = () => {
     return blogPosts.filter((p) => p.category === cat).length;
   };
 
-  const filteredPosts = blogPosts.filter((post) => {
-    const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
-    const searchLower = searchQuery.toLowerCase();
-    const matchesSearch =
-      post.title.toLowerCase().includes(searchLower) ||
-      post.excerpt.toLowerCase().includes(searchLower) ||
-      post.tags.some((tag) => tag.toLowerCase().includes(searchLower)) ||
-      post.contentText.toLowerCase().includes(searchLower);
-    return matchesCategory && matchesSearch;
-  });
+  const filteredPosts = blogPosts
+    .filter((post) => {
+      const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
+      const searchLower = searchQuery.toLowerCase();
+      const matchesSearch =
+        post.title.toLowerCase().includes(searchLower) ||
+        post.excerpt.toLowerCase().includes(searchLower) ||
+        post.tags.some((tag) => tag.toLowerCase().includes(searchLower)) ||
+        post.contentText.toLowerCase().includes(searchLower);
+      return matchesCategory && matchesSearch;
+    })
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
     <section className="flex flex-col gap-8">
